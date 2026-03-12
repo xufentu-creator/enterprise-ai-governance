@@ -2,9 +2,9 @@
 
 Enterprise AI governance and digital transformation frameworks exploring decision architecture, human judgment, and complex systems in AI-mediated organizations.
 
-Research Foundation
+Research Source
 
-This enterprise advisory project builds upon the research framework developed by Xufen Tu.
+This project builds upon the research framework developed by Xufen Tu.
 
 Canonical Research Repository
 https://github.com/xufentu-creator/judgment-as-structural-constraint
