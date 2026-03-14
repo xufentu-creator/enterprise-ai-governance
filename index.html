@@ -14,12 +14,59 @@
     content="Business Systems, AI Automation, CRM, Customer Acquisition, Operational Clarity, Decision Architecture, Complex Systems, Human Judgment, Enterprise Transformation, BB369 Tech"
   />
   <meta name="author" content="BB369 Tech" />
+  <meta property="og:title" content="BB369 Tech | Business Systems, AI Automation & Growth Support" />
+  <meta property="og:description" content="Business systems optimization, CRM structure, operational clarity, and AI automation support for growing teams." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ai.bb369tech.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "name":"BB369 Tech",
+        "url":"https://ai.bb369tech.com",
+        "description":"Business systems optimization, CRM structure, operational clarity, and AI automation support.",
+        "sameAs":[
+          "https://ai.bb369tech.com"
+        ]
+      },
+      {
+        "@type":"WebSite",
+        "name":"BB369 Tech",
+        "url":"https://ai.bb369tech.com",
+        "publisher":{
+          "@type":"Organization",
+          "name":"BB369 Tech"
+        }
+      },
+      {
+        "@type":"Person",
+        "name":"Xufen Tu",
+        "jobTitle":"Independent Interdisciplinary Researcher",
+        "worksFor":{
+          "@type":"Organization",
+          "name":"BB369 Tech"
+        },
+        "knowsAbout":[
+          "Complex Systems",
+          "AI Governance",
+          "Decision Architecture",
+          "Enterprise Transformation",
+          "Human Judgment"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root {
       --bg: #ffffff;
       --bg-soft: #f8fafc;
-      --bg-soft-2: #f4f6f8;
+      --bg-soft-2: #f3f6f9;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
@@ -44,7 +91,7 @@
         "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.72;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -60,10 +107,10 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 80;
+      z-index: 90;
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
     }
 
     .nav {
@@ -101,16 +148,14 @@
       font-size: 0.94rem;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .hero {
       position: relative;
-      padding: 88px 0 44px;
+      padding: 92px 0 46px;
       background:
-        radial-gradient(circle at 85% 5%, rgba(37, 99, 235, 0.06), transparent 22%),
-        radial-gradient(circle at 10% 0%, rgba(15, 23, 42, 0.03), transparent 24%),
+        radial-gradient(circle at 86% 8%, rgba(37, 99, 235, 0.06), transparent 20%),
+        radial-gradient(circle at 12% 0%, rgba(15, 23, 42, 0.03), transparent 24%),
         linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
     }
 
@@ -122,7 +167,7 @@
     }
 
     .hero-left {
-      padding: 28px 0 10px;
+      padding: 28px 0 8px;
     }
 
     .eyebrow {
@@ -148,7 +193,7 @@
     }
 
     h1 {
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(3rem, 6vw, 5.6rem);
       font-weight: 650;
       max-width: 10.5ch;
     }
@@ -170,14 +215,14 @@
       max-width: 62ch;
       font-size: 1.08rem;
       color: var(--primary-2);
-      margin: 22px 0 10px;
+      margin: 22px 0 28px;
     }
 
     .hero-sub-cn {
-      max-width: 60ch;
-      font-size: 1rem;
+      max-width: 62ch;
       color: var(--muted);
-      margin: 0 0 28px;
+      font-size: 0.98rem;
+      margin: -10px 0 28px;
     }
 
     .cta-row {
@@ -265,11 +310,6 @@
       padding: 26px;
     }
 
-    .hero-panel p:last-child,
-    .card p:last-child {
-      margin-bottom: 0;
-    }
-
     .micro-label {
       color: var(--muted);
       font-size: 0.75rem;
@@ -303,9 +343,7 @@
       line-height: 1.5;
     }
 
-    section {
-      padding: 38px 0;
-    }
+    section { padding: 38px 0; }
 
     .section-head {
       max-width: 76ch;
@@ -338,9 +376,7 @@
       margin-bottom: 10px;
     }
 
-    .muted {
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
     .deliverable-list,
     .card ul {
@@ -410,17 +446,10 @@
       border-color: var(--primary);
     }
 
-    .panel-group {
-      display: none;
-    }
+    .panel-group { display: none; }
+    .panel-group.active { display: block; }
 
-    .panel-group.active {
-      display: block;
-    }
-
-    .panel {
-      padding: 26px;
-    }
+    .panel { padding: 26px; }
 
     .badge-row {
       display: flex;
@@ -510,9 +539,7 @@
       gap: 14px;
     }
 
-    .timeline-card {
-      padding: 18px 18px;
-    }
+    .timeline-card { padding: 18px; }
 
     .timeline-step {
       color: var(--muted);
@@ -546,9 +573,7 @@
       padding: 18px 0;
     }
 
-    .faq-item:last-child {
-      border-bottom: none;
-    }
+    .faq-item:last-child { border-bottom: none; }
 
     .contact-links {
       display: flex;
@@ -588,6 +613,12 @@
       display: grid;
       gap: 8px;
       font-size: 0.95rem;
+    }
+
+    .footer-small {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--muted);
     }
 
     .legal-pages {
@@ -631,9 +662,7 @@
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        max-width: 12ch;
-      }
+      h1 { max-width: 12ch; }
     }
 
     @media (max-width: 760px) {
@@ -646,17 +675,11 @@
         align-items: flex-start;
       }
 
-      .nav-links {
-        gap: 12px;
-      }
+      .nav-links { gap: 12px; }
 
-      .hero {
-        padding-top: 64px;
-      }
+      .hero { padding-top: 64px; }
 
-      h1 {
-        font-size: clamp(2.6rem, 12vw, 4rem);
-      }
+      h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
 
       .hero-panel,
       .card,
@@ -693,9 +716,7 @@
       <div class="hero-left">
         <span class="eyebrow">Business Systems For Growth</span>
 
-        <h1>
-          Build a clearer customer system for your business
-        </h1>
+        <h1>Build a clearer customer system for your business</h1>
 
         <p class="hero-sub">
           Clarify customer acquisition, follow-up, appointment flow, CRM structure, and operational logic — so growth becomes more stable, less manual, and easier to scale.
@@ -736,15 +757,15 @@
         <div class="stat-grid">
           <div class="metric-card">
             <div class="metric-number">01</div>
-            <div class="metric-text">Acquisition flow design<br><span class="sub-cn">客户获取流程设计</span></div>
+            <div class="metric-text">Acquisition flow design<span class="sub-cn">客户获取流程设计</span></div>
           </div>
           <div class="metric-card">
             <div class="metric-number">02</div>
-            <div class="metric-text">CRM structure<br><span class="sub-cn">客户管理结构</span></div>
+            <div class="metric-text">CRM structure<span class="sub-cn">客户管理结构</span></div>
           </div>
           <div class="metric-card">
             <div class="metric-number">03</div>
-            <div class="metric-text">AI automation support<br><span class="sub-cn">自动化支持</span></div>
+            <div class="metric-text">AI automation support<span class="sub-cn">自动化支持</span></div>
           </div>
         </div>
 
@@ -912,9 +933,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Core modules</h2>
-        <p>
-          To keep the page minimal, the detailed content is organized inside tabs.
-        </p>
+        <p>To keep the page minimal, the detailed content is organized inside tabs.</p>
         <p class="sub-cn">为了保持页面简洁，详细内容都收进下面的按钮里。</p>
       </div>
 
@@ -1347,9 +1366,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Operational insights</h2>
-        <p>
-          These ideas are here to help businesses understand why the same problems keep repeating.
-        </p>
+        <p>These ideas are here to help businesses understand why the same problems keep repeating.</p>
         <p class="sub-cn">不是为了写得很学术，而是为了让企业更容易理解为什么很多问题会反复出现。</p>
       </div>
 
@@ -1544,6 +1561,9 @@
         </p>
         <p>
           This website presents service information, conceptual frameworks, and research-supported advisory content.
+        </p>
+        <p class="footer-small">
+          Research foundation developed through independent interdisciplinary research by Xufen Tu.
         </p>
       </div>
 
