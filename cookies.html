@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cookie Notice | BB369 Tech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+max-width:900px;
+margin:auto;
+line-height:1.7;
+padding:40px;
+}
+
+h1,h2{
+margin-top:40px;
+}
+
+.lang-switch{
+position:fixed;
+top:20px;
+right:20px;
+}
+
+button{
+padding:6px 10px;
+margin-left:5px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('zh')">中文</button>
+</div>
+
+<h1 data-en="Cookie Notice" data-zh="Cookie 说明"></h1>
+
+<p data-en="This website may use cookies or similar technologies to improve website performance and user experience."
+data-zh="本网站可能使用 Cookie 或类似技术来提升网站性能和用户体验。"></p>
+
+<h2 data-en="What Cookies Are" data-zh="什么是 Cookie"></h2>
+
+<p data-en="Cookies are small text files stored on a user's device when visiting a website."
+data-zh="Cookie 是在访问网站时存储在用户设备中的小型文本文件。"></p>
+
+<h2 data-en="How Cookies Are Used" data-zh="Cookie 的使用方式"></h2>
+
+<p data-en="Cookies may help remember preferences, understand website usage patterns, and support analytics tools."
+data-zh="Cookie 可用于记录用户偏好、理解网站访问模式以及支持数据分析工具。"></p>
+
+<h2 data-en="User Control" data-zh="用户控制"></h2>
+
+<p data-en="Users may disable cookies through their browser settings if desired."
+data-zh="用户可以通过浏览器设置禁用 Cookie。"></p>
+
+<script>
+
+function setLang(lang){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent=el.getAttribute("data-"+lang);
+});
+}
+
+</script>
+
+</body>
+</html>
