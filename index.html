@@ -1,64 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BB369 Tech｜企业系统优化 · AI自动化 · 客户增长支持</title>
+  <title>BB369 Tech | Business Systems, AI Automation & Growth Support</title>
   <meta
     name="description"
-    content="BB369 Tech 帮助企业理顺获客、客户管理、预约流程与运营结构，通过 CRM、业务流程优化与 AI 自动化工具，减少混乱、提升转化与团队效率。"
+    content="BB369 Tech helps businesses build clearer customer systems through acquisition flow design, CRM structure, appointment logic, operational clarity, and AI automation support."
   />
   <meta name="robots" content="index, follow" />
   <meta
     name="keywords"
-    content="企业数字化转型, AI自动化, CRM客户管理, 客户获取系统, 业务流程优化, 企业咨询, 决策架构, 复杂系统, 人类判断, BB369 Tech, 涂绪芬"
+    content="Business Systems, AI Automation, CRM, Customer Acquisition, Operational Clarity, Decision Architecture, Complex Systems, Human Judgment, Enterprise Transformation, BB369 Tech"
   />
-  <meta name="author" content="Xufen Tu" />
+  <meta name="author" content="BB369 Tech" />
 
   <style>
     :root {
-      --bg: #f7f9fc;
-      --bg-soft: #fbfcfe;
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --bg-soft-2: #f4f6f8;
       --card: #ffffff;
-      --text: #111827;
-      --muted: #667085;
-      --line: #e6eaf0;
-      --primary: #102033;
-      --primary-soft: #eef4fb;
-      --accent: #1f4d8f;
-      --accent-2: #edf4ff;
-      --shadow: 0 18px 40px rgba(16, 32, 51, 0.06);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --max-width: 1180px;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e5e7eb;
+      --line-soft: #eef2f7;
+      --primary: #111827;
+      --primary-2: #1f2937;
+      --accent: #2563eb;
+      --accent-soft: #eef4ff;
+      --shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max-width: 1240px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
-        "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.72;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
+      width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(247, 249, 252, 0.88);
-      border-bottom: 1px solid rgba(230, 234, 240, 0.92);
+      z-index: 80;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
     }
 
     .nav {
@@ -66,12 +71,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       padding: 10px 0;
     }
 
     .brand {
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -80,138 +85,99 @@
     .brand small {
       display: block;
       margin-top: 4px;
-      font-size: 0.74rem;
       color: var(--muted);
-      letter-spacing: 0.02em;
-      text-transform: none;
+      font-size: 0.78rem;
       font-weight: 500;
+      letter-spacing: 0.01em;
+      text-transform: none;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 22px;
       flex-wrap: wrap;
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .hero {
+      position: relative;
       padding: 88px 0 44px;
       background:
-        radial-gradient(circle at top right, rgba(28, 78, 140, 0.06), transparent 26%),
-        linear-gradient(180deg, #fbfcff 0%, #f5f8fc 100%);
+        radial-gradient(circle at 85% 5%, rgba(37, 99, 235, 0.06), transparent 22%),
+        radial-gradient(circle at 10% 0%, rgba(15, 23, 42, 0.03), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 22px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      gap: 28px;
+      align-items: start;
     }
 
-    .hero-main,
-    .hero-side,
-    .card,
-    .panel {
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main {
-      padding: 48px 42px;
-      min-height: 560px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-side {
-      padding: 22px;
-      display: grid;
-      gap: 16px;
+    .hero-left {
+      padding: 28px 0 10px;
     }
 
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
       color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     h1, h2, h3, h4 {
       margin: 0 0 14px;
-      line-height: 1.15;
+      line-height: 1.08;
       color: var(--text);
-    }
-
-    h1 {
-      font-size: clamp(2.25rem, 4vw, 4.35rem);
-      letter-spacing: -0.045em;
-      max-width: 11ch;
-    }
-
-    h2 {
-      font-size: clamp(1.55rem, 2.1vw, 2.4rem);
       letter-spacing: -0.03em;
     }
 
+    h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 650;
+      max-width: 10.5ch;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 2.6vw, 2.8rem);
+      font-weight: 640;
+    }
+
     h3 {
-      font-size: 1.05rem;
+      font-size: 1.06rem;
+      font-weight: 640;
+      letter-spacing: -0.02em;
     }
 
     p { margin: 0 0 14px; }
 
     .hero-sub {
       max-width: 62ch;
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 22px;
+      font-size: 1.08rem;
+      color: var(--primary-2);
+      margin: 22px 0 10px;
     }
 
-    .hero-highlight {
-      display: grid;
-      gap: 12px;
-      margin: 18px 0 28px;
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, #fbfdff 0%, #f5f9ff 100%);
-    }
-
-    .hero-highlight strong {
+    .hero-sub-cn {
+      max-width: 60ch;
       font-size: 1rem;
-      color: var(--text);
-    }
-
-    .hero-highlight p {
-      margin: 0;
       color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 0 0 30px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tag-row li {
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: #f7fafc;
-      border: 1px solid var(--line);
-      font-size: 0.88rem;
-      color: #334155;
+      margin: 0 0 28px;
     }
 
     .cta-row {
@@ -228,52 +194,122 @@
       padding: 0 18px;
       border-radius: 999px;
       border: 1px solid var(--primary);
-      cursor: pointer;
-      font: inherit;
       transition: 0.2s ease;
+      font: inherit;
+      cursor: pointer;
       text-align: center;
+      background: transparent;
     }
 
     .btn:hover { transform: translateY(-1px); }
+
     .btn.primary {
       background: var(--primary);
       color: #fff;
+      border-color: var(--primary);
     }
+
     .btn.secondary {
-      background: transparent;
-      color: var(--primary);
-    }
-    .btn.soft {
-      background: var(--primary-soft);
+      background: #fff;
       color: var(--primary);
       border-color: var(--line);
     }
 
-    .hero-note {
-      margin-top: 28px;
-      font-size: 0.93rem;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    .mini-card {
-      padding: 18px 18px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
+    .btn.soft {
       background: var(--bg-soft);
+      color: var(--primary);
+      border-color: var(--line);
     }
 
-    .mini-card p {
-      margin: 0;
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-meta li {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.88rem;
+      color: #475569;
+    }
+
+    .hero-right {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-panel,
+    .card,
+    .panel,
+    .metric-card,
+    .timeline-card,
+    .faq-wrap,
+    .legal-page {
+      background: var(--card);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      padding: 22px;
+    }
+
+    .hero-panel.big {
+      padding: 26px;
+    }
+
+    .hero-panel p:last-child,
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .micro-label {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
     }
 
-    section { padding: 34px 0; }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric-card {
+      padding: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+    }
+
+    .metric-number {
+      font-size: 1.6rem;
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 38px 0;
+    }
 
     .section-head {
       max-width: 76ch;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .section-head p {
@@ -290,7 +326,9 @@
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-    .card { padding: 24px; }
+    .card {
+      padding: 24px;
+    }
 
     .label {
       font-size: 0.76rem;
@@ -300,29 +338,20 @@
       margin-bottom: 10px;
     }
 
+    .muted {
+      color: var(--muted);
+    }
+
+    .deliverable-list,
     .card ul {
       margin: 0;
       padding-left: 18px;
       color: var(--muted);
     }
 
-    .card li { margin-bottom: 6px; }
-
-    .deliverable-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .deliverable-list li {
+    .deliverable-list li,
+    .card li {
       margin-bottom: 8px;
-    }
-
-    .note {
-      margin-top: 10px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
     }
 
     .check-list {
@@ -333,67 +362,51 @@
 
     .check-item {
       display: flex;
-      gap: 12px;
       align-items: flex-start;
+      gap: 12px;
       padding: 14px 16px;
-      border-radius: 16px;
+      border-radius: 18px;
       border: 1px solid var(--line);
-      background: #fcfdff;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
     }
 
     .check-icon {
       width: 28px;
       height: 28px;
       flex: 0 0 28px;
-      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--accent-2);
+      border-radius: 999px;
+      background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 700;
       font-size: 0.9rem;
+      font-weight: 700;
       line-height: 1;
       margin-top: 1px;
     }
 
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .compare-box {
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
-      background: #fff;
-    }
-
-    .compare-box.good {
-      background: linear-gradient(180deg, #fbfdff 0%, #f5f9ff 100%);
-    }
-
     .button-panels {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
       margin-bottom: 18px;
     }
 
     .panel-toggle {
       border: 1px solid var(--line);
-      background: white;
+      background: #fff;
       color: var(--text);
       border-radius: 999px;
       padding: 10px 16px;
       cursor: pointer;
       font: inherit;
+      transition: 0.2s ease;
     }
 
     .panel-toggle.active {
       background: var(--primary);
-      color: white;
+      color: #fff;
       border-color: var(--primary);
     }
 
@@ -419,11 +432,12 @@
     .badge {
       display: inline-flex;
       align-items: center;
-      padding: 8px 12px;
+      min-height: 36px;
+      padding: 0 12px;
       border-radius: 999px;
-      background: #edf4ff;
-      border: 1px solid #dbe7f7;
-      color: #274366;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      color: #334155;
       font-size: 0.88rem;
     }
 
@@ -455,12 +469,11 @@
       width: 100%;
       min-height: 48px;
       padding: 12px 14px;
-      font-size: 0.95rem;
-      border-radius: 14px;
       border: 1px solid var(--line);
+      border-radius: 14px;
       background: #fff;
       color: var(--text);
-      font-family: inherit;
+      font: inherit;
     }
 
     textarea {
@@ -468,20 +481,13 @@
       resize: vertical;
     }
 
-    .result-box {
-      display: grid;
-      gap: 16px;
-      align-content: start;
-    }
-
     .score {
       font-size: 3rem;
       line-height: 1;
       letter-spacing: -0.05em;
       font-weight: 700;
+      margin-bottom: 12px;
     }
-
-    .muted { color: var(--muted); }
 
     .report {
       display: grid;
@@ -492,19 +498,56 @@
       font-size: 0.96rem;
     }
 
+    .note {
+      margin-top: 10px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-card {
+      padding: 18px 18px;
+    }
+
+    .timeline-step {
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
     .insight-list {
       display: grid;
       gap: 12px;
     }
 
     .insight-item {
-      border-bottom: 1px solid var(--line);
       padding: 16px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .insight-item:last-child {
       border-bottom: none;
       padding-bottom: 0;
+    }
+
+    .faq-wrap {
+      padding: 10px 24px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
     }
 
     .contact-links {
@@ -521,42 +564,14 @@
       padding: 0 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: #fafbfc;
+      background: #fff;
       font-size: 0.92rem;
     }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 12px;
-    }
-
-    .stat-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      background: #fcfdff;
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-      line-height: 1;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--line);
-      padding: 18px 0;
-    }
-
-    .faq-item:last-child { border-bottom: none; }
 
     .footer {
       margin-top: 60px;
       padding: 36px 20px;
-      background: #f6f8fb;
+      background: #fafbfc;
       color: #5f6878;
       line-height: 1.7;
       border-top: 1px solid var(--line);
@@ -584,11 +599,9 @@
 
     .legal-page {
       display: none;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
       padding: 24px;
       margin-top: 16px;
+      background: #fff;
     }
 
     .legal-page.active,
@@ -596,32 +609,63 @@
       display: block;
     }
 
-    @media (max-width: 1024px) {
+    .sub-cn {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-top: 6px;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 1100px) {
       .hero-grid,
-      .diag-shell,
-      .contact-shell,
-      .cta-shell,
       .grid-4,
       .grid-3,
       .grid-2,
+      .diag-shell,
+      .contact-shell,
+      .cta-shell,
       .footer-grid,
-      .stat-grid,
-      .compare-grid {
+      .stat-grid {
         grid-template-columns: 1fr;
       }
-      .hero-main { min-height: auto; }
+
+      h1 {
+        max-width: 12ch;
+      }
     }
 
-    @media (max-width: 780px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
+    @media (max-width: 760px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 22px));
       }
-      .nav-links { gap: 12px; }
-      .hero { padding-top: 64px; }
-      .hero-main { padding: 34px 24px; }
-      .hero-side, .card, .panel, .legal-page { padding: 20px; }
-      .container { width: min(var(--max-width), calc(100% - 22px)); }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+      }
+
+      .hero-panel,
+      .card,
+      .panel,
+      .legal-page,
+      .faq-wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
   </style>
 </head>
@@ -629,301 +673,236 @@
   <div class="topbar">
     <div class="container nav">
       <div class="brand">
-        BB369 Tech
-        <small>企业系统优化 · AI自动化 · 客户增长支持</small>
+        BB369 TECH
+        <small>Business systems optimization · AI automation · Growth support</small>
       </div>
 
       <div class="nav-links">
-        <a href="#services">服务</a>
-        <a href="#fit">适合对象</a>
-        <a href="#assessment">评估</a>
-        <a href="#modules">功能模块</a>
-        <a href="#contact">联系</a>
+        <a href="#services">Services</a>
+        <a href="#assessment">Assessment</a>
+        <a href="#modules">Modules</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </div>
 
   <header class="hero">
     <div class="container hero-grid">
-      <div class="hero-main">
-        <div>
-          <span class="eyebrow">Business Systems For Growth</span>
-          <h1>帮企业理顺获客、客户跟进与运营流程，减少混乱，提升转化和效率</h1>
-          <p class="hero-sub">
-            BB369 Tech 帮助企业把客户获取、CRM 客户管理、预约流程和日常运营结构做得更清楚。
-            不是单纯增加工具，而是先把业务系统理顺，再逐步加入 AI 自动化能力，让企业更省力、更稳定、更容易扩展。
-          </p>
+      <div class="hero-left">
+        <span class="eyebrow">Business Systems For Growth</span>
 
-          <div class="hero-highlight">
-            <strong>很多企业真正卡住的，不是没有工具，而是客户来了接不住、流程很多却不顺、团队一直在重复沟通。</strong>
-            <p>我们做的，是把获客、转化、跟进、预约、服务交付这一整条链路搭清楚，让网站、表单、聊天、预约和 CRM 真正连起来。</p>
-          </div>
+        <h1>
+          Build a clearer customer system for your business
+        </h1>
 
-          <ul class="tag-row">
-            <li>企业数字化转型</li>
-            <li>AI 自动化</li>
-            <li>CRM 客户管理</li>
-            <li>客户获取系统</li>
-            <li>复杂系统</li>
-            <li>人类判断</li>
-          </ul>
+        <p class="hero-sub">
+          Clarify customer acquisition, follow-up, appointment flow, CRM structure, and operational logic — so growth becomes more stable, less manual, and easier to scale.
+        </p>
 
-          <div class="cta-row">
-            <a class="btn primary" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">预约咨询</a>
-            <a class="btn secondary" href="#assessment">先做评估</a>
-            <a class="btn soft" href="#process">了解合作方式</a>
-          </div>
+        <p class="hero-sub-cn">
+          理顺客户获取、客户跟进、预约流程、CRM结构与运营逻辑，让业务增长更稳定、减少人工混乱，也更容易扩展。
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">Book a Consultation</a>
+          <a class="btn secondary" href="#assessment">Start Assessment</a>
+          <a class="btn soft" href="#modules">Explore Modules</a>
         </div>
 
-        <div class="hero-note">适合企业老板、成长型团队、跨境业务团队与需要数字化升级的服务机构</div>
+        <ul class="hero-meta">
+          <li>Customer acquisition flow</li>
+          <li>CRM structure</li>
+          <li>Appointment logic</li>
+          <li>Operational clarity</li>
+          <li>AI automation</li>
+          <li>Human judgment</li>
+        </ul>
       </div>
 
-      <div class="hero-side">
-        <div class="mini-card">
-          <h3>你能从这里得到什么</h3>
-          <p>让客户获取、客户管理、预约安排和团队协作不再混乱，建立一个更好用、更容易扩展的业务系统。</p>
+      <div class="hero-right">
+        <div class="hero-panel big">
+          <div class="micro-label">What this site is built for</div>
+          <h3>What we help improve</h3>
+          <p class="muted">
+            Not just adding more tools. The goal is to make websites, forms, scheduling, chat, CRM, and business workflow actually work together.
+          </p>
+          <p class="sub-cn">
+            不是单纯增加工具，而是让网站、表单、预约、聊天、CRM和业务流程真正连起来。
+          </p>
         </div>
 
-        <div class="mini-card">
-          <h3>我们在做的事情</h3>
-          <p>帮助企业把“获客、转化、跟进、服务交付”这一整条链路理顺，并逐步加入自动化能力。</p>
+        <div class="stat-grid">
+          <div class="metric-card">
+            <div class="metric-number">01</div>
+            <div class="metric-text">Acquisition flow design<br><span class="sub-cn">客户获取流程设计</span></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">02</div>
+            <div class="metric-text">CRM structure<br><span class="sub-cn">客户管理结构</span></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">03</div>
+            <div class="metric-text">AI automation support<br><span class="sub-cn">自动化支持</span></div>
+          </div>
         </div>
 
-        <div class="mini-card">
-          <h3>为什么这件事重要</h3>
-          <p>很多企业不是没有工具，而是工具很多、流程很乱、责任不清。真正的问题，往往出在系统结构上。</p>
-        </div>
-
-        <div class="mini-card">
-          <h3>最适合什么情况</h3>
-          <p>已经有业务，但客户路径不够清晰；想做自动化，但不想一上来就把事情弄得更复杂。</p>
+        <div class="hero-panel">
+          <div class="micro-label">Why it matters</div>
+          <p class="muted">
+            Many businesses do not fail because they lack tools. They fail because tools, steps, ownership, and decisions are disconnected.
+          </p>
+          <p class="sub-cn">
+            很多企业的问题不是缺工具，而是工具、流程、责任和判断彼此断开。
+          </p>
         </div>
       </div>
     </div>
   </header>
 
-  <section id="fit">
-    <div class="container">
-      <div class="section-head">
-        <h2>如果你正在遇到这些问题，这类合作通常会很适合</h2>
-        <p>这部分写得很直接，因为很多企业真正的痛点，其实都很具体。</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>常见问题</h3>
-          <div class="check-list">
-            <div class="check-item">
-              <span class="check-icon">✓</span>
-              <div>客户咨询来了，但跟进不稳定，容易漏掉。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">✓</span>
-              <div>线索分散在表单、邮件、聊天工具和个人记录里，团队难以同步。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">✓</span>
-              <div>预约、确认、需求收集都靠人工来回沟通，效率低。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">✓</span>
-              <div>工具装了不少，但流程没有真正打通，业务还是很乱。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">✓</span>
-              <div>想用 AI 或自动化，但担心一上来做太多，反而放大混乱。</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>适合合作的企业类型</h3>
-          <div class="check-list">
-            <div class="check-item">
-              <span class="check-icon">01</span>
-              <div>成长型服务企业：需要把咨询、跟进、预约和客户管理理顺。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">02</span>
-              <div>中小企业团队：想先做最基础、最能落地的数字化升级。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">03</span>
-              <div>跨境业务团队：需要把官网、邮件、预约、CRM 和团队协作连接起来。</div>
-            </div>
-            <div class="check-item">
-              <span class="check-icon">04</span>
-              <div>已具备部分工具基础，但系统结构和流程逻辑仍不够清晰的组织。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="services">
     <div class="container">
       <div class="section-head">
-        <h2>你可以把我们理解成：帮企业把业务系统搭清楚的人</h2>
-        <p>下面这些内容，不是空概念，而是企业老板能直接感受到的实际结果。</p>
+        <h2>What we do</h2>
+        <p>
+          Think of this as business system design for companies that want clearer customer flow, better coordination, and more stable operations.
+        </p>
+        <p class="sub-cn">
+          你可以把我们理解成：帮企业把客户路径、运营流程和系统结构搭清楚的人。
+        </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
           <div class="label">Service 01</div>
-          <h3>把客户获取流程做清楚</h3>
-          <p>让官网不只是展示页面，而是真正能接住客户、筛选客户、推动客户行动的业务入口。</p>
+          <h3>Customer acquisition flow</h3>
+          <p class="muted">
+            Turn the website from a display page into a clearer business entry point that can receive, screen, and move customers forward.
+          </p>
+          <p class="sub-cn">让官网不只是展示页，而是真正能接住客户、筛选客户、推动客户行动的入口。</p>
           <ul>
-            <li>客户表单设计</li>
-            <li>咨询入口梳理</li>
-            <li>预约路径优化</li>
+            <li>Form design</li>
+            <li>Inquiry entry structure</li>
+            <li>Conversion path optimization</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="label">Service 02</div>
-          <h3>把客户管理流程做清楚</h3>
-          <p>把分散在聊天、邮件、表格里的客户信息整理起来，让你知道客户从哪里来、现在到哪一步。</p>
+          <h3>CRM and follow-up structure</h3>
+          <p class="muted">
+            Organize customer information that is scattered across email, chat, forms, and spreadsheets into a usable workflow.
+          </p>
+          <p class="sub-cn">把分散在聊天、邮件、表格里的客户信息整理起来，让团队知道客户从哪里来、现在在哪一步。</p>
           <ul>
-            <li>CRM 逻辑设计</li>
-            <li>客户跟进结构</li>
-            <li>状态管理建议</li>
+            <li>CRM logic design</li>
+            <li>Follow-up structure</li>
+            <li>Status management recommendations</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="label">Service 03</div>
-          <h3>把团队运营流程做清楚</h3>
-          <p>减少重复沟通、重复确认和临时处理，让团队在业务变复杂之后仍然能稳定运转。</p>
+          <h3>Operational workflow clarity</h3>
+          <p class="muted">
+            Reduce repeated communication, unclear handoffs, and temporary fixes so the team can stay stable as operations grow.
+          </p>
+          <p class="sub-cn">减少重复沟通、重复确认和临时处理，让团队在业务变复杂后仍然能稳定运转。</p>
           <ul>
-            <li>流程梳理</li>
-            <li>自动化建议</li>
-            <li>关键判断节点设计</li>
+            <li>Workflow mapping</li>
+            <li>Automation recommendations</li>
+            <li>Key judgment points</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="outcomes">
+  <section id="problems">
     <div class="container">
       <div class="section-head">
-        <h2>合作后，你通常会先看到这些变化</h2>
-        <p>不是一次做很多，而是先把最关键、最容易影响转化和效率的地方理顺。</p>
+        <h2>Common business problems this work is built for</h2>
+        <p>
+          These are not abstract concepts. They are the operational problems many teams feel directly.
+        </p>
+        <p class="sub-cn">这不是空概念，而是很多企业老板会直接感受到的实际问题。</p>
       </div>
 
-      <div class="grid-4">
+      <div class="grid-2">
         <div class="card">
-          <div class="label">Outcome 01</div>
-          <h3>客户路径更清楚</h3>
-          <p>客户从进入网站到咨询、预约、跟进，不再靠人工临时拼接。</p>
-        </div>
-        <div class="card">
-          <div class="label">Outcome 02</div>
-          <h3>商机流失更少</h3>
-          <p>线索收集与跟进逻辑更稳定，减少客户来了却没被接好的情况。</p>
-        </div>
-        <div class="card">
-          <div class="label">Outcome 03</div>
-          <h3>团队协作更顺</h3>
-          <p>谁处理什么、处理到哪一步、下一步是什么，会更容易对齐。</p>
-        </div>
-        <div class="card">
-          <div class="label">Outcome 04</div>
-          <h3>自动化更容易落地</h3>
-          <p>先有清晰流程，再加自动化，后面升级成本更低，也更稳。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cases">
-    <div class="container">
-      <div class="section-head">
-        <h2>常见项目场景</h2>
-        <p>即使业务不同，很多企业卡住的位置其实很像。</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="label">Scenario 01</div>
-          <h3>服务型公司</h3>
-          <p>官网已经有流量，但咨询、预约、需求收集和客户跟进不够顺，导致成交效率不稳定。</p>
-          <ul>
-            <li>理顺咨询入口</li>
-            <li>统一预约与跟进逻辑</li>
-            <li>减少人工反复确认</li>
-          </ul>
+          <h3>What often goes wrong</h3>
+          <div class="check-list">
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                Customer inquiries arrive, but follow-up is inconsistent and opportunities get missed.
+                <div class="sub-cn">客户来了，但跟进不稳定，容易漏掉商机。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                Information is scattered across forms, emails, chat, spreadsheets, and personal memory.
+                <div class="sub-cn">信息分散在表单、邮件、聊天工具、表格和个人记忆里。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                Scheduling and confirmation still depend on manual back-and-forth.
+                <div class="sub-cn">预约和确认流程仍高度依赖人工来回沟通。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                More tools were added, but the system still feels fragmented.
+                <div class="sub-cn">工具加了不少，但整体依然是碎片化的。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                Automation is desired, but the underlying workflow is not stable enough yet.
+                <div class="sub-cn">想做自动化，但底层流程还没有理顺。</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="card">
-          <div class="label">Scenario 02</div>
-          <h3>成长型团队</h3>
-          <p>业务开始变复杂，客户线索和内部协作分散在多个工具里，团队越来越依赖个人记忆。</p>
-          <ul>
-            <li>搭建基础 CRM 承接结构</li>
-            <li>划分客户阶段</li>
-            <li>建立更稳定的流程基础</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="label">Scenario 03</div>
-          <h3>跨境业务团队</h3>
-          <p>官网、邮箱、预约、聊天和客户记录各自独立，前台和后台脱节，影响响应和转化效率。</p>
-          <ul>
-            <li>整合前台入口</li>
-            <li>建立统一客户记录路径</li>
-            <li>支持后续自动化升级</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="trust">
-    <div class="container">
-      <div class="section-head">
-        <h2>为什么客户会更愿意和我们聊这类项目</h2>
-        <p>因为我们不是只讲工具，也不是只讲概念，而是把业务现实、流程结构和判断边界一起看。</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="label">Trust 01</div>
-          <h3>不是为了卖更多工具</h3>
-          <p>很多问题并不是因为工具不够，而是流程、责任和客户路径没有理清。先把结构搭对，工具才真正有用。</p>
-        </div>
-        <div class="card">
-          <div class="label">Trust 02</div>
-          <h3>不是套模板式咨询</h3>
-          <p>不同企业的问题表面相似，底层原因却不一定一样。我们会先判断问题出在哪，再决定先动哪一步。</p>
-        </div>
-        <div class="card">
-          <div class="label">Trust 03</div>
-          <h3>有研究视角，也讲实际落地</h3>
-          <p>服务建立在企业转型、AI治理、决策架构、人类判断与复杂系统研究基础上，但表达和执行会尽量让企业看得懂、用得上。</p>
-        </div>
-      </div>
-
-      <div class="compare-grid" style="margin-top:18px;">
-        <div class="compare-box">
-          <h3>很多企业常见做法</h3>
-          <ul class="deliverable-list">
-            <li>先装工具，再补流程</li>
-            <li>哪里乱就临时加一个表格或群聊</li>
-            <li>想做自动化时才发现底层结构没搭好</li>
-            <li>看起来很忙，但客户路径并不清楚</li>
-          </ul>
-        </div>
-        <div class="compare-box good">
-          <h3>我们更建议的方式</h3>
-          <ul class="deliverable-list">
-            <li>先判断问题出在哪一段流程</li>
-            <li>先理顺客户路径，再考虑自动化</li>
-            <li>先搭基础承接逻辑，再做工具整合</li>
-            <li>让系统服务业务，而不是让业务被工具拖着走</li>
-          </ul>
+          <h3>What this work aims to improve</h3>
+          <div class="check-list">
+            <div class="check-item">
+              <span class="check-icon">01</span>
+              <div>
+                Clearer customer path from inquiry to conversion.
+                <div class="sub-cn">让客户从咨询到成交的路径更清楚。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">02</span>
+              <div>
+                More stable ownership and less repeated communication.
+                <div class="sub-cn">减少重复沟通，让责任和流程更清晰。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">03</span>
+              <div>
+                Better CRM logic and less fragmented customer information.
+                <div class="sub-cn">让客户记录与CRM逻辑更稳定，不再分散。</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">04</span>
+              <div>
+                More grounded automation decisions instead of rushing into heavy systems.
+                <div class="sub-cn">不是一上来做很多自动化，而是先判断哪些地方值得做。</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -932,18 +911,21 @@
   <section id="modules">
     <div class="container">
       <div class="section-head">
-        <h2>核心能力</h2>
-        <p>为了让页面更简洁，详细内容都放在下面按钮里。你点开就能看。</p>
+        <h2>Core modules</h2>
+        <p>
+          To keep the page minimal, the detailed content is organized inside tabs.
+        </p>
+        <p class="sub-cn">为了保持页面简洁，详细内容都收进下面的按钮里。</p>
       </div>
 
       <div class="button-panels">
-        <button class="panel-toggle active" data-target="panel-solutions">解决方案</button>
-        <button class="panel-toggle" data-target="panel-automation">自动化能力</button>
-        <button class="panel-toggle" data-target="panel-crm">CRM 模块</button>
-        <button class="panel-toggle" data-target="panel-usecases">应用场景</button>
-        <button class="panel-toggle" data-target="panel-deliverables">可交付成果</button>
-        <button class="panel-toggle" data-target="panel-priority">先做什么</button>
-        <button class="panel-toggle" data-target="panel-trust">研究基础</button>
+        <button class="panel-toggle active" data-target="panel-solutions">Solutions</button>
+        <button class="panel-toggle" data-target="panel-automation">Automation</button>
+        <button class="panel-toggle" data-target="panel-crm">CRM</button>
+        <button class="panel-toggle" data-target="panel-usecases">Use Cases</button>
+        <button class="panel-toggle" data-target="panel-deliverables">Deliverables</button>
+        <button class="panel-toggle" data-target="panel-priority">What To Do First</button>
+        <button class="panel-toggle" data-target="panel-research">Research Foundation</button>
       </div>
 
       <div id="panel-solutions" class="panel-group active">
@@ -951,32 +933,37 @@
           <div class="grid-3">
             <div class="card">
               <div class="label">Solution 01</div>
-              <h3>客户获取系统</h3>
-              <p>把网站从“好看”升级成“能接客户”的业务入口。</p>
+              <h3>Customer acquisition system</h3>
+              <p class="muted">Upgrade the website from looking good to actually receiving customer demand.</p>
+              <p class="sub-cn">把网站从“好看”升级成“能接客户”的业务入口。</p>
               <ul>
-                <li>表单与咨询入口</li>
-                <li>客户初步筛选</li>
-                <li>客户转化路径设计</li>
+                <li>Inquiry form design</li>
+                <li>Lead screening logic</li>
+                <li>Conversion path design</li>
               </ul>
             </div>
+
             <div class="card">
               <div class="label">Solution 02</div>
-              <h3>客户跟进与 CRM 结构</h3>
-              <p>让客户从咨询、沟通到成交，不再散落在不同工具里。</p>
+              <h3>Follow-up and CRM structure</h3>
+              <p class="muted">Keep customer stages visible instead of letting communication drift across tools.</p>
+              <p class="sub-cn">让客户从咨询、沟通到成交，不再散落在不同工具里。</p>
               <ul>
-                <li>客户阶段划分</li>
-                <li>跟进提醒逻辑</li>
-                <li>线索整理方式</li>
+                <li>Customer stage design</li>
+                <li>Follow-up reminder logic</li>
+                <li>Lead organization structure</li>
               </ul>
             </div>
+
             <div class="card">
               <div class="label">Solution 03</div>
-              <h3>预约与服务流程</h3>
-              <p>减少大量手动沟通，把预约、确认、服务收集变成更顺的流程。</p>
+              <h3>Appointment and service flow</h3>
+              <p class="muted">Reduce manual scheduling overhead and create a smoother intake-to-service process.</p>
+              <p class="sub-cn">减少大量手动沟通，把预约、确认、服务收集变成更顺的流程。</p>
               <ul>
-                <li>咨询预约</li>
-                <li>服务需求收集</li>
-                <li>自动确认逻辑</li>
+                <li>Consultation booking</li>
+                <li>Service intake</li>
+                <li>Confirmation logic</li>
               </ul>
             </div>
           </div>
@@ -988,33 +975,40 @@
           <div class="grid-4">
             <div class="card">
               <div class="label">Module 01</div>
-              <h3>线索收集</h3>
-              <p>让客户咨询自动进入清晰的收集流程。</p>
+              <h3>Lead intake</h3>
+              <p class="muted">Create a clearer intake flow for incoming inquiries.</p>
+              <p class="sub-cn">让客户咨询自动进入更清晰的收集流程。</p>
             </div>
+
             <div class="card">
               <div class="label">Module 02</div>
-              <h3>咨询回复</h3>
-              <p>提升客户咨询响应速度，减少漏回复。</p>
+              <h3>Response support</h3>
+              <p class="muted">Improve response speed and reduce missed replies.</p>
+              <p class="sub-cn">提升客户咨询响应速度，减少漏回复。</p>
             </div>
+
             <div class="card">
               <div class="label">Module 03</div>
-              <h3>预约安排</h3>
-              <p>把来回约时间的成本降下来。</p>
+              <h3>Scheduling flow</h3>
+              <p class="muted">Reduce the cost of back-and-forth coordination.</p>
+              <p class="sub-cn">把来回约时间的成本降下来。</p>
             </div>
+
             <div class="card">
               <div class="label">Module 04</div>
-              <h3>知识支持</h3>
-              <p>用结构化内容支持常见问题、服务说明与内部协作。</p>
+              <h3>Knowledge support</h3>
+              <p class="muted">Use structured content for FAQs, service explanation, and internal coordination.</p>
+              <p class="sub-cn">用结构化内容支持常见问题、服务说明与内部协作。</p>
             </div>
           </div>
 
           <div class="badge-row">
-            <span class="badge">官网咨询</span>
-            <span class="badge">线索筛选</span>
-            <span class="badge">预约安排</span>
-            <span class="badge">邮件回复</span>
-            <span class="badge">CRM 更新</span>
-            <span class="badge">服务流程标准化</span>
+            <span class="badge">Website inquiries</span>
+            <span class="badge">Lead screening</span>
+            <span class="badge">Booking flow</span>
+            <span class="badge">Email response</span>
+            <span class="badge">CRM updates</span>
+            <span class="badge">Workflow standardization</span>
           </div>
         </div>
       </div>
@@ -1024,24 +1018,32 @@
           <div class="grid-3">
             <div class="card">
               <div class="label">CRM 01</div>
-              <h3>客户线索收集与整理</h3>
-              <p>让来自官网、预约和聊天工具的客户线索，有一个清晰入口。</p>
+              <h3>Lead collection and organization</h3>
+              <p class="muted">Create one clearer entry path for inquiries from the website, booking flow, and chat.</p>
+              <p class="sub-cn">让来自官网、预约和聊天工具的客户线索，有一个清晰入口。</p>
             </div>
+
             <div class="card">
               <div class="label">CRM 02</div>
-              <h3>客户跟进记录</h3>
-              <p>你能知道每个客户现在在哪一步，而不是全靠记忆。</p>
+              <h3>Customer follow-up records</h3>
+              <p class="muted">Know where each customer stands without relying only on memory.</p>
+              <p class="sub-cn">你能知道每个客户现在在哪一步，而不是全靠记忆。</p>
             </div>
+
             <div class="card">
               <div class="label">CRM 03</div>
-              <h3>流程可视化</h3>
-              <p>让客户处理过程更直观，团队协作更容易对齐。</p>
+              <h3>Workflow visibility</h3>
+              <p class="muted">Make customer handling more visible and easier for the team to align around.</p>
+              <p class="sub-cn">让客户处理过程更直观，团队协作更容易对齐。</p>
             </div>
           </div>
 
           <div class="card" style="margin-top:18px;">
-            <h3>为什么这块很重要</h3>
-            <p>很多企业客户不是不来，而是来了之后没有被接好。一个更清楚的客户管理系统，能减少商机流失，也能提高服务一致性。</p>
+            <h3>Why this matters</h3>
+            <p class="muted">
+              Many businesses do not lack customer demand. They lose value because incoming customers are not received, tracked, and advanced clearly enough.
+            </p>
+            <p class="sub-cn">很多企业客户不是不来，而是来了之后没有被接好。更清楚的客户管理系统可以减少商机流失，也能提高服务一致性。</p>
           </div>
         </div>
       </div>
@@ -1051,18 +1053,23 @@
           <div class="grid-3">
             <div class="card">
               <div class="label">Use Case 01</div>
-              <h3>中小企业 AI 工作流程</h3>
-              <p>很多中小企业想用 AI，但不知道从哪里开始。我们会先从最容易落地的流程入手，例如客户回复、信息整理和基础内容支持。</p>
+              <h3>SMB AI workflow setup</h3>
+              <p class="muted">For teams that want to start using AI from the most practical places first.</p>
+              <p class="sub-cn">很多中小企业想用 AI，但不知道从哪里开始。更适合先从最容易落地的流程入手。</p>
             </div>
+
             <div class="card">
               <div class="label">Use Case 02</div>
-              <h3>客户线索管理</h3>
-              <p>客户信息散落在邮件、表单和聊天工具里时，最先丢掉的通常是商机。通过更清晰的线索管理结构，可以让跟进更稳定。</p>
+              <h3>Lead management structure</h3>
+              <p class="muted">For businesses where leads are scattered across email, forms, and chat tools.</p>
+              <p class="sub-cn">客户信息散落在邮件、表单和聊天工具里时，最先丢掉的通常是商机。</p>
             </div>
+
             <div class="card">
               <div class="label">Use Case 03</div>
-              <h3>数字化流程优化</h3>
-              <p>当企业仍依赖手工流程时，业务一复杂就容易乱。结构化流程能减少重复工作，也能提升团队协同效率。</p>
+              <h3>Digital workflow optimization</h3>
+              <p class="muted">For teams still relying heavily on manual coordination as complexity grows.</p>
+              <p class="sub-cn">当企业仍依赖手工流程时，业务一复杂就容易乱。结构化流程能减少重复工作，也能提升协同效率。</p>
             </div>
           </div>
         </div>
@@ -1072,16 +1079,21 @@
         <div class="panel">
           <div class="grid-3">
             <div class="card">
-              <h3>系统蓝图</h3>
-              <p>把业务流程、角色分工和运行逻辑整理成一个企业能看懂、能执行的结构图。</p>
+              <h3>System blueprint</h3>
+              <p class="muted">A business-readable structure map for workflow, roles, and operating logic.</p>
+              <p class="sub-cn">把业务流程、角色分工和运行逻辑整理成一个企业能看懂、能执行的结构图。</p>
             </div>
+
             <div class="card">
-              <h3>自动化流程建议</h3>
-              <p>告诉你哪些地方适合先自动化，哪些地方不该急着自动化。</p>
+              <h3>Automation recommendations</h3>
+              <p class="muted">A grounded view of what should be automated first — and what should not.</p>
+              <p class="sub-cn">告诉你哪些地方适合先自动化，哪些地方不该急着自动化。</p>
             </div>
+
             <div class="card">
-              <h3>运营优化建议</h3>
-              <p>给出更具体的下一步动作，而不是停留在抽象概念上。</p>
+              <h3>Operational improvement direction</h3>
+              <p class="muted">Clear next steps instead of staying at the level of vague strategic language.</p>
+              <p class="sub-cn">给出更具体的下一步动作，而不是停留在抽象概念上。</p>
             </div>
           </div>
         </div>
@@ -1091,46 +1103,58 @@
         <div class="panel">
           <div class="grid-2">
             <div class="card">
-              <h3>建议先做的事</h3>
+              <h3>What usually makes sense first</h3>
               <ul class="deliverable-list">
-                <li>先理顺客户从进入到成交的路径</li>
-                <li>先统一咨询、预约、跟进和客户记录入口</li>
-                <li>先明确哪些地方需要人工判断，哪些地方适合自动化</li>
-                <li>先把基础流程跑顺，再考虑扩展更多工具</li>
+                <li>Clarify the customer path first</li>
+                <li>Unify inquiry, booking, follow-up, and customer records</li>
+                <li>Separate judgment-required work from automation-ready work</li>
+                <li>Stabilize basic workflow before expanding tools</li>
               </ul>
+              <p class="sub-cn">先理顺客户路径、统一入口、区分人工判断与自动化，再逐步扩展系统。</p>
             </div>
+
             <div class="card">
-              <h3>通常不建议一开始就做的事</h3>
+              <h3>What is usually not a good first step</h3>
               <ul class="deliverable-list">
-                <li>流程没理顺前就堆很多自动化</li>
-                <li>先买很多工具，再回头想怎么使用</li>
-                <li>把所有问题都交给 AI 或聊天机器人</li>
-                <li>在责任、流程、客户路径不清楚时直接扩大投放</li>
+                <li>Adding heavy automation before the workflow is clear</li>
+                <li>Buying more tools before operating logic is stable</li>
+                <li>Giving every business problem to AI too early</li>
+                <li>Scaling outreach while intake and responsibility are still unclear</li>
               </ul>
+              <p class="sub-cn">流程没理顺前就堆工具、堆自动化，通常只会把混乱放大。</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="panel-trust" class="panel-group">
+      <div id="panel-research" class="panel-group">
         <div class="panel">
           <div class="grid-2">
             <div class="card">
-              <h3>研究基础</h3>
-              <p>这套服务不是从“卖工具”出发，而是建立在企业转型、AI治理、决策架构、人类判断与复杂系统研究基础上的。</p>
+              <h3>Research foundation</h3>
+              <p class="muted">
+                This work does not begin from tool-selling. It is grounded in enterprise transformation, AI governance, decision architecture, human judgment, and complex systems thinking.
+              </p>
+              <p class="sub-cn">这套服务不是从“卖工具”出发，而是建立在企业转型、AI治理、决策架构、人类判断与复杂系统研究基础上的。</p>
             </div>
+
             <div class="card">
-              <h3>研究重点</h3>
-              <p>当数字工具、AI系统和自动化越来越深入业务之后，企业如何保持流程清晰、责任清晰和判断稳定，是这项工作的核心。</p>
+              <h3>Research focus</h3>
+              <p class="muted">
+                As digital tools, AI systems, and automation become more embedded in business operations, the key challenge is not only speed — but workflow clarity, responsibility clarity, and judgment stability.
+              </p>
+              <p class="sub-cn">当数字工具、AI系统和自动化越来越深入业务之后，企业如何保持流程清晰、责任清晰和判断稳定，是这项工作的核心。</p>
             </div>
           </div>
 
           <div class="card" style="margin-top:18px;">
-            <h3>企业 AI 治理咨询框架</h3>
+            <h3>Enterprise AI governance framework</h3>
+            <p class="muted">A structural view of AI, operational flow, and business decision support.</p>
+            <p class="sub-cn">这部分作为研究支持型框架，用于解释业务系统、AI与判断结构之间的关系。</p>
             <div style="margin-top:22px;text-align:center;">
               <img
                 src="images/ai-governance-decision-architecture-framework.png"
-                alt="企业 AI 治理咨询框架"
+                alt="Enterprise AI governance framework"
                 loading="lazy"
                 style="max-width:850px;width:100%;height:auto;"
               >
@@ -1138,12 +1162,15 @@
           </div>
 
           <div class="card" style="margin-top:18px;">
-            <h3>决策架构模型</h3>
-            <p>决策架构不是抽象词，它的意义在于：把组织结构真正转化为可执行的业务判断和运行基础设施。</p>
+            <h3>Decision architecture model</h3>
+            <p class="muted">
+              Decision architecture is not an abstract phrase. It matters because organizational structure must ultimately become executable operational judgment.
+            </p>
+            <p class="sub-cn">决策架构不是抽象词，它的意义在于：把组织结构真正转化为可执行的业务判断和运行基础设施。</p>
             <div style="margin-top:22px;text-align:center;">
               <img
                 src="images/decision-architecture-model.png"
-                alt="决策架构模型"
+                alt="Decision architecture model"
                 loading="lazy"
                 style="max-width:900px;width:100%;height:auto;"
               >
@@ -1157,113 +1184,117 @@
   <section id="assessment">
     <div class="container">
       <div class="section-head">
-        <h2>项目评估</h2>
-        <p>这是一个给企业老板看的简化评估，用来快速判断你目前在哪个阶段。</p>
+        <h2>Assessment</h2>
+        <p>
+          A simplified business readiness assessment for founders and teams who want a quick view of where their system stands.
+        </p>
+        <p class="sub-cn">这是一个给企业老板看的简化评估，用来快速判断你目前在哪个阶段。</p>
       </div>
 
       <div class="diag-shell">
         <div class="card">
           <form class="diag-form" id="diagnosticForm">
             <div class="field">
-              <label for="company">公司名称（可选）</label>
-              <input id="company" name="company" type="text" placeholder="公司名称" />
+              <label for="company">Company name (optional)</label>
+              <input id="company" name="company" type="text" placeholder="Company name" />
             </div>
 
             <div class="field">
-              <label for="industry">所属行业</label>
+              <label for="industry">Industry</label>
               <select id="industry" name="industry">
-                <option value="">请选择</option>
-                <option>制造业</option>
-                <option>科技 / 软件</option>
-                <option>零售 / 电商</option>
-                <option>专业服务</option>
-                <option>金融</option>
-                <option>医疗健康</option>
-                <option>教育培训</option>
-                <option>其他</option>
+                <option value="">Select</option>
+                <option>Manufacturing</option>
+                <option>Technology / Software</option>
+                <option>Retail / E-commerce</option>
+                <option>Professional Services</option>
+                <option>Finance</option>
+                <option>Healthcare</option>
+                <option>Education / Training</option>
+                <option>Other</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="leadFlow">目前新的客户线索如何处理？</label>
+              <label for="leadFlow">How are new leads currently handled?</label>
               <select id="leadFlow" name="leadFlow">
-                <option value="">请选择</option>
-                <option value="5">主要靠人工沟通</option>
-                <option value="10">有部分表单或共享工具</option>
-                <option value="15">已有相对清晰流程</option>
-                <option value="20">已自动收集与分流</option>
+                <option value="">Select</option>
+                <option value="5">Mostly manual communication</option>
+                <option value="10">Some forms or shared tools</option>
+                <option value="15">Relatively clear process</option>
+                <option value="20">Automated intake and routing</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="crm">是否使用 CRM 或客户跟踪系统？</label>
+              <label for="crm">Do you use CRM or customer tracking?</label>
               <select id="crm" name="crm">
-                <option value="">请选择</option>
-                <option value="0">没有</option>
-                <option value="8">部分使用</option>
-                <option value="14">有，但不稳定</option>
-                <option value="20">有，且管理清晰</option>
+                <option value="">Select</option>
+                <option value="0">No</option>
+                <option value="8">Partially</option>
+                <option value="14">Yes, but inconsistent</option>
+                <option value="20">Yes, and clearly managed</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="booking">咨询或预约流程如何管理？</label>
+              <label for="booking">How is appointment or inquiry scheduling handled?</label>
               <select id="booking" name="booking">
-                <option value="">请选择</option>
-                <option value="0">仅靠人工沟通</option>
-                <option value="8">有基础日历工具</option>
-                <option value="14">已有预约工具</option>
-                <option value="20">已与流程系统集成</option>
+                <option value="">Select</option>
+                <option value="0">Manual back-and-forth</option>
+                <option value="8">Basic calendar tools</option>
+                <option value="14">Dedicated booking tool</option>
+                <option value="20">Integrated with workflow</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="response">企业通常多久能回复客户咨询？</label>
+              <label for="response">How quickly are customer inquiries answered?</label>
               <select id="response" name="response">
-                <option value="">请选择</option>
-                <option value="0">经常延迟</option>
-                <option value="8">一个工作日内</option>
-                <option value="14">数小时内</option>
-                <option value="20">接近实时</option>
+                <option value="">Select</option>
+                <option value="0">Frequently delayed</option>
+                <option value="8">Within one business day</option>
+                <option value="14">Within hours</option>
+                <option value="20">Near real-time</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="automation">重复性任务是否已经自动化？</label>
+              <label for="automation">Are repetitive tasks already automated?</label>
               <select id="automation" name="automation">
-                <option value="">请选择</option>
-                <option value="0">没有</option>
-                <option value="8">部分任务</option>
-                <option value="14">多个流程</option>
-                <option value="20">已广泛自动化</option>
+                <option value="">Select</option>
+                <option value="0">No</option>
+                <option value="8">Some tasks</option>
+                <option value="14">Multiple workflows</option>
+                <option value="20">Broadly automated</option>
               </select>
             </div>
 
             <div class="cta-row">
-              <button class="btn primary" type="submit">生成评估结果</button>
+              <button class="btn primary" type="submit">Generate Result</button>
             </div>
 
-            <p class="note">此评估仅用于业务准备度判断，请勿填写机密信息。</p>
+            <p class="note">This is a simplified readiness assessment. Do not submit confidential information.</p>
           </form>
         </div>
 
-        <div class="card result-box">
-          <div>
-            <span class="eyebrow">Assessment Result</span>
-            <div class="score" id="scoreValue">--</div>
-            <div class="muted" id="scoreLabel">填写表单后生成评分结果</div>
-          </div>
+        <div class="card">
+          <div class="micro-label">Assessment result</div>
+          <div class="score" id="scoreValue">--</div>
+          <div class="muted" id="scoreLabel">Complete the form to generate your score</div>
 
           <div class="report">
-            <div><strong>成熟度等级：</strong> <span id="readiness">—</span></div>
-            <div><strong>关键缺口：</strong> <span id="gap">—</span></div>
-            <div><strong>建议下一步：</strong> <span id="nextStep">—</span></div>
-            <div><strong>推荐服务方向：</strong> <span id="advisoryNote">—</span></div>
+            <div><strong>Readiness level:</strong> <span id="readiness">—</span></div>
+            <div><strong>Primary gap:</strong> <span id="gap">—</span></div>
+            <div><strong>Recommended next step:</strong> <span id="nextStep">—</span></div>
+            <div><strong>Suggested service direction:</strong> <span id="advisoryNote">—</span></div>
           </div>
 
-          <div class="card" style="padding:18px; background:#fcfdff;">
-            <h3 style="margin-bottom:10px;">这个评估是看什么的</h3>
-            <p class="muted" style="margin:0;">它不是测“有没有装很多工具”，而是看你的获客、客户管理、预约和自动化基础是不是已经形成稳定结构。</p>
+          <div class="card" style="padding:18px; margin-top:18px; background:#fbfcfe;">
+            <h3>What this score is measuring</h3>
+            <p class="muted">
+              Not how many tools you have, but whether acquisition, follow-up, booking, and automation have formed a stable operating structure.
+            </p>
+            <p class="sub-cn">它不是测“有没有装很多工具”，而是看你的获客、客户管理、预约和自动化基础是不是已经形成稳定结构。</p>
           </div>
         </div>
       </div>
@@ -1273,45 +1304,40 @@
   <section id="process">
     <div class="container">
       <div class="section-head">
-        <h2>合作流程</h2>
-        <p>我们尽量把合作过程做得简单，而不是让你先学一堆复杂概念。</p>
+        <h2>Process</h2>
+        <p>
+          The process is intentionally simple. The goal is not to force clients to learn more language first, but to see where the real bottleneck is.
+        </p>
+        <p class="sub-cn">我们尽量把合作过程做得简单，而不是让客户先学一堆复杂概念。</p>
       </div>
 
-      <div class="grid-4">
-        <div class="card"><div class="label">Step 01</div><h3>先沟通需求</h3><p>先看你现在最卡的地方是什么。</p></div>
-        <div class="card"><div class="label">Step 02</div><h3>评估现状</h3><p>判断流程、客户路径和系统结构哪里需要先动。</p></div>
-        <div class="card"><div class="label">Step 03</div><h3>设计方案</h3><p>给你一个更适合实际业务的系统路径，而不是套模板。</p></div>
-        <div class="card"><div class="label">Step 04</div><h3>实施与优化</h3><p>把关键流程跑起来，再逐步优化。</p></div>
-      </div>
-    </div>
-  </section>
+      <div class="timeline">
+        <div class="timeline-card">
+          <div class="timeline-step">Step 01</div>
+          <h3>Clarify the current bottleneck</h3>
+          <p class="muted">Start by identifying where operations are actually slowing down or losing value.</p>
+          <p class="sub-cn">先看你现在最卡的地方是什么。</p>
+        </div>
 
-  <section id="faq">
-    <div class="container">
-      <div class="section-head">
-        <h2>常见问题</h2>
-      </div>
+        <div class="timeline-card">
+          <div class="timeline-step">Step 02</div>
+          <h3>Assess flow and structure</h3>
+          <p class="muted">Review customer path, workflow structure, communication logic, and system handoffs.</p>
+          <p class="sub-cn">判断流程、客户路径和系统结构哪里需要先动。</p>
+        </div>
 
-      <div class="card">
-        <div class="faq-item">
-          <h3>你们只做咨询，还是会参与搭建？</h3>
-          <p>两者都可以。根据项目范围，我们既可以提供结构建议，也可以参与系统与流程设计。</p>
+        <div class="timeline-card">
+          <div class="timeline-step">Step 03</div>
+          <h3>Design a grounded path forward</h3>
+          <p class="muted">Build a more suitable operating path instead of applying a generic template.</p>
+          <p class="sub-cn">给你一个更适合实际业务的系统路径，而不是套模板。</p>
         </div>
-        <div class="faq-item">
-          <h3>可以协助 CRM、预约和客户流程吗？</h3>
-          <p>可以。这些正是很多企业最容易乱的地方，也是最值得先理顺的部分。</p>
-        </div>
-        <div class="faq-item">
-          <h3>这个网站里的评估会不会泄露信息？</h3>
-          <p>这是一个简化演示评估，请不要填写敏感或机密信息。</p>
-        </div>
-        <div class="faq-item">
-          <h3>目前是不是已经全自动化了？</h3>
-          <p>前台获客已经具备自动化能力，后台 CRM 目前先采用手动过渡，后续可继续升级。</p>
-        </div>
-        <div class="faq-item">
-          <h3>是不是一上来就要做很大的系统？</h3>
-          <p>不一定。很多项目更适合先从一个关键环节开始，例如咨询入口、预约流程或客户跟进，再逐步扩大。</p>
+
+        <div class="timeline-card">
+          <div class="timeline-step">Step 04</div>
+          <h3>Implement and refine</h3>
+          <p class="muted">Get key workflows running first, then continue improving them over time.</p>
+          <p class="sub-cn">把关键流程跑起来，再逐步优化。</p>
         </div>
       </div>
     </div>
@@ -1320,24 +1346,72 @@
   <section id="insights">
     <div class="container">
       <div class="section-head">
-        <h2>内容观点</h2>
-        <p>不是为了写得很学术，而是为了让企业更容易理解为什么很多问题会反复出现。</p>
+        <h2>Operational insights</h2>
+        <p>
+          These ideas are here to help businesses understand why the same problems keep repeating.
+        </p>
+        <p class="sub-cn">不是为了写得很学术，而是为了让企业更容易理解为什么很多问题会反复出现。</p>
       </div>
 
       <div class="card">
         <div class="insight-list">
           <div class="insight-item">
-            <h3>为什么工具很多，企业还是会乱</h3>
-            <p>因为真正缺的常常不是工具，而是更清晰的流程、责任和判断结构。</p>
+            <h3>Why businesses can still feel chaotic even with more tools</h3>
+            <p class="muted">Because the real missing layer is often not software, but workflow clarity, ownership, and decision structure.</p>
+            <p class="sub-cn">真正缺的常常不是工具，而是更清晰的流程、责任和判断结构。</p>
           </div>
+
           <div class="insight-item">
-            <h3>为什么自动化不应该一上来就做很多</h3>
-            <p>底层流程没理清之前，自动化通常只是把混乱放大。</p>
+            <h3>Why automation should not be the first move everywhere</h3>
+            <p class="muted">If the underlying process is unclear, automation usually amplifies confusion instead of solving it.</p>
+            <p class="sub-cn">底层流程没理清之前，自动化通常只是把混乱放大。</p>
           </div>
+
           <div class="insight-item">
-            <h3>为什么客户管理决定了增长效率</h3>
-            <p>客户不是来了就会成交，真正拉开差距的是你有没有把接待、跟进和服务路径设计清楚。</p>
+            <h3>Why customer management shapes growth efficiency</h3>
+            <p class="muted">The real difference is not whether customers arrive, but whether the path from inquiry to service is designed clearly enough.</p>
+            <p class="sub-cn">客户不是来了就会成交，真正拉开差距的是你有没有把接待、跟进和服务路径设计清楚。</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <h3>Do you only provide advice, or can you also help with implementation?</h3>
+          <p class="muted">Both are possible depending on the scope. This can include structural guidance, system design, and workflow design support.</p>
+          <p class="sub-cn">两者都可以。根据项目范围，既可以提供结构建议，也可以参与系统与流程设计。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can this include CRM, booking flow, and customer process support?</h3>
+          <p class="muted">Yes. These are often the most fragmented parts of a growing business and the most valuable places to clarify first.</p>
+          <p class="sub-cn">可以。这些正是很多企业最容易乱的地方，也是最值得先理顺的部分。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will the assessment leak business information?</h3>
+          <p class="muted">It is only a simplified readiness demo. Sensitive or confidential information should not be entered.</p>
+          <p class="sub-cn">这是一个简化演示评估，请不要填写敏感或机密信息。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is everything already fully automated?</h3>
+          <p class="muted">Front-end intake can already support automation. The back-end CRM layer may still use staged manual updates before deeper upgrades.</p>
+          <p class="sub-cn">前台获客已经具备自动化能力，后台 CRM 目前先采用手动过渡，后续可继续升级。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does every project need a large system from the start?</h3>
+          <p class="muted">No. In many cases, starting with one key bottleneck is the most effective path.</p>
+          <p class="sub-cn">不一定。很多项目更适合先从一个关键环节开始，例如咨询入口、预约流程或客户跟进。</p>
         </div>
       </div>
     </div>
@@ -1346,8 +1420,11 @@
   <section id="contact">
     <div class="container">
       <div class="section-head">
-        <h2>想先判断这个项目值不值得做？先预约一次 30 分钟沟通</h2>
-        <p>如果你想聊项目、系统优化、客户管理或自动化支持，直接联系就可以。先看问题在哪里，再决定后面怎么做。</p>
+        <h2>Start with one conversation</h2>
+        <p>
+          If you want to talk about workflow clarity, customer systems, CRM logic, or automation support, the easiest next step is simply to reach out.
+        </p>
+        <p class="sub-cn">如果你想聊项目、系统优化、客户管理或自动化支持，直接联系就可以。先看问题在哪里，再决定后面怎么做。</p>
       </div>
 
       <div class="contact-shell">
@@ -1359,71 +1436,69 @@
             <input type="checkbox" name="botcheck" style="display:none;">
 
             <div class="field">
-              <label for="contactName">姓名</label>
-              <input id="contactName" name="name" type="text" placeholder="您的姓名" required />
+              <label for="contactName">Name</label>
+              <input id="contactName" name="name" type="text" placeholder="Your name" required />
             </div>
 
             <div class="field">
-              <label for="companyName">公司名称</label>
-              <input id="companyName" name="company" type="text" placeholder="公司名称" />
+              <label for="companyName">Company</label>
+              <input id="companyName" name="company" type="text" placeholder="Company name" />
             </div>
 
             <div class="field">
-              <label for="contactEmail">邮箱</label>
+              <label for="contactEmail">Email</label>
               <input id="contactEmail" name="email" type="email" placeholder="contact@example.com" required />
             </div>
 
             <div class="field">
-              <label for="serviceInterest">感兴趣的服务</label>
+              <label for="serviceInterest">Area of interest</label>
               <select id="serviceInterest" name="service_interest">
-                <option value="">请选择</option>
-                <option>企业转型</option>
-                <option>AI 自动化</option>
-                <option>CRM 客户管理</option>
-                <option>预约流程</option>
-                <option>业务系统优化</option>
-                <option>定制项目</option>
+                <option value="">Select</option>
+                <option>Enterprise Transformation</option>
+                <option>AI Automation</option>
+                <option>CRM Structure</option>
+                <option>Booking Flow</option>
+                <option>Business System Optimization</option>
+                <option>Custom Project</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="contactMessage">项目需求</label>
-              <textarea id="contactMessage" name="message" placeholder="请简单描述您的需求" required></textarea>
+              <label for="contactMessage">Project needs</label>
+              <textarea id="contactMessage" name="message" placeholder="Briefly describe what you need" required></textarea>
             </div>
 
             <div class="cta-row">
-              <button class="btn primary" type="submit">提交咨询</button>
-              <a class="btn secondary" href="mailto:contact@bb369tech.com">邮件联系</a>
+              <button class="btn primary" type="submit">Submit Inquiry</button>
+              <a class="btn secondary" href="mailto:contact@bb369tech.com">Email Us</a>
             </div>
 
-            <p class="note">通过此表单提交的信息将发送到 contact@bb369tech.com。请勿提交机密、医疗、金融或其他高度敏感信息。</p>
+            <p class="note">
+              Information submitted through this form will be sent to contact@bb369tech.com. Please do not submit highly sensitive information.
+            </p>
           </form>
         </div>
 
         <div class="card">
-          <div><strong>邮箱：</strong>contact@bb369tech.com</div>
-          <div><strong>网站：</strong>https://ai.bb369tech.com</div>
-          <div><strong>预约：</strong>30 分钟咨询沟通</div>
+          <div><strong>Email:</strong> contact@bb369tech.com</div>
+          <div><strong>Website:</strong> https://ai.bb369tech.com</div>
+          <div><strong>Booking:</strong> 30-minute consultation</div>
 
           <div class="contact-links">
-            <a href="mailto:contact@bb369tech.com">邮件联系</a>
-            <a href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">预约咨询</a>
-            <a href="https://ai.bb369tech.com" target="_blank" rel="noopener">打开网站</a>
+            <a href="mailto:contact@bb369tech.com">Email</a>
+            <a href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">Book Consultation</a>
+            <a href="https://ai.bb369tech.com" target="_blank" rel="noopener">Open Website</a>
           </div>
 
-          <div style="margin-top:18px;">
-            <h3>当前使用的系统</h3>
+          <div class="card" style="margin-top:18px; padding:18px; background:#fbfcfe;">
+            <h3>Current operating stack</h3>
             <ul class="deliverable-list">
-              <li>Cal.com 处理预约</li>
-              <li>Web3Forms 处理表单</li>
-              <li>Tawk.to 在线聊天</li>
-              <li>Airtable 作为 CRM（当前先手动更新）</li>
+              <li>Cal.com for scheduling</li>
+              <li>Web3Forms for intake</li>
+              <li>Tawk.to for live chat</li>
+              <li>Airtable as CRM (currently staged with manual updates)</li>
             </ul>
-          </div>
-
-          <div class="card" style="margin-top:18px; padding:18px; background:#fcfdff;">
-            <h3>建议的沟通方式</h3>
-            <p style="margin:0;color:var(--muted);">如果你还不确定项目范围，可以先预约沟通；如果你已经有明确需求，也可以直接提交表单或发邮件。</p>
+            <p class="sub-cn">当前网站已经具备预约、表单、聊天与 CRM 承接逻辑，后续可以继续升级自动化。</p>
           </div>
         </div>
       </div>
@@ -1434,23 +1509,27 @@
     <div class="container">
       <div class="cta-shell">
         <div class="card">
-          <h2>如果你也觉得现在的业务流程有点乱，就先从一次咨询开始</h2>
-          <p>不一定需要一次做很多，先把最关键的一个环节理顺，通常就会看到明显变化。很多企业真正需要的，不是更复杂，而是更清楚。</p>
+          <h2>Start with one clearer workflow</h2>
+          <p class="muted">
+            It does not need to begin with a large system. In many cases, once one key step becomes clear, visible improvement follows.
+          </p>
+          <p class="sub-cn">不一定需要一次做很多，先把最关键的一个环节理顺，通常就会看到明显变化。</p>
           <div class="cta-row">
-            <a class="btn primary" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">预约咨询</a>
-            <a class="btn secondary" href="#assessment">先做评估</a>
+            <a class="btn primary" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">Book Consultation</a>
+            <a class="btn secondary" href="#assessment">Run Assessment</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>这套网站已经具备的能力</h3>
+          <h3>What this website already supports</h3>
           <ul class="deliverable-list">
-            <li>客户咨询收集</li>
-            <li>预约系统接入</li>
-            <li>在线聊天入口</li>
-            <li>CRM 承接逻辑</li>
-            <li>后续自动化升级空间</li>
+            <li>Inquiry intake</li>
+            <li>Booking integration</li>
+            <li>Live chat entry</li>
+            <li>CRM intake logic</li>
+            <li>Future automation expansion</li>
           </ul>
+          <p class="sub-cn">这套网站已经具备客户咨询收集、预约系统接入、在线聊天入口、CRM承接逻辑和后续自动化升级空间。</p>
         </div>
       </div>
     </div>
@@ -1461,49 +1540,49 @@
       <div>
         <p>
           <strong>BB369 Tech</strong><br />
-          企业转型、AI自动化、客户管理与业务系统优化支持。
+          Business systems optimization, AI automation, CRM support, and workflow clarity.
         </p>
         <p>
-          本网站用于展示业务服务信息、概念框架与研究支持型咨询内容。
+          This website presents service information, conceptual frameworks, and research-supported advisory content.
         </p>
       </div>
 
       <div class="footer-links">
-        <a href="#contact">联系咨询</a>
-        <a href="#services">服务内容</a>
-        <a href="#assessment">项目评估</a>
-        <a href="#modules">功能模块</a>
+        <a href="#services">Services</a>
+        <a href="#assessment">Assessment</a>
+        <a href="#modules">Modules</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div class="footer-links">
-        <a href="#legal" data-legal-target="privacy">隐私政策</a>
-        <a href="#legal" data-legal-target="terms">服务条款</a>
-        <a href="#legal" data-legal-target="cookie">Cookie 说明</a>
-        <a href="#legal" data-legal-target="disclaimer">服务免责声明</a>
+        <a href="#legal" data-legal-target="privacy">Privacy</a>
+        <a href="#legal" data-legal-target="terms">Terms</a>
+        <a href="#legal" data-legal-target="cookie">Cookies</a>
+        <a href="#legal" data-legal-target="disclaimer">Disclaimer</a>
       </div>
     </div>
 
     <div class="container legal-pages" id="legal">
       <div class="legal-page" id="privacy">
-        <h3>隐私政策</h3>
-        <p>我们可能会收集通过表单、聊天工具、预约工具或邮件提交的业务联系信息，用于沟通、咨询处理与项目跟进。</p>
-        <p>请勿通过本网站提交机密、医疗、金融或高度敏感的个人数据。</p>
+        <h3>Privacy Policy</h3>
+        <p>We may collect business contact information submitted through forms, chat tools, booking tools, or email for communication, consultation handling, and project follow-up.</p>
+        <p>Please do not submit confidential, medical, financial, or other highly sensitive personal information through this website.</p>
       </div>
 
       <div class="legal-page" id="terms">
-        <h3>服务条款</h3>
-        <p>本网站用于提供业务信息与服务说明。具体项目范围、时间、费用与交付内容以单独沟通和协议为准。</p>
+        <h3>Terms of Service</h3>
+        <p>This website is for service information and business explanation. Project scope, timing, fees, and deliverables are subject to separate discussion and agreement.</p>
       </div>
 
       <div class="legal-page" id="cookie">
-        <h3>Cookie 说明</h3>
-        <p>本网站可能使用聊天组件、预约工具、表单服务或类似第三方功能，这些工具可能会使用 Cookie 或类似技术。</p>
+        <h3>Cookie Notice</h3>
+        <p>This website may use third-party services such as booking tools, form services, or chat components, which may use cookies or similar technologies.</p>
       </div>
 
       <div class="legal-page" id="disclaimer">
-        <h3>服务免责声明</h3>
-        <p>本网站内容不构成法律、金融、税务、医疗或投资建议。所有建议均应结合客户真实业务情况独立评估。</p>
-        <p>本网站使用的第三方服务可能根据其各自规则处理相关数据，请用户在提交前自行判断信息范围。</p>
+        <h3>Disclaimer</h3>
+        <p>The content on this website does not constitute legal, financial, tax, medical, or investment advice. All recommendations should be evaluated independently in light of the client’s actual business situation.</p>
+        <p>Third-party services used on this website may process data according to their own operating rules.</p>
       </div>
     </div>
 
@@ -1521,10 +1600,10 @@
     const panels = document.querySelectorAll(".panel-group");
 
     function readinessFromScore(score) {
-      if (score >= 85) return "自动化基础较强";
-      if (score >= 65) return "业务系统较清晰";
-      if (score >= 45) return "正在建立流程";
-      return "早期手动运营阶段";
+      if (score >= 85) return "Strong automation foundation / 自动化基础较强";
+      if (score >= 65) return "Relatively clear business system / 业务系统较清晰";
+      if (score >= 45) return "Workflow still being established / 正在建立流程";
+      return "Early manual operating stage / 早期手动运营阶段";
     }
 
     function gapFromAnswers(values) {
@@ -1534,47 +1613,49 @@
       const automation = Number(values.automation || 0);
       const leadFlow = Number(values.leadFlow || 0);
 
-      if (leadFlow <= 10) return "客户线索收集与分流流程仍较弱。";
-      if (crm <= 8) return "客户记录与跟进体系不够清晰。";
-      if (booking <= 8) return "预约流程仍较依赖人工安排。";
-      if (response <= 8) return "客户响应速度可进一步提升。";
-      if (automation <= 8) return "重复性工作尚未形成有效自动化。";
-      return "整体结构较稳定，可进一步优化扩展。";
+      if (leadFlow <= 10) return "Lead intake and routing are still weak / 客户线索收集与分流流程仍较弱";
+      if (crm <= 8) return "Customer records and follow-up structure are unclear / 客户记录与跟进体系不够清晰";
+      if (booking <= 8) return "Scheduling still relies too much on manual coordination / 预约流程仍较依赖人工安排";
+      if (response <= 8) return "Response speed can be improved / 客户响应速度可进一步提升";
+      if (automation <= 8) return "Repetitive work has not yet formed effective automation / 重复性工作尚未形成有效自动化";
+      return "The overall structure is relatively stable and ready for deeper optimization / 整体结构较稳定，可进一步优化扩展";
     }
 
     function nextStepFromScore(score) {
-      if (score >= 85) return "建议进入更高级的自动化、CRM整合与流程优化。";
-      if (score >= 65) return "建议先统一客户流程、预约逻辑与团队协作结构。";
-      if (score >= 45) return "建议优先建立标准化获客、跟进与回复流程。";
-      return "建议先从基础表单、客户记录与咨询流程搭建开始。";
+      if (score >= 85) return "Move into deeper automation, CRM integration, and workflow optimization / 建议进入更高级的自动化、CRM整合与流程优化";
+      if (score >= 65) return "Unify customer flow, booking logic, and team coordination structure / 建议先统一客户流程、预约逻辑与团队协作结构";
+      if (score >= 45) return "Prioritize standardized intake, follow-up, and response workflow / 建议优先建立标准化获客、跟进与回复流程";
+      return "Start with basic forms, customer records, and inquiry handling / 建议先从基础表单、客户记录与咨询流程搭建开始";
     }
 
     function advisoryNote(score) {
-      if (score >= 85) return "适合：高级自动化系统、流程整合与结构升级。";
-      if (score >= 65) return "适合：CRM优化、预约系统、客户流程升级。";
-      if (score >= 45) return "适合：获客系统、回复流程、基础自动化搭建。";
-      return "适合：基础业务系统梳理与转型起步支持。";
+      if (score >= 85) return "Fit: advanced automation systems, integration, and structural upgrade / 适合：高级自动化系统、流程整合与结构升级";
+      if (score >= 65) return "Fit: CRM optimization, scheduling flow, customer system upgrade / 适合：CRM优化、预约系统、客户流程升级";
+      if (score >= 45) return "Fit: acquisition system, response workflow, foundational automation / 适合：获客系统、回复流程、基础自动化搭建";
+      return "Fit: foundational business system clarification / 适合：基础业务系统梳理与转型起步支持";
     }
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const values = Object.fromEntries(data.entries());
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const values = Object.fromEntries(data.entries());
 
-      const score =
-        Number(values.leadFlow || 0) +
-        Number(values.crm || 0) +
-        Number(values.booking || 0) +
-        Number(values.response || 0) +
-        Number(values.automation || 0);
+        const score =
+          Number(values.leadFlow || 0) +
+          Number(values.crm || 0) +
+          Number(values.booking || 0) +
+          Number(values.response || 0) +
+          Number(values.automation || 0);
 
-      document.getElementById("scoreValue").textContent = score + " / 100";
-      document.getElementById("scoreLabel").textContent = "业务自动化成熟度评分";
-      document.getElementById("readiness").textContent = readinessFromScore(score);
-      document.getElementById("gap").textContent = gapFromAnswers(values);
-      document.getElementById("nextStep").textContent = nextStepFromScore(score);
-      document.getElementById("advisoryNote").textContent = advisoryNote(score);
-    });
+        document.getElementById("scoreValue").textContent = score + " / 100";
+        document.getElementById("scoreLabel").textContent = "Business system readiness score / 业务系统准备度评分";
+        document.getElementById("readiness").textContent = readinessFromScore(score);
+        document.getElementById("gap").textContent = gapFromAnswers(values);
+        document.getElementById("nextStep").textContent = nextStepFromScore(score);
+        document.getElementById("advisoryNote").textContent = advisoryNote(score);
+      });
+    }
 
     legalLinks.forEach(link => {
       link.addEventListener("click", function () {
