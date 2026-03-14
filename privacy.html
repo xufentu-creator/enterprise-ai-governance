@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Privacy Policy | BB369 Tech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+max-width:900px;
+margin:auto;
+line-height:1.7;
+padding:40px;
+color:#111;
+}
+
+h1,h2{
+margin-top:40px;
+}
+
+.lang-switch{
+position:fixed;
+top:20px;
+right:20px;
+}
+
+button{
+padding:6px 10px;
+margin-left:5px;
+cursor:pointer;
+}
+
+footer{
+margin-top:60px;
+font-size:14px;
+color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('zh')">中文</button>
+</div>
+
+<h1 data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</h1>
+
+<p data-en="This website is operated by BB369 Tech. Research foundation by Xufen Tu, Independent Interdisciplinary Researcher focusing on Complex Systems, AI Governance, Decision Architecture and Enterprise Transformation."
+data-zh="本网站由 BB369 Tech 运营。研究基础由独立跨学科研究者涂绪芬（Xufen Tu）提出，研究方向包括复杂系统、人工智能治理、决策架构与企业转型。">
+</p>
+
+<h2 data-en="Information We Collect" data-zh="我们收集的信息"></h2>
+
+<p data-en="This website may collect basic contact information voluntarily submitted through forms or email communication, such as name, email address, and message content."
+data-zh="本网站可能通过联系表单或邮件沟通收集用户自愿提交的基本联系信息，例如姓名、邮箱地址以及留言内容。">
+</p>
+
+<h2 data-en="How Information Is Used" data-zh="信息使用方式"></h2>
+
+<p data-en="Submitted information may be used to respond to inquiries, communicate regarding services, or improve website operations."
+data-zh="提交的信息可能用于回复咨询、沟通服务相关事宜或改进网站运营。">
+</p>
+
+<h2 data-en="Data Sharing" data-zh="信息共享"></h2>
+
+<p data-en="This website does not sell, trade, or rent personal information. Information may only be shared when required by law or necessary to operate technical services."
+data-zh="本网站不会出售、出租或交易个人信息。只有在法律要求或技术服务需要的情况下才可能共享相关信息。">
+</p>
+
+<h2 data-en="Third-Party Services" data-zh="第三方服务"></h2>
+
+<p data-en="The website may use third-party services such as analytics tools, chat systems, or booking platforms. These services may collect limited technical information according to their own privacy policies."
+data-zh="本网站可能使用第三方服务，例如数据分析工具、聊天系统或预约平台。这些服务可能根据各自的隐私政策收集有限的技术信息。">
+</p>
+
+<h2 data-en="Data Security" data-zh="数据安全"></h2>
+
+<p data-en="Reasonable technical and organizational measures are used to protect submitted information, but no internet transmission can be guaranteed to be fully secure."
+data-zh="本网站采取合理的技术与管理措施保护提交的信息，但任何互联网传输都无法保证绝对安全。">
+</p>
+
+<h2 data-en="User Responsibility" data-zh="用户责任"></h2>
+
+<p data-en="Users should avoid submitting sensitive personal information such as medical records, financial details, government identification numbers, or confidential data."
+data-zh="用户应避免提交敏感个人信息，例如医疗记录、财务信息、政府证件号码或其他保密数据。">
+</p>
+
+<h2 data-en="Policy Updates" data-zh="政策更新"></h2>
+
+<p data-en="This policy may be updated periodically to reflect operational or legal changes."
+data-zh="本政策可能根据运营或法律要求不定期更新。">
+</p>
+
+<footer>
+<p>© 2026 BB369 Tech</p>
+</footer>
+
+<script>
+
+function setLang(lang){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent=el.getAttribute("data-"+lang);
+});
+}
+
+</script>
+
+</body>
+</html>
