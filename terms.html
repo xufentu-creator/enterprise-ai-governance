@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Terms of Service | BB369 Tech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+max-width:900px;
+margin:auto;
+line-height:1.7;
+padding:40px;
+}
+
+h1,h2{
+margin-top:40px;
+}
+
+.lang-switch{
+position:fixed;
+top:20px;
+right:20px;
+}
+
+button{
+padding:6px 10px;
+margin-left:5px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('zh')">中文</button>
+</div>
+
+<h1 data-en="Terms of Service" data-zh="服务条款"></h1>
+
+<p data-en="This website provides research insights, structural analysis, and advisory information related to enterprise systems and decision architecture."
+data-zh="本网站提供与企业系统结构和决策架构相关的研究见解、结构分析和咨询信息。"></p>
+
+<h2 data-en="Use of Website" data-zh="网站使用"></h2>
+
+<p data-en="Users may access the website for informational and professional communication purposes."
+data-zh="用户可以出于信息获取或专业沟通目的访问本网站。"></p>
+
+<h2 data-en="No Professional Advice" data-zh="非专业建议"></h2>
+
+<p data-en="Content on this website is provided for informational purposes only and does not constitute legal, medical, financial, or professional advice."
+data-zh="本网站内容仅用于信息交流，不构成法律、医疗、财务或其他专业建议。"></p>
+
+<h2 data-en="User Responsibility" data-zh="用户责任"></h2>
+
+<p data-en="Users are responsible for evaluating how information from the website may apply to their own situations."
+data-zh="用户需自行评估网站信息在自身情境中的适用性。"></p>
+
+<h2 data-en="Service Engagement" data-zh="服务合作"></h2>
+
+<p data-en="Formal consulting or advisory engagements require separate agreements."
+data-zh="正式咨询或顾问合作需通过独立协议进行。"></p>
+
+<h2 data-en="Intellectual Property" data-zh="知识产权"></h2>
+
+<p data-en="All research concepts, frameworks, and original content remain the intellectual property of BB369 Tech and its research contributors."
+data-zh="所有研究概念、框架及原创内容均属于 BB369 Tech 及其研究贡献者所有。"></p>
+
+<script>
+
+function setLang(lang){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent=el.getAttribute("data-"+lang);
+});
+}
+
+</script>
+
+</body>
+</html>
