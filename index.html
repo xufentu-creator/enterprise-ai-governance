@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BB369 Tech | Enterprise Transformation & Decision Architecture</title>
+  <title>BB369 Tech | Enterprise Transformation, AI Automation & Bilingual Business Systems</title>
   <meta
     name="description"
-    content="BB369 Tech provides research-informed advisory on enterprise transformation, AI governance, decision architecture, and complex organizational systems."
+    content="BB369 Tech provides enterprise transformation, AI automation, CRM workflow design, bilingual business support, and operational systems for modern organizations."
   />
   <meta name="robots" content="index, follow" />
   <meta
     name="keywords"
-    content="Enterprise Transformation, AI Governance, Decision Architecture, Complex Systems, Human Judgment, Digital Transformation, Xufen Tu, BB369 Tech"
+    content="Enterprise Transformation, AI Automation, AI Governance, Decision Architecture, CRM Workflow, Business Systems, Bilingual Business Support, Complex Systems, Human Judgment, Xufen Tu, BB369 Tech"
   />
   <meta name="author" content="Xufen Tu" />
 
@@ -33,15 +33,13 @@
       --shadow: 0 10px 30px rgba(20, 25, 35, 0.06);
       --radius: 18px;
       --max-width: 1180px;
+      --success: #1b5e3f;
+      --soft-green: #edf7f1;
+      --soft-blue: #f2f6fb;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -51,15 +49,11 @@
       line-height: 1.65;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    body.zh-mode [data-lang="en"] { display: none !important; }
+    body:not(.zh-mode) [data-lang="zh"] { display: none !important; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(var(--max-width), calc(100% - 32px));
@@ -69,8 +63,8 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(245, 246, 248, 0.92);
+      z-index: 200;
+      background: rgba(245, 246, 248, 0.94);
       border-bottom: 1px solid rgba(221, 226, 232, 0.9);
       backdrop-filter: blur(10px);
     }
@@ -81,6 +75,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      padding: 10px 0;
     }
 
     .brand {
@@ -102,14 +97,38 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       flex-wrap: wrap;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--muted);
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links button:hover {
       color: var(--text);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: 6px;
+    }
+
+    .lang-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: var(--button);
+      color: var(--button-text);
+      border-color: var(--button);
     }
 
     .hero {
@@ -127,7 +146,7 @@
     .hero-main,
     .hero-side,
     .card {
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(221, 226, 232, 0.95);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -138,7 +157,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 540px;
+      min-height: 580px;
       background:
         radial-gradient(circle at top right, rgba(78, 95, 120, 0.08), transparent 34%),
         linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
@@ -168,7 +187,7 @@
     h1 {
       font-size: clamp(2.2rem, 4vw, 4.2rem);
       letter-spacing: -0.03em;
-      max-width: 11ch;
+      max-width: 12ch;
     }
 
     h2 {
@@ -176,13 +195,8 @@
       letter-spacing: -0.02em;
     }
 
-    h3 {
-      font-size: 1.06rem;
-    }
-
-    p {
-      margin: 0 0 14px;
-    }
+    h3 { font-size: 1.06rem; }
+    p { margin: 0 0 14px; }
 
     .hero-sub {
       max-width: 60ch;
@@ -227,21 +241,13 @@
       transition: 0.2s ease;
       cursor: pointer;
       text-align: center;
+      font-family: inherit;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn.primary {
-      background: var(--button);
-      color: var(--button-text);
-    }
-
-    .btn.secondary {
-      background: var(--button-secondary-bg);
-      color: var(--button-secondary-text);
-    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: var(--button); color: var(--button-text); }
+    .btn.secondary { background: var(--button-secondary-bg); color: var(--button-secondary-text); }
+    .btn.soft { background: var(--soft-blue); border-color: var(--line); }
 
     .hero-signature {
       text-align: right;
@@ -263,12 +269,10 @@
       font-size: 0.95rem;
     }
 
-    section {
-      padding: 58px 0;
-    }
+    section { padding: 58px 0; }
 
     .section-head {
-      max-width: 72ch;
+      max-width: 74ch;
       margin-bottom: 22px;
     }
 
@@ -278,57 +282,76 @@
       margin-bottom: 0;
     }
 
-    .grid-3 {
+    .grid-4, .grid-3, .grid-2 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-    .card {
-      padding: 24px;
-    }
+    .card { padding: 24px; }
+    .card p:last-child { margin-bottom: 0; }
 
-    .card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .service-card {
+    .service-card,
+    .solution-card,
+    .automation-card {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      min-height: 236px;
+      min-height: 230px;
     }
 
-    .service-card .label {
+    .service-card .label,
+    .solution-card .label,
+    .automation-card .label,
+    .stat-label {
       font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
-    .service-card ul {
+    .service-card ul,
+    .solution-card ul,
+    .automation-card ul,
+    .deliverable-list {
       margin: 0;
       padding-left: 18px;
       color: var(--muted);
     }
 
-    .service-card li {
-      margin-bottom: 6px;
+    .service-card li,
+    .solution-card li,
+    .automation-card li,
+    .deliverable-list li { margin-bottom: 6px; }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
     }
 
-    .diag-shell {
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--soft-green);
+      color: var(--success);
+      border: 1px solid rgba(27, 94, 63, 0.15);
+      font-size: 0.88rem;
+    }
+
+    .diag-shell, .contact-shell, .cta-shell {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
-    .diag-form {
+    .diag-form, .contact-form {
       display: grid;
       gap: 14px;
     }
@@ -343,16 +366,21 @@
       font-weight: 600;
     }
 
-    input,
-    select {
+    input, select, textarea {
       width: 100%;
       min-height: 46px;
-      padding: 0 14px;
+      padding: 12px 14px;
       font-size: 0.95rem;
       border-radius: 12px;
       border: 1px solid var(--line);
       background: #ffffff;
       color: var(--text);
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
     .result-box {
@@ -368,9 +396,7 @@
       font-weight: 700;
     }
 
-    .muted {
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
     .report {
       display: grid;
@@ -396,10 +422,6 @@
       padding-bottom: 0;
     }
 
-    .insight-item h3 {
-      margin-bottom: 8px;
-    }
-
     .contact-links {
       display: flex;
       gap: 12px;
@@ -418,7 +440,7 @@
       font-size: 0.92rem;
     }
 
-    .contact-box {
+    .contact-box, .cta-box {
       display: grid;
       gap: 10px;
     }
@@ -428,65 +450,136 @@
       color: var(--muted);
     }
 
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .stat-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .footer {
+      margin-top: 60px;
+      padding: 36px 20px;
+      background: #f7f7f7;
+      color: #666;
+      line-height: 1.7;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    .legal-pages {
+      display: none;
+      margin-top: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .legal-page {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 16px;
+    }
+
+    .legal-page.active,
+    .legal-pages.active {
+      display: block;
+    }
+
+    .inline-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 18px 0;
+    }
+
     @media (max-width: 1024px) {
       .hero-grid,
       .diag-shell,
+      .contact-shell,
+      .cta-shell,
+      .grid-4,
       .grid-3,
-      .grid-2 {
+      .grid-2,
+      .footer-grid,
+      .stat-grid {
         grid-template-columns: 1fr;
       }
-
-      .hero-main {
-        min-height: auto;
-      }
+      .hero-main { min-height: auto; }
     }
 
     @media (max-width: 780px) {
       .nav {
         align-items: flex-start;
         flex-direction: column;
-        padding: 10px 0;
       }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .hero {
-        padding-top: 64px;
-      }
-
-      .hero-main {
-        padding: 34px 24px;
-      }
-
-      .hero-side,
-      .card {
-        padding: 20px;
-      }
-
-      .container {
-        width: min(var(--max-width), calc(100% - 22px));
-      }
+      .nav-links { gap: 12px; }
+      .hero { padding-top: 64px; }
+      .hero-main { padding: 34px 24px; }
+      .hero-side, .card, .legal-page { padding: 20px; }
+      .container { width: min(var(--max-width), calc(100% - 22px)); }
     }
   </style>
 </head>
 <body>
-
   <div class="topbar">
     <div class="container nav">
       <div class="brand">
         BB369 Tech
-        <small>Enterprise Transformation · Decision Architecture · AI Governance</small>
+        <small>
+          <span data-lang="en">Enterprise Transformation · AI Automation · Bilingual Business Systems</span>
+          <span data-lang="zh">企业转型 · AI自动化 · 中英双语业务系统</span>
+        </small>
       </div>
+
       <div class="nav-links">
-        <a href="#challenges">Challenges</a>
-        <a href="#services">Services</a>
-        <a href="#assessment">Assessment</a>
-        <a href="#framework">Framework</a>
-        <a href="#research">Research</a>
-        <a href="#insights">Insights</a>
-        <a href="#contact">Contact</a>
+        <a href="#solutions"><span data-lang="en">Solutions</span><span data-lang="zh">解决方案</span></a>
+        <a href="#services"><span data-lang="en">Services</span><span data-lang="zh">服务内容</span></a>
+        <a href="#automation"><span data-lang="en">Automation</span><span data-lang="zh">自动化系统</span></a>
+        <a href="#assessment"><span data-lang="en">Assessment</span><span data-lang="zh">在线评估</span></a>
+        <a href="#bilingual"><span data-lang="en">Bilingual</span><span data-lang="zh">双语服务</span></a>
+        <a href="#process"><span data-lang="en">Process</span><span data-lang="zh">合作流程</span></a>
+        <a href="#insights"><span data-lang="en">Insights</span><span data-lang="zh">内容观点</span></a>
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系咨询</span></a>
+
+        <div class="lang-switch" aria-label="language switcher">
+          <button class="lang-btn active" id="langEn" type="button">EN</button>
+          <button class="lang-btn" id="langZh" type="button">中文</button>
+        </div>
       </div>
     </div>
   </div>
@@ -495,25 +588,48 @@
     <div class="container hero-grid">
       <div class="hero-main">
         <div>
-          <span class="eyebrow">Research-informed advisory</span>
-          <h1>Enterprise Transformation & Decision Architecture</h1>
+          <span class="eyebrow">
+            <span data-lang="en">Business systems for modern growth</span>
+            <span data-lang="zh">面向现代企业增长的业务系统</span>
+          </span>
+
+          <h1>
+            <span data-lang="en">Enterprise Transformation, AI Automation, and Operational Systems</span>
+            <span data-lang="zh">企业转型、AI自动化与业务运营系统搭建</span>
+          </h1>
+
           <p class="hero-sub">
-            Helping organizations navigate digital transformation, operational complexity,
-            and AI-mediated decision environments through clearer structure, stronger judgment,
-            and more stable governance.
+            <span data-lang="en">
+              BB369 Tech helps organizations build clearer workflows, stronger lead systems, bilingual service processes,
+              CRM operations, appointment workflows, and AI-supported automation for modern business growth.
+            </span>
+            <span data-lang="zh">
+              BB369 Tech 为企业提供更清晰的业务流程、获客系统、中英双语服务流程、CRM客户管理、预约工作流与 AI 自动化支持，帮助现代企业完成更稳定的增长与转型。
+            </span>
           </p>
 
           <ul class="hero-tags">
-            <li>Complex Systems</li>
-            <li>AI Governance</li>
-            <li>Decision Architecture</li>
-            <li>Human Judgment</li>
             <li>Enterprise Transformation</li>
+            <li>AI Automation</li>
+            <li>CRM Workflow</li>
+            <li>Bilingual Service</li>
+            <li>Complex Systems</li>
+            <li>Human Judgment</li>
           </ul>
 
           <div class="cta-row">
-            <a class="btn primary" href="#assessment">Start Enterprise Assessment</a>
-            <a class="btn secondary" href="#contact">Contact Us</a>
+            <a class="btn primary" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">
+              <span data-lang="en">Book a Consultation</span>
+              <span data-lang="zh">预约咨询</span>
+            </a>
+            <a class="btn secondary" href="#assessment">
+              <span data-lang="en">Start Assessment</span>
+              <span data-lang="zh">开始评估</span>
+            </a>
+            <a class="btn soft" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener">
+              <span data-lang="en">Request a Demo</span>
+              <span data-lang="zh">查看系统演示</span>
+            </a>
           </div>
         </div>
 
@@ -522,65 +638,104 @@
 
       <div class="hero-side">
         <div class="mini-panel">
-          <h3>What this work is about</h3>
+          <h3>
+            <span data-lang="en">What we help improve</span>
+            <span data-lang="zh">我们帮助改善什么</span>
+          </h3>
           <p>
-            This platform helps organizations clarify decision structures, improve digital readiness,
-            and prepare for more automated and AI-supported operations.
+            <span data-lang="en">Lead capture, inquiry handling, CRM structure, appointment flow, internal process clarity, and AI-supported operations.</span>
+            <span data-lang="zh">获客流程、咨询接待、CRM结构、预约流程、内部运营清晰度，以及 AI 支持的业务自动化。</span>
           </p>
         </div>
 
         <div class="mini-panel">
-          <h3>Applied focus</h3>
+          <h3>
+            <span data-lang="en">Applied business focus</span>
+            <span data-lang="zh">实际业务聚焦</span>
+          </h3>
           <p>
-            Enterprise decision structure, digital transformation readiness, operational clarity,
-            and governance preparation for automation.
+            <span data-lang="en">Business system setup, automation workflows, bilingual client support, and operational design for growing organizations.</span>
+            <span data-lang="zh">面向成长型企业的业务系统搭建、自动化流程、中英双语客户支持与运营结构设计。</span>
           </p>
         </div>
 
         <div class="mini-panel">
-          <h3>Research basis</h3>
+          <h3>
+            <span data-lang="en">Research foundation</span>
+            <span data-lang="zh">研究基础</span>
+          </h3>
           <p>
-            This work is informed by independent research in complex systems, AI governance,
-            decision architecture, and the structural role of human judgment.
+            <span data-lang="en">This work is informed by independent research in enterprise transformation, AI governance, decision architecture, and complex organizational systems.</span>
+            <span data-lang="zh">本网站服务建立在企业转型、AI治理、决策架构与复杂组织系统的独立研究基础之上。</span>
           </p>
         </div>
       </div>
     </div>
   </header>
 
-  <section id="challenges">
+  <section id="solutions">
     <div class="container">
       <div class="section-head">
-        <h2>Enterprise Challenges</h2>
+        <h2>
+          <span data-lang="en">Solutions</span>
+          <span data-lang="zh">解决方案</span>
+        </h2>
         <p>
-          Many organizations do not struggle because they lack software. They struggle because
-          decision responsibility, workflow clarity, and operational governance remain structurally unclear.
+          <span data-lang="en">Business-ready solutions that help organizations move from scattered manual work to clearer systems, stronger workflows, and more scalable operations.</span>
+          <span data-lang="zh">帮助企业从分散、手动的工作方式，升级为更清晰的系统、更稳定的流程与更易扩展的运营结构。</span>
         </p>
       </div>
 
       <div class="grid-3">
-        <div class="card">
-          <h3>Unclear decision responsibility</h3>
+        <div class="card solution-card">
+          <div class="label">Solution 01</div>
+          <h3>
+            <span data-lang="en">AI Lead Generation System</span>
+            <span data-lang="zh">AI获客系统</span>
+          </h3>
           <p>
-            Important decisions are made across teams, yet final ownership is often not clearly defined,
-            creating delay, confusion, and avoidable execution risk.
+            <span data-lang="en">Turn a website into a lead capture and qualification system instead of a static company page.</span>
+            <span data-lang="zh">把企业官网从展示页面升级为可持续获客与线索筛选的业务入口。</span>
           </p>
+          <ul>
+            <li><span data-lang="en">Lead forms and routing</span><span data-lang="zh">线索表单与自动分流</span></li>
+            <li><span data-lang="en">AI inquiry handling</span><span data-lang="zh">AI咨询接待</span></li>
+            <li><span data-lang="en">Lead qualification workflow</span><span data-lang="zh">潜在客户筛选流程</span></li>
+          </ul>
         </div>
 
-        <div class="card">
-          <h3>Fragmented digital workflows</h3>
+        <div class="card solution-card">
+          <div class="label">Solution 02</div>
+          <h3>
+            <span data-lang="en">CRM & Follow-up Operations</span>
+            <span data-lang="zh">CRM客户管理与跟进系统</span>
+          </h3>
           <p>
-            Organizations add tools and platforms, but internal processes remain disconnected,
-            making operations harder to manage at scale.
+            <span data-lang="en">Build a cleaner structure for client records, follow-up actions, sales visibility, and team coordination.</span>
+            <span data-lang="zh">搭建更清晰的客户信息、跟进动作、销售状态与团队协同管理结构。</span>
           </p>
+          <ul>
+            <li><span data-lang="en">CRM setup logic</span><span data-lang="zh">CRM配置逻辑</span></li>
+            <li><span data-lang="en">Pipeline stages</span><span data-lang="zh">客户阶段设计</span></li>
+            <li><span data-lang="en">Follow-up reminders</span><span data-lang="zh">自动跟进提醒</span></li>
+          </ul>
         </div>
 
-        <div class="card">
-          <h3>Automation before structure</h3>
+        <div class="card solution-card">
+          <div class="label">Solution 03</div>
+          <h3>
+            <span data-lang="en">Booking & Service Workflow</span>
+            <span data-lang="zh">预约与服务交付流程</span>
+          </h3>
           <p>
-            Companies begin automating tasks before redesigning how decisions, approvals, and
-            responsibilities should actually flow.
+            <span data-lang="en">Reduce manual scheduling friction with appointment flows, service intake steps, and response automation.</span>
+            <span data-lang="zh">通过自动预约、服务需求收集与回复流程，减少人工沟通和安排成本。</span>
           </p>
+          <ul>
+            <li><span data-lang="en">Consultation booking</span><span data-lang="zh">咨询预约</span></li>
+            <li><span data-lang="en">Client intake forms</span><span data-lang="zh">客户需求收集</span></li>
+            <li><span data-lang="en">Auto-confirmation flow</span><span data-lang="zh">自动确认流程</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -589,53 +744,65 @@
   <section id="services">
     <div class="container">
       <div class="section-head">
-        <h2>Services</h2>
+        <h2>
+          <span data-lang="en">Services</span>
+          <span data-lang="zh">服务内容</span>
+        </h2>
         <p>
-          Advisory services designed to help organizations improve decision clarity,
-          structural readiness, and governance capacity as they grow more digital.
+          <span data-lang="en">Practical services for companies that want clearer systems, stronger operations, and better automation readiness.</span>
+          <span data-lang="zh">面向希望建立更清晰系统、更稳定运营与更好自动化基础的企业提供的实际服务。</span>
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card service-card">
           <div class="label">Service 01</div>
-          <h3>Digitalization Readiness</h3>
+          <h3>
+            <span data-lang="en">Enterprise Transformation Support</span>
+            <span data-lang="zh">企业转型支持</span>
+          </h3>
           <p>
-            Assess whether your organization has the structural clarity needed before scaling systems,
-            tools, and cross-functional digital processes.
+            <span data-lang="en">Assess structure, identify friction points, and redesign operational clarity for growing businesses.</span>
+            <span data-lang="zh">评估企业结构，找出关键阻碍点，并为成长型业务重建更清晰的运营结构。</span>
           </p>
           <ul>
-            <li>Workflow clarity review</li>
-            <li>Operational structure observations</li>
-            <li>Digital readiness assessment</li>
+            <li><span data-lang="en">Operational review</span><span data-lang="zh">运营现状评估</span></li>
+            <li><span data-lang="en">Workflow redesign</span><span data-lang="zh">流程重构</span></li>
+            <li><span data-lang="en">Growth-ready systems planning</span><span data-lang="zh">增长型系统规划</span></li>
           </ul>
         </div>
 
         <div class="card service-card">
           <div class="label">Service 02</div>
-          <h3>Decision Architecture Design</h3>
+          <h3>
+            <span data-lang="en">AI Automation Setup</span>
+            <span data-lang="zh">AI自动化搭建</span>
+          </h3>
           <p>
-            Redesign decision flows, approval layers, and responsibility structure across complex
-            operational environments.
+            <span data-lang="en">Design workflows that reduce manual repetition and improve customer response speed and operational consistency.</span>
+            <span data-lang="zh">搭建减少重复人工工作、提升客户响应速度和业务一致性的自动化流程。</span>
           </p>
           <ul>
-            <li>Decision ownership mapping</li>
-            <li>Approval flow redesign</li>
-            <li>Human judgment checkpoints</li>
+            <li><span data-lang="en">Inquiry automation</span><span data-lang="zh">咨询自动化</span></li>
+            <li><span data-lang="en">Email and response flow</span><span data-lang="zh">邮件与回复流程</span></li>
+            <li><span data-lang="en">Task routing</span><span data-lang="zh">任务分发流程</span></li>
           </ul>
         </div>
 
         <div class="card service-card">
           <div class="label">Service 03</div>
-          <h3>AI Governance Advisory</h3>
+          <h3>
+            <span data-lang="en">Decision Structure & Governance Advisory</span>
+            <span data-lang="zh">决策结构与治理咨询</span>
+          </h3>
           <p>
-            Prepare organizations for automation and AI-supported operations with more stable
-            accountability and clearer governance structure.
+            <span data-lang="en">For organizations that need stronger ownership, accountability, and decision clarity as systems become more digital.</span>
+            <span data-lang="zh">帮助在数字化过程中需要更清晰责任划分、问责结构与决策逻辑的企业建立稳定框架。</span>
           </p>
           <ul>
-            <li>Automation readiness review</li>
-            <li>Governance gap identification</li>
-            <li>Oversight structure planning</li>
+            <li><span data-lang="en">Decision checkpoints</span><span data-lang="zh">关键判断节点</span></li>
+            <li><span data-lang="en">Approval flow planning</span><span data-lang="zh">审批流程设计</span></li>
+            <li><span data-lang="en">Oversight structure</span><span data-lang="zh">监督结构规划</span></li>
           </ul>
         </div>
       </div>
@@ -648,8 +815,62 @@
           style="max-width:850px;width:100%;height:auto;"
         >
         <p style="font-size:14px;color:#777;margin-top:10px;">
-          Enterprise AI Governance Advisory Framework
+          <span data-lang="en">Enterprise AI Governance Advisory Framework</span>
+          <span data-lang="zh">企业 AI 治理咨询框架</span>
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="automation">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">AI Automation & Agent Systems</span>
+          <span data-lang="zh">AI自动化与 Agent 系统</span>
+        </h2>
+        <p>
+          <span data-lang="en">A productized layer for businesses that want practical automation, not just strategy language.</span>
+          <span data-lang="zh">为希望真正落地自动化而不只是停留在概念层的企业提供产品化系统模块。</span>
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card automation-card">
+          <div class="label">Agent Module 01</div>
+          <h3><span data-lang="en">Lead Capture Agent</span><span data-lang="zh">线索收集 Agent</span></h3>
+          <p><span data-lang="en">Capture and route inquiries from website visitors into a structured lead flow.</span><span data-lang="zh">将网站访问者的咨询自动转为可跟进的业务线索。</span></p>
+        </div>
+        <div class="card automation-card">
+          <div class="label">Agent Module 02</div>
+          <h3><span data-lang="en">Inquiry Response Agent</span><span data-lang="zh">咨询回复 Agent</span></h3>
+          <p><span data-lang="en">Respond to common service inquiries faster using guided automation and AI support.</span><span data-lang="zh">通过 AI 与自动化流程更快回复常见客户咨询。</span></p>
+        </div>
+        <div class="card automation-card">
+          <div class="label">Agent Module 03</div>
+          <h3><span data-lang="en">Booking Agent</span><span data-lang="zh">预约 Agent</span></h3>
+          <p><span data-lang="en">Route prospects to booking steps, consultation forms, and service intake workflows.</span><span data-lang="zh">把潜在客户自动引导到预约、表单与服务需求收集流程。</span></p>
+        </div>
+        <div class="card automation-card">
+          <div class="label">Agent Module 04</div>
+          <h3><span data-lang="en">Knowledge Support Agent</span><span data-lang="zh">知识支持 Agent</span></h3>
+          <p><span data-lang="en">Use structured knowledge for support, onboarding, internal references, and standard responses.</span><span data-lang="zh">利用结构化知识内容支持客服、内部培训、常见问题与标准回复。</span></p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <h3>
+          <span data-lang="en">What can be automated</span>
+          <span data-lang="zh">可自动化的业务场景</span>
+        </h3>
+        <div class="badge-row">
+          <span class="badge"><span data-lang="en">Website inquiries</span><span data-lang="zh">官网咨询</span></span>
+          <span class="badge"><span data-lang="en">Lead qualification</span><span data-lang="zh">线索筛选</span></span>
+          <span class="badge"><span data-lang="en">CRM updates</span><span data-lang="zh">CRM同步</span></span>
+          <span class="badge"><span data-lang="en">Appointment booking</span><span data-lang="zh">预约安排</span></span>
+          <span class="badge"><span data-lang="en">Email responses</span><span data-lang="zh">邮件回复</span></span>
+          <span class="badge"><span data-lang="en">Bilingual support</span><span data-lang="zh">双语支持</span></span>
+        </div>
       </div>
     </div>
   </section>
@@ -657,10 +878,13 @@
   <section id="assessment">
     <div class="container">
       <div class="section-head">
-        <h2>Enterprise Decision Structure Assessment</h2>
+        <h2>
+          <span data-lang="en">Business Automation Readiness Check</span>
+          <span data-lang="zh">业务自动化成熟度评估</span>
+        </h2>
         <p>
-          A short assessment for organizations evaluating their decision clarity,
-          digital readiness, and structural preparedness for automation.
+          <span data-lang="en">A practical assessment for businesses evaluating lead systems, response speed, workflow clarity, and automation readiness.</span>
+          <span data-lang="zh">用于评估企业获客系统、响应速度、流程清晰度与自动化准备程度的实用问卷。</span>
         </p>
       </div>
 
@@ -668,28 +892,29 @@
         <div class="card">
           <form class="diag-form" id="diagnosticForm">
             <div class="field">
-              <label for="company">Company Name (optional)</label>
-              <input id="company" name="company" type="text" placeholder="Company name" />
+              <label for="company"><span data-lang="en">Company Name (optional)</span><span data-lang="zh">公司名称（可选）</span></label>
+              <input id="company" name="company" type="text" placeholder="Company name / 公司名称" />
             </div>
 
             <div class="field">
-              <label for="industry">Industry</label>
+              <label for="industry"><span data-lang="en">Industry</span><span data-lang="zh">所属行业</span></label>
               <select id="industry" name="industry">
-                <option value="">Select industry</option>
-                <option>Manufacturing</option>
-                <option>Technology / Software</option>
-                <option>Retail / Commerce</option>
-                <option>Professional Services</option>
-                <option>Finance</option>
-                <option>Healthcare</option>
-                <option>Other</option>
+                <option value="">Select / 请选择</option>
+                <option>Manufacturing / 制造业</option>
+                <option>Technology / Software / 科技软件</option>
+                <option>Retail / Commerce / 零售电商</option>
+                <option>Professional Services / 专业服务</option>
+                <option>Finance / 金融</option>
+                <option>Healthcare / 医疗健康</option>
+                <option>Education / 培训教育</option>
+                <option>Other / 其他</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="size">Company Size</label>
+              <label for="size"><span data-lang="en">Company Size</span><span data-lang="zh">公司规模</span></label>
               <select id="size" name="size">
-                <option value="">Select size</option>
+                <option value="">Select / 请选择</option>
                 <option>1–20 employees</option>
                 <option>20–100 employees</option>
                 <option>100–500 employees</option>
@@ -698,128 +923,306 @@
             </div>
 
             <div class="field">
-              <label for="stage">How is your business currently managed?</label>
-              <select id="stage" name="stage">
-                <option value="">Select one</option>
-                <option value="5">Mostly manual communication and records</option>
-                <option value="10">Some management software is used</option>
-                <option value="18">Some workflows are automated</option>
-                <option value="25">Automation systems are broadly involved in operations</option>
+              <label for="leadFlow"><span data-lang="en">How are new leads currently handled?</span><span data-lang="zh">目前新的客户线索如何处理？</span></label>
+              <select id="leadFlow" name="leadFlow">
+                <option value="">Select / 请选择</option>
+                <option value="5">Mostly manual communication / 主要靠人工沟通</option>
+                <option value="10">Some forms or shared tools / 有部分表单或共享工具</option>
+                <option value="18">Structured lead process exists / 已有相对清晰流程</option>
+                <option value="25">Automated capture and routing / 已自动收集与分流</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="authority">Is final decision responsibility clearly defined?</label>
-              <select id="authority" name="authority">
-                <option value="">Select one</option>
-                <option value="12">Clearly defined</option>
-                <option value="6">Partially defined</option>
-                <option value="0">Not clearly defined</option>
+              <label for="crm"><span data-lang="en">Do you use a CRM or client tracking system?</span><span data-lang="zh">是否使用 CRM 或客户跟踪系统？</span></label>
+              <select id="crm" name="crm">
+                <option value="">Select / 请选择</option>
+                <option value="0">No / 没有</option>
+                <option value="8">Partially / 部分使用</option>
+                <option value="15">Yes, but inconsistent / 有，但不稳定</option>
+                <option value="20">Yes, clearly managed / 有，且管理清晰</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="approval">How many approval layers are typically required?</label>
-              <select id="approval" name="approval">
-                <option value="">Select one</option>
-                <option value="13">1 layer</option>
-                <option value="10">2–3 layers</option>
-                <option value="5">4–5 layers</option>
-                <option value="0">More than 5 layers</option>
+              <label for="booking"><span data-lang="en">How are consultations or appointments managed?</span><span data-lang="zh">咨询或预约流程如何管理？</span></label>
+              <select id="booking" name="booking">
+                <option value="">Select / 请选择</option>
+                <option value="0">Manual messages only / 仅靠人工消息沟通</option>
+                <option value="8">Basic calendar use / 基本日历工具</option>
+                <option value="15">Booking tool exists / 已有预约工具</option>
+                <option value="20">Integrated with workflow / 已与流程系统集成</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="trace">Can responsibility be traced when decisions fail?</label>
-              <select id="trace" name="trace">
-                <option value="">Select one</option>
-                <option value="13">Yes</option>
-                <option value="6">Partially</option>
-                <option value="0">Difficult to trace</option>
+              <label for="response"><span data-lang="en">How quickly can your business respond to inquiries?</span><span data-lang="zh">企业通常多久能回复客户咨询？</span></label>
+              <select id="response" name="response">
+                <option value="">Select / 请选择</option>
+                <option value="0">Often delayed / 经常延迟</option>
+                <option value="8">Within one business day / 一个工作日内</option>
+                <option value="15">Within a few hours / 数小时内</option>
+                <option value="20">Near real-time / 接近实时</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="systems">Do systems or software support operational decisions?</label>
-              <select id="systems" name="systems">
-                <option value="">Select one</option>
-                <option value="5">Rarely</option>
-                <option value="12">Partially</option>
-                <option value="20">Widely used</option>
+              <label for="bilingual"><span data-lang="en">Do you need bilingual English-Chinese service support?</span><span data-lang="zh">是否需要中英双语服务支持？</span></label>
+              <select id="bilingual" name="bilingual">
+                <option value="">Select / 请选择</option>
+                <option value="5">Not needed / 暂不需要</option>
+                <option value="10">Maybe / 可能需要</option>
+                <option value="15">Yes / 需要</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="oversight">Before automated actions are executed, is there a human review step?</label>
-              <select id="oversight" name="oversight">
-                <option value="">Select one</option>
-                <option value="25">Always</option>
-                <option value="15">Sometimes</option>
-                <option value="5">Rarely</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="delay">Do decision delays frequently slow down operations?</label>
-              <select id="delay" name="delay">
-                <option value="">Select one</option>
-                <option value="12">Rarely</option>
-                <option value="6">Sometimes</option>
-                <option value="0">Frequently</option>
+              <label for="automation"><span data-lang="en">Are repetitive tasks already automated?</span><span data-lang="zh">重复性任务是否已经自动化？</span></label>
+              <select id="automation" name="automation">
+                <option value="">Select / 请选择</option>
+                <option value="0">No / 没有</option>
+                <option value="8">Some tasks / 部分任务</option>
+                <option value="15">Several workflows / 多个流程</option>
+                <option value="20">Broadly automated / 已广泛自动化</option>
               </select>
             </div>
 
             <div class="cta-row">
-              <button class="btn primary" type="submit">Generate Assessment</button>
+              <button class="btn primary" type="submit">
+                <span data-lang="en">Generate Assessment</span>
+                <span data-lang="zh">生成评估结果</span>
+              </button>
             </div>
 
             <p class="note">
-              This assessment does not collect confidential business data.
-              It is intended only as a structural readiness review.
+              <span data-lang="en">This assessment is for business readiness review only and should not include confidential data.</span>
+              <span data-lang="zh">此评估仅用于业务准备度判断，请勿填写机密信息。</span>
             </p>
           </form>
         </div>
 
         <div class="card result-box">
           <div>
-            <span class="eyebrow">Assessment Result</span>
+            <span class="eyebrow"><span data-lang="en">Assessment Result</span><span data-lang="zh">评估结果</span></span>
             <div class="score" id="scoreValue">--</div>
-            <div class="muted" id="scoreLabel">Complete the form to generate a score.</div>
+            <div class="muted" id="scoreLabel">
+              <span data-lang="en">Complete the form to generate a score.</span>
+              <span data-lang="zh">填写表单后生成评分结果。</span>
+            </div>
           </div>
 
           <div class="report">
-            <div><strong>Readiness Level:</strong> <span id="readiness">—</span></div>
-            <div><strong>Key Structural Gap:</strong> <span id="gap">—</span></div>
-            <div><strong>Recommended Next Step:</strong> <span id="nextStep">—</span></div>
-            <div><strong>Advisory Note:</strong> <span id="advisoryNote">—</span></div>
+            <div><strong><span data-lang="en">Readiness Level:</span><span data-lang="zh">成熟度等级：</span></strong> <span id="readiness">—</span></div>
+            <div><strong><span data-lang="en">Key Gap:</span><span data-lang="zh">关键缺口：</span></strong> <span id="gap">—</span></div>
+            <div><strong><span data-lang="en">Recommended Next Step:</span><span data-lang="zh">建议下一步：</span></strong> <span id="nextStep">—</span></div>
+            <div><strong><span data-lang="en">Suggested Service Focus:</span><span data-lang="zh">推荐服务方向：</span></strong> <span id="advisoryNote">—</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="framework">
+  <section id="bilingual">
     <div class="container">
-      <div class="card" style="padding:40px">
-        <h2>Decision Architecture as a Core Driver of Enterprise Transformation</h2>
-
-        <p style="font-size:18px;color:#444;max-width:800px;">
-          Decision architecture drives enterprise transformation.
-          It translates organizational structure into executable decision infrastructure,
-          integrating AI-supported analysis with governance and accountability to create
-          resilient systems capable of sustainable growth.
+      <div class="card" style="padding:40px;">
+        <h2>
+          <span data-lang="en">Bilingual Service Support</span>
+          <span data-lang="zh">中英双语服务支持</span>
+        </h2>
+        <p style="font-size:18px;color:#444;max-width:860px;">
+          <span data-lang="en">
+            We provide English and Chinese communication support for enterprise consulting, system setup,
+            automation projects, and cross-border business collaboration.
+          </span>
+          <span data-lang="zh">
+            我们提供中英文双语沟通与项目支持，适用于企业咨询、系统搭建、自动化项目以及跨境业务协作。
+          </span>
         </p>
 
-        <div style="margin-top:40px;text-align:center;">
-          <img
-            src="images/decision-architecture-model.png"
-            alt="Decision Architecture Model linking Human Judgment AI Systems and Execution"
-            loading="lazy"
-            style="max-width:900px;width:100%;height:auto;"
-          >
-          <p style="font-size:14px;color:#777;margin-top:10px;">
-            Decision Architecture Model
+        <div class="grid-3" style="margin-top:24px;">
+          <div class="card" style="background:#fcfdff;">
+            <h3><span data-lang="en">Chinese-speaking service support</span><span data-lang="zh">中文客户支持</span></h3>
+            <p><span data-lang="en">Suitable for businesses, founders, and teams that prefer communication in Chinese.</span><span data-lang="zh">适合希望使用中文沟通的企业、创始人和团队。</span></p>
+          </div>
+          <div class="card" style="background:#fcfdff;">
+            <h3><span data-lang="en">English-facing business delivery</span><span data-lang="zh">英文业务交付</span></h3>
+            <p><span data-lang="en">Suitable for websites, client-facing workflows, and cross-border communication.</span><span data-lang="zh">适合官网、对外服务流程与跨境业务沟通使用。</span></p>
+          </div>
+          <div class="card" style="background:#fcfdff;">
+            <h3><span data-lang="en">Bilingual workflow design</span><span data-lang="zh">双语业务流程设计</span></h3>
+            <p><span data-lang="en">Suitable for businesses serving both English-speaking and Chinese-speaking audiences.</span><span data-lang="zh">适合同时服务英文与中文客户群体的企业。</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who-we-help">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">Who We Help</span>
+          <span data-lang="zh">服务对象</span>
+        </h2>
+        <p>
+          <span data-lang="en">Designed for organizations that want practical system improvement rather than abstract digital language.</span>
+          <span data-lang="zh">适合真正希望改善业务系统，而不是只听抽象数字化概念的企业与团队。</span>
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card"><h3><span data-lang="en">Small and Medium Businesses</span><span data-lang="zh">中小企业</span></h3><p><span data-lang="en">Companies that want clearer systems without building a large internal tech team.</span><span data-lang="zh">希望提升系统效率、但暂时没有大型技术团队的企业。</span></p></div>
+        <div class="card"><h3><span data-lang="en">Professional Service Firms</span><span data-lang="zh">专业服务机构</span></h3><p><span data-lang="en">Consulting, advisory, coaching, legal, and service-oriented businesses.</span><span data-lang="zh">包括顾问、咨询、教练、法律及其他服务型业务。</span></p></div>
+        <div class="card"><h3><span data-lang="en">Cross-border Businesses</span><span data-lang="zh">跨境业务企业</span></h3><p><span data-lang="en">Organizations that need bilingual support and smoother client workflows.</span><span data-lang="zh">需要双语支持与更顺畅客户流程的跨境业务团队。</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">How We Work</span>
+          <span data-lang="zh">合作流程</span>
+        </h2>
+        <p>
+          <span data-lang="en">A clear structure from first conversation to implementation.</span>
+          <span data-lang="zh">从首次沟通到实施上线，保持清晰的合作结构。</span>
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card"><div class="label">Step 01</div><h3><span data-lang="en">Discovery</span><span data-lang="zh">需求沟通</span></h3><p><span data-lang="en">Clarify business goals, current friction, and service priorities.</span><span data-lang="zh">明确业务目标、当前阻碍与优先事项。</span></p></div>
+        <div class="card"><div class="label">Step 02</div><h3><span data-lang="en">Assessment</span><span data-lang="zh">现状评估</span></h3><p><span data-lang="en">Review workflow structure, tools, client flow, and automation opportunities.</span><span data-lang="zh">评估流程结构、现有工具、客户路径与自动化机会。</span></p></div>
+        <div class="card"><div class="label">Step 03</div><h3><span data-lang="en">Solution Design</span><span data-lang="zh">方案设计</span></h3><p><span data-lang="en">Design a practical system roadmap based on actual business operations.</span><span data-lang="zh">根据真实业务情况设计可执行的系统方案。</span></p></div>
+        <div class="card"><div class="label">Step 04</div><h3><span data-lang="en">Implementation & Optimization</span><span data-lang="zh">实施与优化</span></h3><p><span data-lang="en">Launch the workflow, improve operations, and refine key processes over time.</span><span data-lang="zh">完成系统上线，并持续优化核心业务流程。</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="crm-module">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">CRM & Client Management</span>
+          <span data-lang="zh">客户管理与跟进系统</span>
+        </h2>
+        <p>
+          <span data-lang="en">We help businesses organize leads, manage client information, and improve follow-up workflows with a clearer operating structure.</span>
+          <span data-lang="zh">帮助企业整理客户线索、管理客户信息，并通过更清晰的运营结构优化后续跟进流程。</span>
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">CRM 01</div>
+          <h3><span data-lang="en">Lead Capture & Organization</span><span data-lang="zh">客户线索收集与整理</span></h3>
+          <p><span data-lang="en">Create a cleaner path for incoming leads from website forms, booking pages, and direct inquiries.</span><span data-lang="zh">为来自网站表单、预约页面与直接咨询的客户线索建立更清晰的进入路径。</span></p>
+        </div>
+        <div class="card">
+          <div class="label">CRM 02</div>
+          <h3><span data-lang="en">Client Follow-up Tracking</span><span data-lang="zh">客户跟进记录</span></h3>
+          <p><span data-lang="en">Keep track of outreach, status, and next actions so opportunities are less likely to be missed.</span><span data-lang="zh">记录沟通进度、当前状态与下一步动作，减少潜在商机流失。</span></p>
+        </div>
+        <div class="card">
+          <div class="label">CRM 03</div>
+          <h3><span data-lang="en">Simple Workflow Visibility</span><span data-lang="zh">业务流程可视化</span></h3>
+          <p><span data-lang="en">Make customer handling and team coordination easier to understand and manage.</span><span data-lang="zh">让客户处理流程与团队协同更容易理解和管理。</span></p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <h3><span data-lang="en">Why this matters</span><span data-lang="zh">为什么这很重要</span></h3>
+        <p><span data-lang="en">A clearer client system helps businesses respond faster, improve service consistency, and reduce missed opportunities.</span><span data-lang="zh">更清晰的客户管理系统可以帮助企业更快响应客户、提升服务一致性，并减少商机流失。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="use-cases">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">Use Cases</span>
+          <span data-lang="zh">应用场景</span>
+        </h2>
+        <p>
+          <span data-lang="en">Examples of common business situations where structured digital workflows, AI tools, and clearer decision processes can improve efficiency.</span>
+          <span data-lang="zh">一些常见企业场景示例，展示如何通过数字化流程、AI工具和更清晰的决策结构提升效率。</span>
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">USE CASE 01</div>
+          <h3>
+            <span data-lang="en">AI Workflow for Small Businesses</span>
+            <span data-lang="zh">中小企业 AI 工作流程</span>
+          </h3>
+          <p>
+            <span data-lang="en">Many small businesses want to use AI but do not know where to start. A simple workflow using AI tools can help automate routine tasks such as replying to inquiries, organizing information, and generating basic content.</span>
+            <span data-lang="zh">很多中小企业希望使用AI，但不知道从哪里开始。通过简单的AI工作流程，可以自动处理客户回复、信息整理和基础内容生成等日常任务。</span>
           </p>
+        </div>
+
+        <div class="card">
+          <div class="label">USE CASE 02</div>
+          <h3>
+            <span data-lang="en">Customer Lead Management</span>
+            <span data-lang="zh">客户线索管理</span>
+          </h3>
+          <p>
+            <span data-lang="en">Customer inquiries are often scattered across emails, forms, and chat tools. A clearer lead management structure helps businesses track inquiries and respond more effectively.</span>
+            <span data-lang="zh">客户咨询往往分散在邮件、表单和聊天工具中。通过建立更清晰的客户线索管理结构，企业可以更有效地跟踪和回应潜在客户。</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="label">USE CASE 03</div>
+          <h3>
+            <span data-lang="en">Digital Workflow Improvement</span>
+            <span data-lang="zh">数字化流程优化</span>
+          </h3>
+          <p>
+            <span data-lang="en">Many organizations rely on manual processes that slow down operations. Introducing structured digital workflows can reduce repetitive work and improve coordination.</span>
+            <span data-lang="zh">许多企业仍依赖人工流程，导致效率低。通过引入结构化的数字化流程，可以减少重复工作并提升团队协同效率。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="deliverables">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">What You Receive</span>
+          <span data-lang="zh">可交付成果</span>
+        </h2>
+        <p>
+          <span data-lang="en">Depending on the project, deliverables can include system logic, process design, customer flow setup, and operational structure.</span>
+          <span data-lang="zh">根据项目内容，可交付成果通常包括系统逻辑、流程设计、客户路径搭建与运营结构优化。</span>
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card"><h3><span data-lang="en">System Blueprint</span><span data-lang="zh">系统蓝图</span></h3><p><span data-lang="en">A practical map of workflows, responsibilities, and operating logic.</span><span data-lang="zh">业务流程、职责分工与运行逻辑的系统蓝图。</span></p></div>
+        <div class="card"><h3><span data-lang="en">Automation Flow Setup</span><span data-lang="zh">自动化流程搭建</span></h3><p><span data-lang="en">Lead, booking, response, and support workflows designed for actual use.</span><span data-lang="zh">面向真实使用场景的获客、预约、回复与支持流程。</span></p></div>
+        <div class="card"><h3><span data-lang="en">Operational Recommendations</span><span data-lang="zh">运营优化建议</span></h3><p><span data-lang="en">Actionable next steps for improving business efficiency and service quality.</span><span data-lang="zh">提升业务效率与服务质量的实际下一步建议。</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats">
+    <div class="container">
+      <div class="card">
+        <h2>
+          <span data-lang="en">What this website is built to do</span>
+          <span data-lang="zh">这个网站的目标功能</span>
+        </h2>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-number">01</div><div class="stat-label"><span data-lang="en">Capture interest</span><span data-lang="zh">接住客户兴趣</span></div><p><span data-lang="en">Turn visitors into structured leads.</span><span data-lang="zh">把访问者转化为可管理线索。</span></p></div>
+          <div class="stat-card"><div class="stat-number">02</div><div class="stat-label"><span data-lang="en">Qualify needs</span><span data-lang="zh">判断客户需求</span></div><p><span data-lang="en">Use assessments and forms to identify service fit.</span><span data-lang="zh">通过表单和评估识别客户是否匹配。</span></p></div>
+          <div class="stat-card"><div class="stat-number">03</div><div class="stat-label"><span data-lang="en">Drive action</span><span data-lang="zh">推动转化动作</span></div><p><span data-lang="en">Move prospects into booking, proposal, or direct contact.</span><span data-lang="zh">把潜在客户推进到预约、方案申请或直接联系。</span></p></div>
         </div>
       </div>
     </div>
@@ -828,36 +1231,67 @@
   <section id="research">
     <div class="container">
       <div class="section-head">
-        <h2>Research Foundations</h2>
+        <h2>
+          <span data-lang="en">Research Foundations</span>
+          <span data-lang="zh">研究基础</span>
+        </h2>
         <p>
-          This work is grounded in independent research on complex systems, AI governance,
-          decision architecture, and the role of human judgment in increasingly mediated
-          organizational environments.
+          <span data-lang="en">This work is grounded in independent research on enterprise transformation, AI governance, decision architecture, human judgment, and complex systems.</span>
+          <span data-lang="zh">本网站服务建立在企业转型、AI治理、决策架构、人类判断与复杂系统的独立研究基础之上。</span>
         </p>
       </div>
 
       <div class="grid-2">
         <div class="card">
-          <h3>Research Direction</h3>
-          <p>
-            This advisory framework draws on research examining how organizations maintain
-            structural clarity as digital tools, automation workflows, and AI-supported systems
-            become more deeply embedded in operations.
-          </p>
-          <p>
-            The work focuses on how decision systems, governance structures, and human judgment
-            interact under conditions of increasing organizational complexity.
-          </p>
+          <h3><span data-lang="en">Research Direction</span><span data-lang="zh">研究方向</span></h3>
+          <p><span data-lang="en">A structural perspective on how organizations improve operational clarity as digital tools, AI systems, and automation become more deeply embedded in business processes.</span><span data-lang="zh">从结构视角研究当数字工具、AI系统与自动化流程越来越深入业务时，企业如何保持运营清晰度与稳定性。</span></p>
         </div>
-
         <div class="card">
-          <h3>Research Fields</h3>
-          <p>
-            Complex Systems · AI Governance · Decision Architecture · Human Judgment · Enterprise Transformation
-          </p>
-          <p>
-            Relevant publications and research outputs are available through public research channels.
-          </p>
+          <h3><span data-lang="en">Research Fields</span><span data-lang="zh">研究领域</span></h3>
+          <p>Complex Systems · AI Governance · Decision Architecture · Human Judgment · Enterprise Transformation</p>
+          <p><span data-lang="en">Public research outputs can be connected here later.</span><span data-lang="zh">后续可在此处接入公开研究成果与文章入口。</span></p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px; padding:40px;">
+        <h3><span data-lang="en">Decision Architecture Model</span><span data-lang="zh">决策架构模型</span></h3>
+        <p><span data-lang="en">Decision architecture translates organizational structure into executable decision infrastructure, integrating AI-supported analysis with governance and accountability.</span><span data-lang="zh">决策架构将组织结构转化为可执行的决策基础设施，并把 AI 分析能力与治理和责任结构结合起来。</span></p>
+        <div style="margin-top:28px;text-align:center;">
+          <img
+            src="images/decision-architecture-model.png"
+            alt="Decision Architecture Model linking Human Judgment AI Systems and Execution"
+            loading="lazy"
+            style="max-width:900px;width:100%;height:auto;"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">Frequently Asked Questions</span>
+          <span data-lang="zh">常见问题</span>
+        </h2>
+      </div>
+      <div class="card">
+        <div class="faq-item">
+          <h3><span data-lang="en">Do you provide bilingual support?</span><span data-lang="zh">是否提供中英双语支持？</span></h3>
+          <p><span data-lang="en">Yes. We support both English and Chinese communication for suitable projects.</span><span data-lang="zh">是的。对于合适的项目，我们支持中英文双语沟通。</span></p>
+        </div>
+        <div class="faq-item">
+          <h3><span data-lang="en">Do you build systems or only provide advice?</span><span data-lang="zh">你们是只提供咨询，还是会搭建系统？</span></h3>
+          <p><span data-lang="en">Both. Depending on scope, we can provide advisory structure, system design, and workflow setup.</span><span data-lang="zh">两者都可以。根据项目范围，我们既可提供咨询，也可参与系统设计与流程搭建。</span></p>
+        </div>
+        <div class="faq-item">
+          <h3><span data-lang="en">Can you help with CRM and booking workflows?</span><span data-lang="zh">可以协助 CRM 和预约流程吗？</span></h3>
+          <p><span data-lang="en">Yes. CRM logic, intake flow, booking path, and client follow-up are all within scope.</span><span data-lang="zh">可以。CRM逻辑、客户收集、预约路径与后续跟进都在可支持范围内。</span></p>
+        </div>
+        <div class="faq-item">
+          <h3><span data-lang="en">Is the assessment confidential?</span><span data-lang="zh">在线评估是否保密？</span></h3>
+          <p><span data-lang="en">The demo assessment on this page is for structural review only. Do not submit sensitive or confidential information.</span><span data-lang="zh">本页评估仅用于结构判断，请不要提交敏感或机密信息。</span></p>
         </div>
       </div>
     </div>
@@ -866,37 +1300,29 @@
   <section id="insights">
     <div class="container">
       <div class="section-head">
-        <h2>Insights</h2>
+        <h2>
+          <span data-lang="en">Insights</span>
+          <span data-lang="zh">内容观点</span>
+        </h2>
         <p>
-          Short observations on decision clarity, digital operations,
-          enterprise structure, and the organizational conditions that shape successful transformation.
+          <span data-lang="en">Short observations on enterprise systems, digital operations, and transformation readiness.</span>
+          <span data-lang="zh">关于企业系统、数字运营与转型准备度的简短观察。</span>
         </p>
       </div>
 
       <div class="card">
         <div class="insight-list">
           <div class="insight-item">
-            <h3>Why digital tools do not automatically solve operational confusion</h3>
-            <p>
-              Software can improve visibility, but it does not replace clear ownership,
-              decision boundaries, or organizational judgment.
-            </p>
+            <h3><span data-lang="en">Why tools alone do not solve operational confusion</span><span data-lang="zh">为什么工具本身不能解决运营混乱</span></h3>
+            <p><span data-lang="en">Software adds visibility, but it does not automatically create ownership, follow-up discipline, or service clarity.</span><span data-lang="zh">软件能提高可见性，但不会自动创造责任归属、跟进纪律和服务清晰度。</span></p>
           </div>
-
           <div class="insight-item">
-            <h3>What organizations often miss before automation</h3>
-            <p>
-              Automation works best when the underlying structure is already clear.
-              Otherwise, it scales inconsistency rather than discipline.
-            </p>
+            <h3><span data-lang="en">Automation works best after basic structure is clear</span><span data-lang="zh">自动化最适合建立在清晰结构之后</span></h3>
+            <p><span data-lang="en">When the underlying process is unclear, automation often scales inconsistency rather than efficiency.</span><span data-lang="zh">当底层流程不清晰时，自动化往往放大的不是效率，而是不一致性。</span></p>
           </div>
-
           <div class="insight-item">
-            <h3>Human judgment as a structural advantage</h3>
-            <p>
-              In complex systems, human judgment is not simply a manual step.
-              It often functions as the stabilizing constraint within uncertain environments.
-            </p>
+            <h3><span data-lang="en">Bilingual businesses need more than translation</span><span data-lang="zh">双语业务需要的不只是翻译</span></h3>
+            <p><span data-lang="en">They need workflow design, service logic, response consistency, and a clean operational bridge between audiences.</span><span data-lang="zh">双语业务真正需要的是流程设计、服务逻辑、回复一致性，以及连接不同客户群体的运营桥梁。</span></p>
           </div>
         </div>
       </div>
@@ -906,135 +1332,342 @@
   <section id="contact">
     <div class="container">
       <div class="section-head">
-        <h2>Contact</h2>
+        <h2>
+          <span data-lang="en">Contact</span>
+          <span data-lang="zh">联系咨询</span>
+        </h2>
         <p>
-          For advisory inquiries, enterprise assessments, or collaboration requests,
-          please get in touch.
+          <span data-lang="en">For business inquiries, system planning, or bilingual consulting support, please get in touch.</span>
+          <span data-lang="zh">如需企业咨询、系统规划或中英双语业务支持，欢迎联系。</span>
         </p>
       </div>
 
-      <div class="card contact-box">
-        <div><strong>Email:</strong> contact@bb369tech.com</div>
-        <div><strong>Website:</strong> https://ai.bb369tech.com</div>
+      <div class="contact-shell">
+        <div class="card">
+          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="ff1ff130-68b2-480f-a4be-3f6f8734936e">
+            <input type="hidden" name="subject" value="New Contact from BB369 Tech Website">
+            <input type="hidden" name="from_name" value="BB369 Tech Website">
+            <input type="checkbox" name="botcheck" style="display:none;">
 
-        <div class="contact-links">
-          <a href="mailto:contact@bb369tech.com">Email Us</a>
-          <a href="https://ai.bb369tech.com" target="_blank" rel="noopener">Company Website</a>
+            <div class="field">
+              <label for="contactName"><span data-lang="en">Name</span><span data-lang="zh">姓名</span></label>
+              <input id="contactName" name="name" type="text" placeholder="Your name / 您的姓名" required />
+            </div>
+            <div class="field">
+              <label for="companyName"><span data-lang="en">Company</span><span data-lang="zh">公司名称</span></label>
+              <input id="companyName" name="company" type="text" placeholder="Company / 公司" />
+            </div>
+            <div class="field">
+              <label for="contactEmail"><span data-lang="en">Email</span><span data-lang="zh">邮箱</span></label>
+              <input id="contactEmail" name="email" type="email" placeholder="contact@example.com" required />
+            </div>
+            <div class="field">
+              <label for="serviceInterest"><span data-lang="en">Service Interest</span><span data-lang="zh">感兴趣的服务</span></label>
+              <select id="serviceInterest" name="service_interest">
+                <option value="">Select / 请选择</option>
+                <option>Enterprise Transformation / 企业转型</option>
+                <option>AI Automation / AI自动化</option>
+                <option>CRM Workflow / CRM客户流程</option>
+                <option>Booking Workflow / 预约流程</option>
+                <option>Bilingual Support / 双语支持</option>
+                <option>Custom Project / 定制项目</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="preferredLanguage"><span data-lang="en">Preferred Language</span><span data-lang="zh">偏好语言</span></label>
+              <select id="preferredLanguage" name="preferred_language">
+                <option>English</option>
+                <option>中文</option>
+                <option>Bilingual / 双语</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="contactMessage"><span data-lang="en">Project Message</span><span data-lang="zh">项目需求</span></label>
+              <textarea id="contactMessage" name="message" placeholder="Tell us what you need / 请简单描述您的需求" required></textarea>
+            </div>
+            <div class="cta-row">
+              <button class="btn primary" type="submit">
+                <span data-lang="en">Submit Inquiry</span>
+                <span data-lang="zh">提交咨询</span>
+              </button>
+              <a class="btn secondary" href="mailto:contact@bb369tech.com">
+                <span data-lang="en">Email Us</span>
+                <span data-lang="zh">邮件联系</span>
+              </a>
+            </div>
+            <p class="note">
+              <span data-lang="en">Messages submitted here will be sent to contact@bb369tech.com.</span>
+              <span data-lang="zh">通过此表单提交的信息将发送到 contact@bb369tech.com。</span>
+            </p>
+          </form>
         </div>
 
-        <p class="note">
-          Live chat is available through the chat icon on this page.
-        </p>
+        <div class="card contact-box">
+          <div><strong><span data-lang="en">Email:</span><span data-lang="zh">邮箱：</span></strong> contact@bb369tech.com</div>
+          <div><strong><span data-lang="en">Website:</span><span data-lang="zh">网站：</span></strong> https://ai.bb369tech.com</div>
+          <div><strong><span data-lang="en">Service Support:</span><span data-lang="zh">服务支持：</span></strong> English / 中文 / Bilingual</div>
+
+          <div class="contact-links">
+            <a href="mailto:contact@bb369tech.com"><span data-lang="en">Email Us</span><span data-lang="zh">邮件联系</span></a>
+            <a href="https://ai.bb369tech.com" target="_blank" rel="noopener"><span data-lang="en">Company Website</span><span data-lang="zh">公司网站</span></a>
+            <a href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener"><span data-lang="en">Book a Demo</span><span data-lang="zh">预约演示</span></a>
+          </div>
+
+          <div class="inline-divider"></div>
+
+          <h3><span data-lang="en">Recommended integrations</span><span data-lang="zh">推荐接入工具</span></h3>
+          <ul class="deliverable-list">
+            <li><span data-lang="en">Cal.com for booking</span><span data-lang="zh">Cal.com 处理预约</span></li>
+            <li><span data-lang="en">Airtable for CRM (manual update for now)</span><span data-lang="zh">Airtable 作为 CRM（当前先手动更新）</span></li>
+            <li><span data-lang="en">Web3Forms for form delivery</span><span data-lang="zh">Web3Forms 处理表单投递</span></li>
+            <li><span data-lang="en">Tawk.to for live chat</span><span data-lang="zh">Tawk.to 在线聊天</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
+  <section id="final-cta">
+    <div class="container">
+      <div class="cta-shell">
+        <div class="card cta-box">
+          <h2><span data-lang="en">Ready to turn your website into a business system?</span><span data-lang="zh">准备把网站升级成业务系统了吗？</span></h2>
+          <p><span data-lang="en">Build a clearer lead flow, stronger client management process, and a more scalable automation structure.</span><span data-lang="zh">搭建更清晰的获客流程、更稳定的客户管理结构，以及更易扩展的自动化系统。</span></p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener"><span data-lang="en">Discuss Your Project</span><span data-lang="zh">沟通项目需求</span></a>
+            <a class="btn secondary" href="#assessment"><span data-lang="en">Run the Assessment</span><span data-lang="zh">先做在线评估</span></a>
+          </div>
+        </div>
+        <div class="card cta-box">
+          <h3><span data-lang="en">This site is prepared for</span><span data-lang="zh">本网站已为以下方向预留</span></h3>
+          <ul class="deliverable-list">
+            <li><span data-lang="en">Bilingual service structure</span><span data-lang="zh">双语服务结构</span></li>
+            <li><span data-lang="en">CRM integration</span><span data-lang="zh">CRM集成</span></li>
+            <li><span data-lang="en">Booking integration</span><span data-lang="zh">预约系统接入</span></li>
+            <li><span data-lang="en">Form automation</span><span data-lang="zh">表单自动化</span></li>
+            <li><span data-lang="en">Agent-based workflow expansion</span><span data-lang="zh">Agent 工作流扩展</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trust-module">
+    <div class="container">
+      <div class="section-head">
+        <h2>
+          <span data-lang="en">Research & Professional Perspective</span>
+          <span data-lang="zh">研究背景与专业视角</span>
+        </h2>
+        <p>
+          <span data-lang="en">Our work draws on interdisciplinary research in complex systems, decision architecture, and AI-mediated organizational processes.</span>
+          <span data-lang="zh">我们的工作结合复杂系统、决策架构以及AI参与的组织流程等跨学科研究视角。</span>
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">TRUST 01</div>
+          <h3><span data-lang="en">Complex Systems Thinking</span><span data-lang="zh">复杂系统思维</span></h3>
+          <p><span data-lang="en">Understanding organizations as evolving systems helps identify structural risks and decision bottlenecks.</span><span data-lang="zh">将组织视为持续演化的系统，有助于识别结构性风险与决策瓶颈。</span></p>
+        </div>
+
+        <div class="card">
+          <div class="label">TRUST 02</div>
+          <h3><span data-lang="en">AI Governance Perspective</span><span data-lang="zh">AI治理视角</span></h3>
+          <p><span data-lang="en">Focus on responsible integration of AI tools within business operations and decision processes.</span><span data-lang="zh">关注AI工具在企业运营与决策流程中的合理整合。</span></p>
+        </div>
+
+        <div class="card">
+          <div class="label">TRUST 03</div>
+          <h3><span data-lang="en">Human Judgment in Decision Systems</span><span data-lang="zh">人类判断在决策系统中的作用</span></h3>
+          <p><span data-lang="en">Even in automated environments, human judgment remains essential for stability and accountability.</span><span data-lang="zh">即使在高度自动化环境中，人类判断仍是保持稳定性与责任边界的重要因素。</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p>
+          <strong>BB369 Tech</strong><br />
+          <span data-lang="en">Enterprise Transformation, AI Automation, CRM Workflow, Bilingual Business Support.</span>
+          <span data-lang="zh">企业转型、AI自动化、CRM工作流与中英双语业务支持。</span>
+        </p>
+        <p>
+          <span data-lang="en">This website presents business service information, conceptual frameworks, and research-informed advisory content.</span>
+          <span data-lang="zh">本网站用于展示业务服务信息、概念框架与研究支持型咨询内容。</span>
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系咨询</span></a>
+        <a href="#bilingual"><span data-lang="en">Bilingual Service</span><span data-lang="zh">双语服务</span></a>
+        <a href="#automation"><span data-lang="en">Automation</span><span data-lang="zh">自动化系统</span></a>
+        <a href="#assessment"><span data-lang="en">Assessment</span><span data-lang="zh">在线评估</span></a>
+      </div>
+
+      <div class="footer-links">
+        <a href="#legal" data-legal-target="privacy"><span data-lang="en">Privacy Policy</span><span data-lang="zh">隐私政策</span></a>
+        <a href="#legal" data-legal-target="terms"><span data-lang="en">Terms of Service</span><span data-lang="zh">服务条款</span></a>
+        <a href="#legal" data-legal-target="cookie"><span data-lang="en">Cookie Notice</span><span data-lang="zh">Cookie 说明</span></a>
+        <a href="#legal" data-legal-target="disclaimer"><span data-lang="en">Service Disclaimer</span><span data-lang="zh">服务免责声明</span></a>
+      </div>
+    </div>
+
+    <div class="container legal-pages" id="legal">
+      <div class="legal-page" id="privacy">
+        <h3><span data-lang="en">Privacy Policy</span><span data-lang="zh">隐私政策</span></h3>
+        <p><span data-lang="en">We may collect business contact information submitted through forms, chat tools, or email for service communication, inquiry handling, and project follow-up.</span><span data-lang="zh">我们可能会收集通过表单、聊天工具或邮件提交的业务联系信息，用于沟通、咨询处理与项目跟进。</span></p>
+        <p><span data-lang="en">Do not submit confidential, medical, financial, or highly sensitive personal data through this website.</span><span data-lang="zh">请勿通过本网站提交机密、医疗、金融或高度敏感的个人数据。</span></p>
+      </div>
+
+      <div class="legal-page" id="terms">
+        <h3><span data-lang="en">Terms of Service</span><span data-lang="zh">服务条款</span></h3>
+        <p><span data-lang="en">This website provides business information and service descriptions. Project scope, timelines, fees, and deliverables are determined separately through direct agreement.</span><span data-lang="zh">本网站用于提供业务信息与服务说明。具体项目范围、时间、费用与交付内容以单独沟通和协议为准。</span></p>
+      </div>
+
+      <div class="legal-page" id="cookie">
+        <h3><span data-lang="en">Cookie Notice</span><span data-lang="zh">Cookie 说明</span></h3>
+        <p><span data-lang="en">This site may use third-party tools such as chat widgets, analytics, booking tools, or form services that rely on cookies or similar technologies.</span><span data-lang="zh">本网站可能使用聊天组件、分析工具、预约工具或表单服务等第三方功能，这些工具可能会使用 Cookie 或类似技术。</span></p>
+      </div>
+
+      <div class="legal-page" id="disclaimer">
+        <h3><span data-lang="en">Service Disclaimer</span><span data-lang="zh">服务免责声明</span></h3>
+        <p><span data-lang="en">The content on this website does not constitute legal, financial, tax, medical, or investment advice. All recommendations should be evaluated in the context of the client’s actual business situation.</span><span data-lang="zh">本网站内容不构成法律、金融、税务、医疗或投资建议。所有建议均应结合客户真实业务情况独立评估。</span></p>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:20px; font-size:14px;">
+      <p>© 2024 BB369 Tech — Research & Advisory</p>
+    </div>
+  </footer>
+
   <script>
+    const body = document.body;
+    const langEn = document.getElementById("langEn");
+    const langZh = document.getElementById("langZh");
     const form = document.getElementById("diagnosticForm");
+    const legalLinks = document.querySelectorAll("[data-legal-target]");
+    const legalPages = document.getElementById("legal");
+    const legalPageItems = document.querySelectorAll(".legal-page");
+
+    function setLanguage(lang) {
+      if (lang === "zh") {
+        body.classList.add("zh-mode");
+        langZh.classList.add("active");
+        langEn.classList.remove("active");
+        document.documentElement.lang = "zh";
+        localStorage.setItem("bb369_lang", "zh");
+      } else {
+        body.classList.remove("zh-mode");
+        langEn.classList.add("active");
+        langZh.classList.remove("active");
+        document.documentElement.lang = "en";
+        localStorage.setItem("bb369_lang", "en");
+      }
+    }
+
+    langEn.addEventListener("click", () => setLanguage("en"));
+    langZh.addEventListener("click", () => setLanguage("zh"));
+
+    const savedLang = localStorage.getItem("bb369_lang");
+    if (savedLang === "zh") setLanguage("zh");
 
     function readinessFromScore(score) {
-      if (score >= 80) return "Governance-ready organization";
-      if (score >= 60) return "Structured organization";
-      if (score >= 40) return "Developing structure";
-      return "Early operational stage";
+      if (score >= 85) return body.classList.contains("zh-mode") ? "自动化基础较强" : "Strong automation foundation";
+      if (score >= 65) return body.classList.contains("zh-mode") ? "业务系统较清晰" : "Structured business system";
+      if (score >= 45) return body.classList.contains("zh-mode") ? "正在建立流程" : "Developing workflow structure";
+      return body.classList.contains("zh-mode") ? "早期手动运营阶段" : "Early manual operations stage";
     }
 
     function gapFromAnswers(values) {
-      const authority = Number(values.authority || 0);
-      const trace = Number(values.trace || 0);
-      const approval = Number(values.approval || 0);
-      const oversight = Number(values.oversight || 0);
-      const stage = Number(values.stage || 0);
+      const crm = Number(values.crm || 0);
+      const booking = Number(values.booking || 0);
+      const response = Number(values.response || 0);
+      const automation = Number(values.automation || 0);
+      const leadFlow = Number(values.leadFlow || 0);
 
-      if (authority <= 6 || trace <= 6) {
-        return "Decision ownership and accountability are not yet clearly defined.";
+      if (leadFlow <= 10) {
+        return body.classList.contains("zh-mode") ? "客户线索收集与分流流程仍较弱。" : "Lead capture and routing structure is still weak.";
       }
-      if (approval <= 5) {
-        return "Approval layers appear too heavy for efficient execution.";
+      if (crm <= 8) {
+        return body.classList.contains("zh-mode") ? "客户记录与跟进体系不够清晰。" : "Client tracking and follow-up structure is unclear.";
       }
-      if (oversight <= 15) {
-        return "Automated or system-supported actions need clearer human review checkpoints.";
+      if (booking <= 8) {
+        return body.classList.contains("zh-mode") ? "预约流程仍较依赖人工安排。" : "Booking flow still relies too heavily on manual coordination.";
       }
-      if (stage <= 10) {
-        return "Operational structure appears earlier-stage and may require stronger digital foundations.";
+      if (response <= 8) {
+        return body.classList.contains("zh-mode") ? "客户响应速度可进一步提升。" : "Customer response speed can be improved.";
       }
-      return "The organization appears relatively structured, with room to refine execution clarity.";
+      if (automation <= 8) {
+        return body.classList.contains("zh-mode") ? "重复性工作尚未形成有效自动化。" : "Repetitive tasks are not yet well automated.";
+      }
+      return body.classList.contains("zh-mode") ? "整体结构较稳定，可进一步优化扩展。" : "Overall structure is fairly stable, with room for expansion and refinement.";
     }
 
     function nextStepFromScore(score) {
-      if (score >= 80) {
-        return "Refine governance design for advanced automation and AI-supported workflows.";
-      }
-      if (score >= 60) {
-        return "Clarify weak points in decision ownership and simplify approval structure.";
-      }
-      if (score >= 40) {
-        return "Strengthen decision structure before expanding digital systems or automation.";
-      }
-      return "Establish clear ownership and operational structure before broader transformation initiatives.";
+      if (score >= 85) return body.classList.contains("zh-mode") ? "建议进入更高级的自动化、CRM整合与双语流程优化。" : "Move into more advanced automation, CRM integration, and bilingual workflow optimization.";
+      if (score >= 65) return body.classList.contains("zh-mode") ? "建议先统一客户流程、预约逻辑与团队协作结构。" : "Unify client flow, booking logic, and internal coordination next.";
+      if (score >= 45) return body.classList.contains("zh-mode") ? "建议优先建立标准化获客、跟进与回复流程。" : "Prioritize standardized lead, follow-up, and response workflows first.";
+      return body.classList.contains("zh-mode") ? "建议先从基础表单、客户记录与咨询流程搭建开始。" : "Start with basic forms, client records, and inquiry flow setup.";
     }
 
     function advisoryNote(score) {
-      if (score >= 80) {
-        return "Suitable for advanced advisory on automation, oversight, and governance design.";
-      }
-      if (score >= 60) {
-        return "Suitable for targeted decision architecture improvement and operational redesign.";
-      }
-      if (score >= 40) {
-        return "Suitable for readiness-focused advisory before further transformation investment.";
-      }
-      return "Suitable for foundational structure work before digital expansion.";
+      if (score >= 85) return body.classList.contains("zh-mode") ? "适合：高级自动化系统、Agent工作流、跨系统整合。" : "Best fit: advanced automation systems, agent workflows, and integrated operations.";
+      if (score >= 65) return body.classList.contains("zh-mode") ? "适合：CRM优化、预约系统、客户流程升级。" : "Best fit: CRM optimization, booking systems, and client flow upgrades.";
+      if (score >= 45) return body.classList.contains("zh-mode") ? "适合：获客系统、回复流程、基础自动化搭建。" : "Best fit: lead systems, response workflows, and foundational automation setup.";
+      return body.classList.contains("zh-mode") ? "适合：基础业务系统梳理与转型起步支持。" : "Best fit: foundational business system structuring and early transformation support.";
     }
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const data = new FormData(form);
       const values = Object.fromEntries(data.entries());
 
       const score =
-        Number(values.authority || 0) +
-        Number(values.trace || 0) +
-        Number(values.approval || 0) +
-        Number(values.delay || 0) +
-        Number(values.stage || 0) +
-        Number(values.systems || 0) +
-        Number(values.oversight || 0);
+        Number(values.leadFlow || 0) +
+        Number(values.crm || 0) +
+        Number(values.booking || 0) +
+        Number(values.response || 0) +
+        Number(values.bilingual || 0) +
+        Number(values.automation || 0);
 
       document.getElementById("scoreValue").textContent = score + " / 100";
-      document.getElementById("scoreLabel").textContent = "Enterprise Decision Structure Score";
+      document.getElementById("scoreLabel").textContent = body.classList.contains("zh-mode")
+        ? "业务自动化成熟度评分"
+        : "Business Automation Readiness Score";
       document.getElementById("readiness").textContent = readinessFromScore(score);
       document.getElementById("gap").textContent = gapFromAnswers(values);
       document.getElementById("nextStep").textContent = nextStepFromScore(score);
       document.getElementById("advisoryNote").textContent = advisoryNote(score);
     });
+
+    legalLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        const target = this.getAttribute("data-legal-target");
+        legalPages.classList.add("active");
+        legalPageItems.forEach(page => page.classList.remove("active"));
+        const activePage = document.getElementById(target);
+        if (activePage) activePage.classList.add("active");
+      });
+    });
   </script>
 
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/69b1a883b7035c1c3716a28e/1jjevkgm2';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/69b1a883b7035c1c3716a28e/1jjevkgm2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
   </script>
   <!--End of Tawk.to Script-->
-
-  <footer style="margin-top:60px;padding:30px 20px;background:#f7f7f7;text-align:center;font-size:14px;color:#666;line-height:1.6;">
-    <p>
-      This website presents conceptual frameworks and research-informed insights.
-      It does not constitute legal, financial, or operational advice.
-    </p>
-
-    <p style="margin-top:10px;">
-      © 2024 BB369 Tech — Research & Advisory
-    </p>
-  </footer>
-
 </body>
 </html>
