@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: Enterprise AI Governance Framework
+message: "If you use this repository, please cite it as below."
+type: software
+
+authors:
+  - family-names: Tu
+    given-names: Xufen
+    orcid: https://orcid.org/0009-0007-5265-964X
+    affiliation: Independent Interdisciplinary Researcher
+
+repository-code: https://github.com/xufentu-creator/enterprise-ai-governance
+url: https://xufentu-creator.github.io/
+
+abstract: >
+  A research-informed framework examining enterprise AI governance,
+  decision architecture, and the role of human judgment as a structural
+  constraint in complex systems.
+
+keywords:
+  - Complex Systems
+  - AI Governance
+  - Decision Architecture
+  - Enterprise Transformation
+  - Human Judgment
+
+license: CC-BY-4.0
+date-released: 2026-03-14
