@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Case Studies | BB369 Tech</title>
+
+  <meta name="description" content="Selected enterprise application cases in digital transformation, decision architecture, and trust infrastructure.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Xufen Tu">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Case Studies, Enterprise Digital Transformation, Trust Infrastructure, Decision Architecture, AI Governance, BB369 Tech">
+
+  <meta property="og:title" content="Case Studies | BB369 Tech">
+  <meta property="og:description" content="Selected enterprise application cases in digital transformation, decision architecture, and trust infrastructure.">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://ai.bb369tech.com/case-studies.html">
+
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --bg-soft:#eef3f9;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#5f6a7d;
+      --line:#dce4ef;
+      --accent:#1f4fa3;
+      --accent-dark:#173c7d;
+      --accent-soft:#edf4ff;
+      --shadow:0 18px 44px rgba(18, 34, 68, 0.08);
+      --radius-xl:28px;
+      --radius-lg:20px;
+      --radius-md:14px;
+      --max:1120px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:"Helvetica Neue", Arial, sans-serif;
+      background:linear-gradient(180deg, #f8fbff 0%, #eef3f9 100%);
+      color:var(--text);
+      line-height:1.78;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      padding:24px 0 10px;
+    }
+
+    .topbar-inner{
+      display:flex;
+      justify-content:flex-end;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .mini-link{
+      display:inline-flex;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.78);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+      transition:all .2s ease;
+    }
+
+    .mini-link:hover{
+      background:#fff;
+      color:var(--accent);
+      border-color:#cfd9e7;
+    }
+
+    .hero{
+      padding:28px 0 18px;
+    }
+
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at top right, rgba(61,132,255,0.16), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(31,79,163,0.08), transparent 28%),
+        var(--card);
+      border:1px solid rgba(220,228,239,0.9);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      padding:54px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:18px;
+      padding:7px 14px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:0.02em;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:50px;
+      line-height:1.08;
+      letter-spacing:-0.03em;
+    }
+
+    .subtitle{
+      margin:0 0 18px;
+      color:#2b3650;
+      font-size:21px;
+    }
+
+    .intro{
+      margin:0;
+      max-width:760px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .button-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:12px 18px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      font-size:15px;
+      font-weight:600;
+      transition:all .2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+      box-shadow:0 8px 18px rgba(31,79,163,0.18);
+    }
+
+    .btn-primary:hover{
+      background:var(--accent-dark);
+      border-color:var(--accent-dark);
+      color:#fff;
+      transform:translateY(-1px);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--text);
+    }
+
+    .btn-secondary:hover{
+      background:#f8fbff;
+      border-color:#cfd9e7;
+      transform:translateY(-1px);
+    }
+
+    .section{
+      padding:20px 0;
+    }
+
+    .section-header{
+      margin-bottom:18px;
+    }
+
+    .section-label{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.7);
+      border:1px solid var(--line);
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-0.025em;
+    }
+
+    .section-intro{
+      margin:0;
+      max-width:800px;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .stack{
+      display:grid;
+      gap:24px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.92);
+      border:1px solid rgba(220,228,239,0.95);
+      border-radius:var(--radius-xl);
+      box-shadow:0 10px 28px rgba(18,34,68,0.05);
+      padding:32px;
+    }
+
+    .case-number{
+      display:inline-block;
+      margin-bottom:16px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .case-title{
+      margin:0 0 10px;
+      font-size:30px;
+      line-height:1.2;
+      letter-spacing:-0.02em;
+    }
+
+    .case-subtitle{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .case-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .mini-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+    }
+
+    .mini-card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      line-height:1.25;
+    }
+
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .text-block p{
+      margin:0 0 18px;
+      color:#344054;
+    }
+
+    .text-block p:last-child{
+      margin-bottom:0;
+    }
+
+    .contact-box{
+      background:linear-gradient(180deg, #f9fbff 0%, #f1f6fd 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:30px;
+    }
+
+    .contact-box h2{
+      margin:0 0 14px;
+      font-size:28px;
+      line-height:1.2;
+    }
+
+    .contact-box p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .contact-list{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .contact-item{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      padding:14px 16px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      color:#2d3748;
+      font-size:15px;
+    }
+
+    .disclaimer{
+      font-size:14px;
+      color:#748094;
+      margin-top:18px;
+    }
+
+    footer{
+      padding:14px 0 48px;
+    }
+
+    .footer-note{
+      padding:22px 24px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.75);
+      border:1px solid rgba(220,228,239,0.9);
+      color:#728096;
+      font-size:14px;
+    }
+
+    @media (max-width: 980px){
+      .case-grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:40px;
+      }
+    }
+
+    @media (max-width: 680px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .hero-card,
+      .card,
+      .mini-card,
+      .contact-box{
+        padding:24px;
+      }
+
+      h1{
+        font-size:34px;
+      }
+
+      .subtitle{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:28px;
+      }
+
+      .case-title{
+        font-size:25px;
+      }
+
+      .topbar-inner{
+        justify-content:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="mini-link" href="index.html">Home</a>
+        <a class="mini-link" href="https://ai.bb369tech.com" target="_blank">BB369 Tech</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="eyebrow">Selected Cases</div>
+<h1>Case Studies</h1>
+
+<p class="intro">
+企业数字化、决策架构与信任基础建设相关应用案例
+</p>
+
+<p class="subtitle">
+Selected Enterprise Applications in Decision Architecture and Trust Infrastructure
+</p>
+
+<p>
+The following cases present representative enterprise application scenarios in digital transformation, decision structure optimization, and trust infrastructure design.
+</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="index.html">Back to Homepage</a>
+          <a class="btn btn-secondary" href="mailto:contact@bb369tech.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container stack">
+        <div class="section-header">
+          <div class="section-label">Case 01</div>
+          <h2 class="section-title">Enterprise Digital Transformation and Decision Efficiency Optimization</h2>
+          <p class="section-intro">
+            A structured case focused on digital workflow integration, decision-path clarity, and operational coordination.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="case-number">Case Study 01</div>
+          <h3 class="case-title">Enterprise Digital Transformation and Decision Efficiency Optimization</h3>
+          <p class="case-subtitle">
+            Mid-sized service organization · workflow integration · decision structure improvement
+          </p>
+
+          <div class="text-block">
+            <p>
+              In the course of business expansion, a mid-sized service-oriented enterprise encountered problems related to fragmented systems and declining decision efficiency. Communication across departments relied heavily on manual coordination, leading to delayed execution cycles and rising management costs.
+            </p>
+          </div>
+
+          <div class="case-grid">
+            <div class="mini-card">
+              <h3>Challenge</h3>
+              <p>
+                Multiple systems lacked a unified structure, data remained disconnected, and decision-making depended too heavily on individual experience rather than stable process design.
+              </p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Approach</h3>
+              <p>
+                A structured framework was introduced to align data flow, business processes, and decision paths, while adding clear judgment points at key stages of execution.
+              </p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Outcome</h3>
+              <p>
+                Decision responsiveness improved, communication friction was reduced, and management gained stronger visibility across the operational system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stack">
+        <div class="section-header">
+          <div class="section-label">Case 02</div>
+          <h2 class="section-title">Trust Infrastructure and Decision Architecture Design</h2>
+          <p class="section-intro">
+            A governance-oriented case focused on responsibility clarity, trust structure, and controllable decision processes.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="case-number">Case Study 02</div>
+          <h3 class="case-title">Trust Infrastructure and Decision Architecture Design</h3>
+          <p class="case-subtitle">
+            Cross-regional digital business · AI-assisted operations · governance structure design
+          </p>
+
+          <div class="text-block">
+            <p>
+              A digitally mediated business operating across regions introduced automation and AI-supported processes, but gradually encountered unclear accountability, ambiguous decision ownership, and weakened governance boundaries. These issues began to affect operational stability and risk control.
+            </p>
+          </div>
+
+          <div class="case-grid">
+            <div class="mini-card">
+              <h3>Challenge</h3>
+              <p>
+                Responsibility drift emerged between systems and human actors, while trust boundaries and decision ownership remained insufficiently defined.
+              </p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Approach</h3>
+              <p>
+                A trust infrastructure layer and decision architecture framework were designed to clarify role boundaries, establish responsibility nodes, and improve explainability across critical processes.
+              </p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Outcome</h3>
+              <p>
+                Governance structure became clearer, operational uncertainty was reduced, and the business gained a more stable basis for long-term system expansion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stack">
+        <div class="contact-box">
+          <h2>Contact</h2>
+          <p>
+            For enterprise communication related to digital transformation, governance structure, and decision architecture:
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Email:</strong>
+              <a href="mailto:contact@bb369tech.com">contact@bb369tech.com</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Website:</strong>
+              <a href="https://ai.bb369tech.com" target="_blank">ai.bb369tech.com</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Phone:</strong>
+              <span>626 743 8360</span>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            These cases are illustrative examples based on real-world problem structures and methodological applications. They are presented for informational purposes only and do not represent specific client disclosures or formal service commitments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-note">
+        BB369 Tech · Enterprise digital transformation, trust infrastructure, and decision architecture.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
