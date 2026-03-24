@@ -790,20 +790,24 @@
       text-overflow:ellipsis;
     }
 
-    .toolbar{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
-      gap:6px;
-      width:auto;
-    }
+.toolbar{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-end;
+  gap:6px;
+  flex-wrap:wrap;
+  width:auto;
+  max-width:220px;
+}
 
-    .small-btn{
-      min-height:32px;
-      padding:0 10px;
-      font-size:13px;
-      border-radius:999px;
-    }
+  .small-btn{
+  min-height:30px;
+  padding:0 10px;
+  font-size:12px;
+  border-radius:999px;
+}
+
 
     #mobileMenuBtn{
       display:inline-flex;
@@ -1723,6 +1727,118 @@ mobileMenuBtn?.addEventListener("click", ()=>{
 
 applyTextLanguage("en");
 updateToolbarLanguage("en");
+
+  const diagnosticForm = document.getElementById("diagnosticForm");
+
+if (diagnosticForm) {
+  diagnosticForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const leadFlow = Number(document.getElementById("leadFlow")?.value || 0);
+    const crm = Number(document.getElementById("crm")?.value || 0);
+    const booking = Number(document.getElementById("booking")?.value || 0);
+    const response = Number(document.getElementById("response")?.value || 0);
+    const automation = Number(document.getElementById("automation")?.value || 0);
+
+    const total = leadFlow + crm + booking + response + automation;
+
+    const scoreValue = document.getElementById("scoreValue");
+    const readiness = document.getElementById("readiness");
+    const gap = document.getElementById("gap");
+    const nextStep = document.getElementById("nextStep");
+    const advisoryNote = document.getElementById("advisoryNote");
+    const scoreExplanation = document.getElementById("scoreExplanation");
+    const humanNodes = document.getElementById("humanNodes");
+    const boundaryNote = document.getElementById("boundaryNote");
+    const scoreLabel = document.getElementById("scoreLabel");
+
+    const metricSystem = document.getElementById("metricSystem");
+    const metricCustomer = document.getElementById("metricCustomer");
+    const metricJudgment = document.getElementById("metricJudgment");
+    const metricBoundary = document.getElementById("metricBoundary");
+    const metricResponsibility = document.getElementById("metricResponsibility");
+    const metricGap = document.getElementById("metricGap");
+
+    const barSystem = document.getElementById("barSystem");
+    const barCustomer = document.getElementById("barCustomer");
+    const barJudgment = document.getElementById("barJudgment");
+    const barBoundary = document.getElementById("barBoundary");
+    const barResponsibility = document.getElementById("barResponsibility");
+    const barGap = document.getElementById("barGap");
+
+    if (scoreValue) scoreValue.textContent = total;
+
+    let readinessText = "";
+    let gapText = "";
+    let nextStepText = "";
+    let advisoryText = "";
+    let explanationText = "";
+    let humanText = "";
+    let boundaryText = "";
+
+    if (total <= 35) {
+      readinessText = currentLang === "zh" ? "早期阶段" : "Early Stage";
+      gapText = currentLang === "zh" ? "流程清晰度不足" : "Workflow clarity gap";
+      nextStepText = currentLang === "zh" ? "先梳理客户进入、预约与跟进路径" : "Clarify intake, booking, and follow-up flow first";
+      advisoryText = currentLang === "zh" ? "建议先做基础业务系统梳理" : "Start with core business system design";
+      explanationText = currentLang === "zh" ? "目前更需要先把流程和责任结构理清，再谈自动化。" : "Your system needs clearer workflow and responsibility structure before more automation.";
+      humanText = currentLang === "zh" ? "客户分流、例外情况判断、优先级判断" : "Lead triage, exception handling, prioritization decisions";
+      boundaryText = currentLang === "zh" ? "先保留人工判断节点，不建议过早做重自动化。" : "Keep visible human judgment nodes before adding heavy automation.";
+    } else if (total <= 70) {
+      readinessText = currentLang === "zh" ? "成长阶段" : "Growth Stage";
+      gapText = currentLang === "zh" ? "责任结构与系统连接" : "Responsibility structure and system connection";
+      nextStepText = currentLang === "zh" ? "统一CRM、预约与客户跟进结构" : "Unify CRM, booking, and follow-up structure";
+      advisoryText = currentLang === "zh" ? "适合做流程清晰化与自动化准备" : "Good fit for workflow clarity and automation readiness";
+      explanationText = currentLang === "zh" ? "你已经有一定基础，下一步重点是减少流程断点与重复沟通。" : "You already have a foundation. The next step is reducing handoff gaps and repeated communication.";
+      humanText = currentLang === "zh" ? "客户优先级判断、服务节点确认、异常处理" : "Lead prioritization, service checkpoints, exception handling";
+      boundaryText = currentLang === "zh" ? "适合做轻量自动化，但关键判断节点仍建议保留人工。" : "Light automation is appropriate, but key decision points should remain human-led.";
+    } else {
+      readinessText = currentLang === "zh" ? "成熟阶段" : "Advanced Stage";
+      gapText = currentLang === "zh" ? "自动化边界优化" : "Automation boundary optimization";
+      nextStepText = currentLang === "zh" ? "优化结构，明确哪些地方继续由人主导" : "Refine boundaries between human judgment and automation";
+      advisoryText = currentLang === "zh" ? "适合做高级流程优化与系统协同" : "Good fit for advanced workflow optimization";
+      explanationText = currentLang === "zh" ? "系统整体较成熟，下一步重点是优化自动化边界与判断节点。" : "Your system is fairly mature. The next step is refining automation boundaries and decision nodes.";
+      humanText = currentLang === "zh" ? "高价值例外处理、最终责任确认、关键客户决策" : "High-value exceptions, final responsibility checks, key client decisions";
+      boundaryText = currentLang === "zh" ? "自动化可以更深入，但最终责任节点应继续保持人工可见。" : "Automation can go deeper, but final responsibility nodes should remain visibly human.";
+    }
+
+    if (readiness) readiness.textContent = readinessText;
+    if (gap) gap.textContent = gapText;
+    if (nextStep) nextStep.textContent = nextStepText;
+    if (advisoryNote) advisoryNote.textContent = advisoryText;
+    if (scoreExplanation) scoreExplanation.textContent = explanationText;
+    if (humanNodes) humanNodes.textContent = humanText;
+    if (boundaryNote) boundaryNote.textContent = boundaryText;
+    if (scoreLabel) scoreLabel.textContent = currentLang === "zh" ? "评估结果已生成" : "Assessment result generated";
+
+    const percent = Math.min(100, total);
+    const systemVal = Math.round((leadFlow + crm) / 2);
+    const customerVal = Math.round((leadFlow + booking + response) / 3);
+    const judgmentVal = Math.round((response + crm) / 2);
+    const boundaryVal = automation;
+    const responsibilityVal = Math.round((crm + booking) / 2);
+    const gapVal = 100 - percent;
+
+    if (metricSystem) metricSystem.textContent = systemVal;
+    if (metricCustomer) metricCustomer.textContent = customerVal;
+    if (metricJudgment) metricJudgment.textContent = judgmentVal;
+    if (metricBoundary) metricBoundary.textContent = boundaryVal;
+    if (metricResponsibility) metricResponsibility.textContent = responsibilityVal;
+    if (metricGap) metricGap.textContent = gapVal;
+
+    if (barSystem) barSystem.style.width = systemVal + "%";
+    if (barCustomer) barCustomer.style.width = customerVal + "%";
+    if (barJudgment) barJudgment.style.width = judgmentVal + "%";
+    if (barBoundary) barBoundary.style.width = boundaryVal + "%";
+    if (barResponsibility) barResponsibility.style.width = responsibilityVal + "%";
+    if (barGap) barGap.style.width = gapVal + "%";
+
+    const resultCard = document.querySelector("#view-assessment .diag-shell .card:last-child");
+    if (resultCard && window.innerWidth <= 860) {
+      resultCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+}
 </script>
 
 </body>
