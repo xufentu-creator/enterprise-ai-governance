@@ -51,7 +51,6 @@
       }
     ]
   }
-    
   </script>
 
 <style>
@@ -713,6 +712,16 @@
     white-space:nowrap;
   }
 
+  .icon-btn{
+    width:32px;
+    min-width:32px;
+    height:32px;
+    padding:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
   @media (max-width:1100px){
     .hero,
     .grid-6,
@@ -733,8 +742,8 @@
 
     .sidebar{
       position:fixed;
-      left:14px;
-      top:14px;
+      left:12px;
+      top:12px;
       bottom:auto;
       height:auto;
       width:auto;
@@ -747,8 +756,53 @@
       display:none !important;
     }
 
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      font-size:20px;
+    }
+
     .topbar{
-      padding:14px 16px 14px 74px;
+      padding:10px 12px 10px 64px;
+      align-items:flex-start;
+      gap:8px;
+    }
+
+    .topbar-left{
+      flex:1;
+      min-width:0;
+      padding-top:2px;
+    }
+
+    .page-title{
+      font-size:14px;
+      line-height:1.2;
+      margin:0;
+    }
+
+    .page-sub{
+      font-size:12px;
+      margin-top:2px;
+      max-width:180px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .toolbar{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:6px;
+      width:auto;
+    }
+
+    .small-btn{
+      min-height:32px;
+      padding:0 10px;
+      font-size:13px;
+      border-radius:999px;
     }
 
     #mobileMenuBtn{
@@ -759,7 +813,68 @@
 
     .workspace{
       width:min(var(--content-max), calc(100% - 24px));
-      padding:22px 0 36px;
+      padding:14px 0 30px;
+    }
+
+    .hero{
+      padding-top:6px;
+      gap:18px;
+      grid-template-columns:1fr;
+    }
+
+    .eyebrow{
+      margin-bottom:14px;
+      font-size:.68rem;
+      padding:0 10px;
+      min-height:28px;
+    }
+
+    h1{
+      font-size:clamp(2.7rem, 14vw, 4.5rem);
+      line-height:.95;
+      max-width:8ch;
+    }
+
+    .hero-lead{
+      font-size:15px;
+      line-height:1.6;
+      margin:16px 0 18px;
+    }
+
+    .hero-actions{
+      gap:8px;
+    }
+
+    .btn{
+      min-height:40px;
+      padding:0 14px;
+      font-size:14px;
+    }
+
+    .hero-tags{
+      gap:8px;
+      margin:18px 0 0;
+    }
+
+    .hero-tags li{
+      font-size:12px;
+      padding:7px 10px;
+    }
+
+    .stats,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-6,
+    .diag-shell,
+    .contact-shell{
+      grid-template-columns:1fr;
+    }
+
+    .panel,
+    .card{
+      padding:18px;
+      border-radius:20px;
     }
   }
 </style>
@@ -823,12 +938,10 @@
         </div>
 
         <div class="toolbar">
-          <button class="small-btn" id="mobileMenuBtn">☰</button>
-          <button class="lang-toggle active" id="langEn">EN</button>
-          <button class="lang-toggle" id="langZh">中文</button>
-          <a class="small-btn" href="case-studies.html">Cases</a>
-          <a class="small-btn" href="case-studies-cn.html">案例</a>
-          <a class="small-btn" id="bookTopBtn" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener" data-en="Book" data-zh="预约咨询">Book</a>
+          <button class="small-btn icon-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+          <button class="small-btn" id="langSwitch" data-en="中文" data-zh="EN">中文</button>
+          <a class="small-btn" id="casesTopBtn" href="case-studies.html" data-en="Cases" data-zh="案例">Cases</a>
+          <a class="small-btn" id="bookTopBtn" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener" data-en="Book" data-zh="预约">Book</a>
         </div>
       </div>
 
@@ -845,1047 +958,786 @@
         Build a clearer customer system for your business
       </h1>
 
-      <p class="hero-lead">
+      <p class="hero-lead"
+         data-en="Clarify customer acquisition, follow-up, appointment flow, CRM structure, responsibility structure, and operational logic — so growth becomes more stable, less manual, and easier to scale."
+         data-zh="理顺客户获取、客户跟进、预约流程、CRM结构、责任结构与运营逻辑，让业务增长更稳定、减少人工混乱，也更容易扩展。">
         Clarify customer acquisition, follow-up, appointment flow, CRM structure, responsibility structure, and operational logic — so growth becomes more stable, less manual, and easier to scale.
       </p>
 
       <div class="hero-actions">
-        <button class="btn primary" data-jump="assessment">Start Assessment</button>
-        <button class="btn secondary" data-jump="services">Explore Services</button>
-        <button class="btn soft" data-jump="modules">Open Modules</button>
+        <button class="btn primary" data-jump="assessment" data-en="Start Assessment" data-zh="开始评估">Start Assessment</button>
+        <button class="btn secondary" data-jump="services" data-en="Explore Services" data-zh="查看服务">Explore Services</button>
+        <button class="btn soft" data-jump="modules" data-en="Open Modules" data-zh="查看模块">Open Modules</button>
       </div>
 
       <ul class="hero-tags">
-        <li>Customer acquisition</li>
-        <li>CRM structure</li>
-        <li>Booking flow</li>
-        <li>Operational clarity</li>
-        <li>AI automation</li>
-        <li>Human judgment</li>
+        <li data-en="Customer acquisition" data-zh="客户获取">Customer acquisition</li>
+        <li data-en="CRM structure" data-zh="客户管理结构">CRM structure</li>
+        <li data-en="Booking flow" data-zh="预约流程">Booking flow</li>
+        <li data-en="Operational clarity" data-zh="运营清晰度">Operational clarity</li>
+        <li data-en="AI automation" data-zh="AI自动化">AI automation</li>
+        <li data-en="Human judgment" data-zh="人类判断">Human judgment</li>
       </ul>
     </div>
 
     <div class="stack">
 
       <div class="panel">
-        <div class="micro">What this platform helps improve</div>
-        <h3>Not more tools. Better structure.</h3>
-        <p class="muted">
+        <div class="micro" data-en="What this platform helps improve" data-zh="平台解决什么问题">What this platform helps improve</div>
+        <h3 data-en="Not more tools. Better structure." data-zh="不是更多工具，而是更好的结构">Not more tools. Better structure.</h3>
+        <p class="muted"
+           data-en="The goal is to make website, forms, scheduling, chat, CRM, and workflow actually work together — with clear responsibility points and better judgment boundaries."
+           data-zh="目标不是继续堆工具，而是让网站、表单、预约、聊天、CRM与流程真正连接起来，并让责任节点和判断边界更清楚。">
           The goal is to make website, forms, scheduling, chat, CRM, and workflow actually work together — with clear responsibility points and better judgment boundaries.
         </p>
       </div>
 
       <div class="panel">
-        <div class="micro">Selected Cases</div>
+        <div class="micro" data-en="Selected Cases" data-zh="案例入口">Selected Cases</div>
 
         <div class="case-entry">
           <div class="case-meta">
             <div class="case-kicker">Case 01</div>
-            <h3>Enterprise Digital Transformation</h3>
-            <p class="muted">
+            <h3 data-en="Enterprise Digital Transformation" data-zh="企业数字化转型">Enterprise Digital Transformation</h3>
+            <p class="muted"
+               data-en="Decision efficiency, workflow alignment, and operational clarity."
+               data-zh="聚焦决策效率、流程协同与运营清晰度。">
               Decision efficiency, workflow alignment, and operational clarity.
             </p>
           </div>
-          <a class="case-link" href="case-studies.html">View →</a>
+          <a class="case-link" id="caseLinkOne" href="case-studies.html" data-en="View →" data-zh="查看 →">View →</a>
         </div>
 
         <div class="case-entry">
           <div class="case-meta">
             <div class="case-kicker">Case 02</div>
-            <h3>Trust Infrastructure & Decision Architecture</h3>
-            <p class="muted">
+            <h3 data-en="Trust Infrastructure & Decision Architecture" data-zh="信任基础建设与决策架构">Trust Infrastructure & Decision Architecture</h3>
+            <p class="muted"
+               data-en="Governance structure, accountability clarity, and scalable operating logic."
+               data-zh="聚焦治理结构、责任清晰度与可扩展运营逻辑。">
               Governance structure, accountability clarity, and scalable operating logic.
             </p>
           </div>
-          <a class="case-link" href="case-studies-cn.html">中文 →</a>
+          <a class="case-link" id="caseLinkTwo" href="case-studies.html" data-en="View →" data-zh="查看 →">View →</a>
         </div>
       </div>
 
       <div class="stats">
         <div class="stat">
           <div class="stat-num">01</div>
-          <div class="muted">Acquisition flow design</div>
+          <div class="muted" data-en="Acquisition flow design" data-zh="客户获取流程设计">Acquisition flow design</div>
         </div>
         <div class="stat">
           <div class="stat-num">02</div>
-          <div class="muted">CRM structure</div>
+          <div class="muted" data-en="CRM structure" data-zh="客户管理结构">CRM structure</div>
         </div>
         <div class="stat">
           <div class="stat-num">03</div>
-          <div class="muted">Automation readiness</div>
+          <div class="muted" data-en="Automation readiness" data-zh="自动化准备度">Automation readiness</div>
         </div>
       </div>
 
       <div class="panel">
-        <div class="micro">Why this matters</div>
-        <p class="muted">
+        <div class="micro" data-en="Why this matters" data-zh="为什么重要">Why this matters</div>
+        <p class="muted"
+           data-en="Many businesses do not lack tools. They lack workflow clarity, ownership clarity, responsibility structure, and judgment stability."
+           data-zh="很多企业不是缺工具，而是缺流程清晰度、责任清晰度、责任结构和判断稳定性。">
           Many businesses do not lack tools. They lack workflow clarity, ownership clarity, responsibility structure, and judgment stability.
         </p>
       </div>
     </div>
-
-    <div class="grid-2">
-      
-            <div class="card">
-              <div class="label" data-en="Common issues" data-zh="常见问题">Common issues</div>
-              <div class="check-list">
-                <div class="check">
-                  <span class="check-mark">✓</span>
-                  <div data-en="Leads arrive, but follow-up is inconsistent." data-zh="客户来了，但跟进不稳定。">Leads arrive, but follow-up is inconsistent.</div>
-                </div>
-                <div class="check">
-                  <span class="check-mark">✓</span>
-                  <div data-en="Information is scattered across tools." data-zh="信息分散在不同工具里。">Information is scattered across tools.</div>
-                </div>
-                <div class="check">
-                  <span class="check-mark">✓</span>
-                  <div data-en="Booking and confirmation still rely on manual back-and-forth." data-zh="预约与确认仍依赖人工来回沟通。">Booking and confirmation still rely on manual back-and-forth.</div>
-                </div>
-                <div class="check">
-                  <span class="check-mark">✓</span>
-                  <div data-en="Automation is desired, but the underlying process is not stable yet." data-zh="想做自动化，但底层流程还没理顺。">Automation is desired, but the underlying process is not stable yet.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="label" data-en="What this work improves" data-zh="改善方向">What this work improves</div>
-              <div class="check-list">
-                <div class="check">
-                  <span class="check-mark">01</span>
-                  <div data-en="A clearer customer path from inquiry to service." data-zh="让客户从咨询到服务的路径更清楚。">A clearer customer path from inquiry to service.</div>
-                </div>
-                <div class="check">
-                  <span class="check-mark">02</span>
-                  <div data-en="More stable ownership and less repeated communication." data-zh="减少重复沟通，让责任更清晰。">More stable ownership and less repeated communication.</div>
-                </div>
-                <div class="check">
-                  <span class="check-mark">03</span>
-                  <div data-en="A stronger CRM structure with less fragmented records." data-zh="让CRM结构更稳定，客户记录不再分散。">A stronger CRM structure with less fragmented records.</div>
-                </div>
-                <div class="check">
-                  <span class="check-mark">04</span>
-                  <div data-en="A more grounded path toward automation." data-zh="让自动化从更稳的地方开始。">A more grounded path toward automation.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-services">
-          <div class="card">
-            <h2 data-en="Services" data-zh="服务">Services</h2>
-            <p class="muted" data-en="Think of this as business system design for companies that want clearer customer flow, better coordination, stronger responsibility structure, and more stable operations." data-zh="你可以把这理解为：帮企业把客户路径、运营流程、责任结构和系统逻辑搭清楚。">
-              Think of this as business system design for companies that want clearer customer flow, better coordination, stronger responsibility structure, and more stable operations.
-            </p>
-          </div>
-
-          <div class="grid-3">
-            <div class="card">
-              <div class="label">Service 01</div>
-              <h3 data-en="Customer acquisition flow" data-zh="客户获取流程">Customer acquisition flow</h3>
-              <p class="muted" data-en="Turn the website into a clearer business entry point that can receive, screen, and move customers forward." data-zh="让官网不只是展示页，而是真正能接住客户、筛选客户、推动客户行动的入口。">
-                Turn the website into a clearer business entry point that can receive, screen, and move customers forward.
-              </p>
-              <ul>
-                <li data-en="Form design" data-zh="表单设计">Form design</li>
-                <li data-en="Inquiry entry structure" data-zh="咨询入口梳理">Inquiry entry structure</li>
-                <li data-en="Conversion path optimization" data-zh="转化路径优化">Conversion path optimization</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <div class="label">Service 02</div>
-              <h3 data-en="CRM and follow-up structure" data-zh="CRM与跟进结构">CRM and follow-up structure</h3>
-              <p class="muted" data-en="Organize customer information scattered across email, chat, forms, and spreadsheets into a usable workflow." data-zh="把分散在聊天、邮件、表格里的客户信息整理成可用的工作流。">
-                Organize customer information scattered across email, chat, forms, and spreadsheets into a usable workflow.
-              </p>
-              <ul>
-                <li data-en="CRM logic design" data-zh="CRM逻辑设计">CRM logic design</li>
-                <li data-en="Follow-up structure" data-zh="跟进结构">Follow-up structure</li>
-                <li data-en="Status management recommendations" data-zh="状态管理建议">Status management recommendations</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <div class="label">Service 03</div>
-              <h3 data-en="Operational workflow clarity" data-zh="运营流程清晰化">Operational workflow clarity</h3>
-              <p class="muted" data-en="Reduce repeated communication, unclear handoffs, and temporary fixes so the team can stay stable as operations grow." data-zh="减少重复沟通、责任不清和临时补救，让团队在业务变复杂后仍然能稳定运转。">
-                Reduce repeated communication, unclear handoffs, and temporary fixes so the team can stay stable as operations grow.
-              </p>
-              <ul>
-                <li data-en="Workflow mapping" data-zh="流程梳理">Workflow mapping</li>
-                <li data-en="Automation recommendations" data-zh="自动化建议">Automation recommendations</li>
-                <li data-en="Key judgment points" data-zh="关键判断节点">Key judgment points</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-modules">
-          <div class="card">
-            <h2 data-en="Modules" data-zh="模块">Modules</h2>
-            <p class="muted" data-en="Detailed content is organized in tabs to keep the interface clean." data-zh="详细内容放在标签按钮里，界面更干净。">
-              Detailed content is organized in tabs to keep the interface clean.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="tabs">
-              <button class="tab active" data-tab="solutions" data-en="Solutions" data-zh="解决方案">Solutions</button>
-              <button class="tab" data-tab="automation" data-en="Automation" data-zh="自动化">Automation</button>
-              <button class="tab" data-tab="crm" data-en="CRM" data-zh="客户管理">CRM</button>
-              <button class="tab" data-tab="usecases" data-en="Use Cases" data-zh="应用场景">Use Cases</button>
-              <button class="tab" data-tab="deliverables" data-en="Deliverables" data-zh="交付物">Deliverables</button>
-              <button class="tab" data-tab="priority" data-en="What To Do First" data-zh="先做什么">What To Do First</button>
-              <button class="tab" data-tab="research" data-en="Research Foundation" data-zh="研究基础">Research Foundation</button>
-            </div>
-
-            <div class="tab-view active" id="tab-solutions">
-              <div class="grid-3">
-                <div class="card">
-                  <div class="label">Solution 01</div>
-                  <h3 data-en="Customer acquisition system" data-zh="客户获取系统">Customer acquisition system</h3>
-                  <p class="muted" data-en="Upgrade the website from looking good to actually receiving customer demand." data-zh="把网站从“好看”升级成“能接客户”的入口。">
-                    Upgrade the website from looking good to actually receiving customer demand.
-                  </p>
-                </div>
-                <div class="card">
-                  <div class="label">Solution 02</div>
-                  <h3 data-en="Follow-up and CRM structure" data-zh="跟进与CRM结构">Follow-up and CRM structure</h3>
-                  <p class="muted" data-en="Keep customer stages visible instead of letting communication drift across tools." data-zh="让客户阶段可见，而不是让沟通散落在多个工具里。">
-                    Keep customer stages visible instead of letting communication drift across tools.
-                  </p>
-                </div>
-                <div class="card">
-                  <div class="label">Solution 03</div>
-                  <h3 data-en="Appointment and service flow" data-zh="预约与服务流程">Appointment and service flow</h3>
-                  <p class="muted" data-en="Reduce manual scheduling overhead and create a smoother intake-to-service process." data-zh="减少人工约时间成本，让接待到服务的流程更顺。">
-                    Reduce manual scheduling overhead and create a smoother intake-to-service process.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-view" id="tab-automation">
-              <div class="grid-4">
-                <div class="card"><h3 data-en="Lead intake" data-zh="线索收集">Lead intake</h3></div>
-                <div class="card"><h3 data-en="Response support" data-zh="咨询回复">Response support</h3></div>
-                <div class="card"><h3 data-en="Scheduling flow" data-zh="预约安排">Scheduling flow</h3></div>
-                <div class="card"><h3 data-en="Knowledge support" data-zh="知识支持">Knowledge support</h3></div>
-              </div>
-            </div>
-
-            <div class="tab-view" id="tab-crm">
-              <div class="grid-3">
-                <div class="card"><h3 data-en="Lead collection and organization" data-zh="客户线索收集与整理">Lead collection and organization</h3></div>
-                <div class="card"><h3 data-en="Customer follow-up records" data-zh="客户跟进记录">Customer follow-up records</h3></div>
-                <div class="card"><h3 data-en="Workflow visibility" data-zh="流程可视化">Workflow visibility</h3></div>
-              </div>
-            </div>
-
-            <div class="tab-view" id="tab-usecases">
-              <div class="grid-3">
-                <div class="card"><h3 data-en="SMB AI workflow setup" data-zh="中小企业AI流程">SMB AI workflow setup</h3></div>
-                <div class="card"><h3 data-en="Lead management structure" data-zh="客户线索管理">Lead management structure</h3></div>
-                <div class="card"><h3 data-en="Digital workflow optimization" data-zh="数字化流程优化">Digital workflow optimization</h3></div>
-              </div>
-            </div>
-
-            <div class="tab-view" id="tab-deliverables">
-              <div class="grid-3">
-                <div class="card"><h3 data-en="System blueprint" data-zh="系统蓝图">System blueprint</h3></div>
-                <div class="card"><h3 data-en="Automation recommendations" data-zh="自动化建议">Automation recommendations</h3></div>
-                <div class="card"><h3 data-en="Operational improvement direction" data-zh="运营优化建议">Operational improvement direction</h3></div>
-              </div>
-            </div>
-
-            <div class="tab-view" id="tab-priority">
-              <div class="grid-2">
-                <div class="card">
-                  <h3 data-en="What usually makes sense first" data-zh="建议先做的事">What usually makes sense first</h3>
-                  <ul>
-                    <li data-en="Clarify the customer path first" data-zh="先理顺客户路径">Clarify the customer path first</li>
-                    <li data-en="Unify inquiry, booking, follow-up, and customer records" data-zh="统一咨询、预约、跟进和客户记录">Unify inquiry, booking, follow-up, and customer records</li>
-                    <li data-en="Separate judgment-required work from automation-ready work" data-zh="区分人工判断和自动化任务">Separate judgment-required work from automation-ready work</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3 data-en="What is usually not a good first step" data-zh="通常不建议先做的事">What is usually not a good first step</h3>
-                  <ul>
-                    <li data-en="Adding heavy automation before the workflow is clear" data-zh="流程没理顺前就堆自动化">Adding heavy automation before the workflow is clear</li>
-                    <li data-en="Buying more tools before operating logic is stable" data-zh="逻辑没稳前就继续买工具">Buying more tools before operating logic is stable</li>
-                    <li data-en="Scaling outreach while intake and responsibility are still unclear" data-zh="入口和责任没清楚前就扩大投放">Scaling outreach while intake and responsibility are still unclear</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-view" id="tab-research">
-              <div class="grid-2">
-                <div class="card">
-                  <h3 data-en="Research foundation" data-zh="研究基础">Research foundation</h3>
-                  <p class="muted" data-en="This work is grounded in enterprise transformation, AI governance, decision architecture, human judgment, and complex systems thinking." data-zh="这套工作建立在企业转型、AI治理、决策架构、人类判断与复杂系统研究之上。">
-                    This work is grounded in enterprise transformation, AI governance, decision architecture, human judgment, and complex systems thinking.
-                  </p>
-                </div>
-                <div class="card">
-                  <h3 data-en="Research focus" data-zh="研究重点">Research focus</h3>
-                  <p class="muted" data-en="The key challenge is not only speed, but workflow clarity, responsibility clarity, judgment stability, and better automation boundaries." data-zh="关键挑战不只是速度，而是流程清晰、责任清晰、判断稳定，以及更清楚的自动化边界。">
-                    The key challenge is not only speed, but workflow clarity, responsibility clarity, judgment stability, and better automation boundaries.
-                  </p>
-                </div>
-              </div>
-
-              <div class="grid-2" style="margin-top:16px;">
-                <div class="card">
-                  <h3 data-en="Research attribution" data-zh="研究归属">Research attribution</h3>
-                  <p class="muted" data-en="Research foundation developed through independent interdisciplinary research by Xufen Tu." data-zh="本平台研究基础源于 Xufen Tu 的独立跨学科研究。">
-                    Research foundation developed through independent interdisciplinary research by Xufen Tu.
-                  </p>
-                </div>
-                <div class="card">
-                  <h3 data-en="Practical orientation" data-zh="实践方向">Practical orientation</h3>
-                  <p class="muted" data-en="This platform translates structural research into usable business system design for customer flow, CRM logic, responsibility structure, and workflow optimization." data-zh="这个平台把结构研究转化为企业可实际使用的客户流程、CRM逻辑、责任结构与工作流优化方案。">
-                    This platform translates structural research into usable business system design for customer flow, CRM logic, responsibility structure, and workflow optimization.
-                  </p>
-                </div>
-              </div>
-
-              <div class="grid-2" style="margin-top:16px;">
-                <div class="card">
-                  <h3 data-en="Enterprise AI governance framework" data-zh="企业AI治理框架">Enterprise AI governance framework</h3>
-                  <img src="images/ai-governance-decision-architecture-framework.png" alt="Enterprise AI governance framework" loading="lazy">
-                </div>
-                <div class="card">
-                  <h3 data-en="Decision architecture model" data-zh="决策架构模型">Decision architecture model</h3>
-                  <img src="images/decision-architecture-model.png" alt="Decision architecture model" loading="lazy">
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-assessment">
-          <div class="card">
-            <h2 data-en="Assessment" data-zh="评估">Assessment</h2>
-            <p class="muted" data-en="A simplified readiness assessment for founders and teams who want a quick view of where their system stands — not only in automation, but in clarity, responsibility, and judgment stability." data-zh="一个给企业老板和团队使用的简化评估，用来快速判断系统处于什么阶段，不只是看自动化，也看清晰度、责任结构和判断稳定性。">
-              A simplified readiness assessment for founders and teams who want a quick view of where their system stands — not only in automation, but in clarity, responsibility, and judgment stability.
-            </p>
-          </div>
-
-          <div class="diag-shell">
-            <div class="card">
-              <form class="form" id="diagnosticForm">
-                <div class="field">
-                  <label for="company" data-en="Company name (optional)" data-zh="公司名称（可选）">Company name (optional)</label>
-                  <input id="company" name="company" type="text" placeholder="Company name" data-placeholder-en="Company name" data-placeholder-zh="公司名称" />
-                </div>
-
-                <div class="field">
-                  <label for="industry" data-en="Industry" data-zh="所属行业">Industry</label>
-                  <select id="industry" name="industry">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option data-en="Manufacturing" data-zh="制造业">Manufacturing</option>
-                    <option data-en="Technology / Software" data-zh="科技 / 软件">Technology / Software</option>
-                    <option data-en="Retail / E-commerce" data-zh="零售 / 电商">Retail / E-commerce</option>
-                    <option data-en="Professional Services" data-zh="专业服务">Professional Services</option>
-                    <option data-en="Finance" data-zh="金融">Finance</option>
-                    <option data-en="Healthcare" data-zh="医疗健康">Healthcare</option>
-                    <option data-en="Education / Training" data-zh="教育 / 培训">Education / Training</option>
-                    <option data-en="Other" data-zh="其他">Other</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="leadFlow" data-en="How are new leads currently handled?" data-zh="目前新客户线索如何处理？">How are new leads currently handled?</label>
-                  <select id="leadFlow" name="leadFlow">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option value="5" data-en="Mostly manual communication" data-zh="主要靠人工沟通">Mostly manual communication</option>
-                    <option value="10" data-en="Some forms or shared tools" data-zh="已有部分表单或共享工具">Some forms or shared tools</option>
-                    <option value="15" data-en="Relatively clear process" data-zh="流程相对清楚">Relatively clear process</option>
-                    <option value="20" data-en="Automated intake and routing" data-zh="已自动收集与分流">Automated intake and routing</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="crm" data-en="Do you use CRM or customer tracking?" data-zh="是否使用CRM或客户追踪系统？">Do you use CRM or customer tracking?</label>
-                  <select id="crm" name="crm">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option value="0" data-en="No" data-zh="没有">No</option>
-                    <option value="8" data-en="Partially" data-zh="部分使用">Partially</option>
-                    <option value="14" data-en="Yes, but inconsistent" data-zh="有，但不稳定">Yes, but inconsistent</option>
-                    <option value="20" data-en="Yes, clearly managed" data-zh="有，而且管理清楚">Yes, clearly managed</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="booking" data-en="How is scheduling handled?" data-zh="咨询或预约流程如何管理？">How is scheduling handled?</label>
-                  <select id="booking" name="booking">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option value="0" data-en="Manual back-and-forth" data-zh="靠人工来回确认">Manual back-and-forth</option>
-                    <option value="8" data-en="Basic calendar tools" data-zh="基础日历工具">Basic calendar tools</option>
-                    <option value="14" data-en="Dedicated booking tool" data-zh="专用预约工具">Dedicated booking tool</option>
-                    <option value="20" data-en="Integrated with workflow" data-zh="已经整合到流程里">Integrated with workflow</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="response" data-en="How quickly are customer inquiries answered?" data-zh="企业通常多久回复客户咨询？">How quickly are customer inquiries answered?</label>
-                  <select id="response" name="response">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option value="0" data-en="Frequently delayed" data-zh="经常延迟">Frequently delayed</option>
-                    <option value="8" data-en="Within one business day" data-zh="一个工作日内">Within one business day</option>
-                    <option value="14" data-en="Within hours" data-zh="数小时内">Within hours</option>
-                    <option value="20" data-en="Near real-time" data-zh="接近实时">Near real-time</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="automation" data-en="Are repetitive tasks already automated?" data-zh="重复性任务是否已经自动化？">Are repetitive tasks already automated?</label>
-                  <select id="automation" name="automation">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option value="0" data-en="No" data-zh="没有">No</option>
-                    <option value="8" data-en="Some tasks" data-zh="部分任务">Some tasks</option>
-                    <option value="14" data-en="Multiple workflows" data-zh="多个流程已自动化">Multiple workflows</option>
-                    <option value="20" data-en="Broadly automated" data-zh="大范围自动化">Broadly automated</option>
-                  </select>
-                </div>
-
-                <button class="btn primary" type="submit" data-en="Generate Result" data-zh="生成结果">Generate Result</button>
-              </form>
-            </div>
-
-            <div class="card">
-              <div class="micro" data-en="Assessment result" data-zh="评估结果">Assessment result</div>
-              <div class="score" id="scoreValue">--</div>
-              <div class="muted" id="scoreLabel" data-en="Complete the form to generate your score" data-zh="填写表单后生成评分">Complete the form to generate your score</div>
-
-              <div class="report">
-                <div><strong data-en="Readiness level:" data-zh="成熟度等级：">Readiness level:</strong> <span id="readiness">—</span></div>
-                <div><strong data-en="Primary gap:" data-zh="关键缺口：">Primary gap:</strong> <span id="gap">—</span></div>
-                <div><strong data-en="Recommended next step:" data-zh="建议下一步：">Recommended next step:</strong> <span id="nextStep">—</span></div>
-                <div><strong data-en="Suggested service direction:" data-zh="推荐服务方向：">Suggested service direction:</strong> <span id="advisoryNote">—</span></div>
-              </div>
-
-              <div class="grid-6" style="margin-top:16px;">
-                <div class="metric-card">
-                  <div class="metric-name" data-en="System Clarity Level" data-zh="系统清晰度等级">System Clarity Level</div>
-                  <div class="metric-score" id="metricSystem">—</div>
-                  <div class="meter"><div class="meter-bar" id="barSystem"></div></div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-name" data-en="Customer Flow Readiness" data-zh="客户路径准备度">Customer Flow Readiness</div>
-                  <div class="metric-score" id="metricCustomer">—</div>
-                  <div class="meter"><div class="meter-bar" id="barCustomer"></div></div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-name" data-en="Human Judgment Node Stability" data-zh="人类判断节点稳定性">Human Judgment Node Stability</div>
-                  <div class="metric-score" id="metricJudgment">—</div>
-                  <div class="meter"><div class="meter-bar" id="barJudgment"></div></div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-name" data-en="Automation Boundary Readiness" data-zh="自动化边界准备度">Automation Boundary Readiness</div>
-                  <div class="metric-score" id="metricBoundary">—</div>
-                  <div class="meter"><div class="meter-bar" id="barBoundary"></div></div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-name" data-en="Responsibility Structure" data-zh="责任结构状态">Responsibility Structure</div>
-                  <div class="metric-score" id="metricResponsibility">—</div>
-                  <div class="meter"><div class="meter-bar" id="barResponsibility"></div></div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-name" data-en="Key Structural Gap" data-zh="关键结构缺口">Key Structural Gap</div>
-                  <div class="metric-score" id="metricGap">—</div>
-                  <div class="meter"><div class="meter-bar" id="barGap"></div></div>
-                </div>
-              </div>
-
-              <div class="report-block" style="margin-top:16px;">
-                <strong data-en="What this score suggests:" data-zh="这个分数说明：">What this score suggests:</strong>
-                <div id="scoreExplanation" class="muted" style="margin-top:8px;">—</div>
-              </div>
-
-              <div class="report-block">
-                <strong data-en="Human judgment nodes to keep visible first:" data-zh="建议优先保留可见的人类判断节点：">Human judgment nodes to keep visible first:</strong>
-                <div id="humanNodes" class="muted" style="margin-top:8px;">—</div>
-              </div>
-
-              <div class="report-block">
-                <strong data-en="Automation boundary recommendation:" data-zh="自动化边界建议：">Automation boundary recommendation:</strong>
-                <div id="boundaryNote" class="muted" style="margin-top:8px;">—</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-process">
-          <div class="card">
-            <h2 data-en="Process" data-zh="流程">Process</h2>
-            <p class="muted" data-en="The goal is not to force clients to learn more language first, but to see where the real bottleneck is and what should remain human-led." data-zh="目标不是让客户先学一堆概念，而是先看真正的瓶颈在哪里，以及哪些地方应该继续由人主导。">
-              The goal is not to force clients to learn more language first, but to see where the real bottleneck is and what should remain human-led.
-            </p>
-          </div>
-
-          <div class="grid-4">
-            <div class="card"><div class="label">Step 01</div><h3 data-en="Clarify the bottleneck" data-zh="先明确瓶颈">Clarify the bottleneck</h3></div>
-            <div class="card"><div class="label">Step 02</div><h3 data-en="Assess flow and structure" data-zh="评估流程与结构">Assess flow and structure</h3></div>
-            <div class="card"><div class="label">Step 03</div><h3 data-en="Design a grounded path" data-zh="设计更稳的路径">Design a grounded path</h3></div>
-            <div class="card"><div class="label">Step 04</div><h3 data-en="Implement and refine" data-zh="实施并优化">Implement and refine</h3></div>
-          </div>
-        </section>
-
-        <section class="view" id="view-insights">
-          <div class="card">
-            <h2 data-en="Operational insights" data-zh="运营观察">Operational insights</h2>
-
-            <div class="faq-item">
-              <h3 data-en="Why businesses can still feel chaotic even with more tools" data-zh="为什么工具很多，企业还是会乱">Why businesses can still feel chaotic even with more tools</h3>
-              <p class="muted" data-en="Because the real missing layer is often not software, but workflow clarity, ownership, responsibility structure, and decision architecture." data-zh="真正缺的常常不是工具，而是流程清晰、责任清晰、责任结构，以及决策架构。">
-                Because the real missing layer is often not software, but workflow clarity, ownership, responsibility structure, and decision architecture.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3 data-en="Why automation should not be the first move everywhere" data-zh="为什么自动化不应该一上来就做很多">Why automation should not be the first move everywhere</h3>
-              <p class="muted" data-en="If the underlying process is unclear, automation usually amplifies confusion. It speeds up motion, but not necessarily good judgment." data-zh="底层流程没理清之前，自动化通常只是把混乱放大。它能加快动作，但不一定能加快好的判断。">
-                If the underlying process is unclear, automation usually amplifies confusion. It speeds up motion, but not necessarily good judgment.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3 data-en="Why customer management shapes growth efficiency" data-zh="为什么客户管理决定了增长效率">Why customer management shapes growth efficiency</h3>
-              <p class="muted" data-en="The key difference is whether the path from inquiry to service is designed clearly enough — and whether each stage has a visible owner." data-zh="真正的差别在于，从咨询到服务的路径是否被设计得足够清楚，以及每个阶段是否有明确负责人。">
-                The key difference is whether the path from inquiry to service is designed clearly enough — and whether each stage has a visible owner.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3 data-en="Why responsibility structure matters before scaling" data-zh="为什么扩张前要先理清责任结构">Why responsibility structure matters before scaling</h3>
-              <p class="muted" data-en="When businesses grow faster than their responsibility structure, teams start repeating work, dropping handoffs, and relying on memory instead of system logic." data-zh="当企业增长速度快于责任结构的清晰度时，团队就容易重复劳动、交接失误，并开始依赖记忆而不是系统逻辑。">
-                When businesses grow faster than their responsibility structure, teams start repeating work, dropping handoffs, and relying on memory instead of system logic.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3 data-en="Why human judgment nodes still matter in business systems" data-zh="为什么业务系统里仍然需要人类判断节点">Why human judgment nodes still matter in business systems</h3>
-              <p class="muted" data-en="Not every step should be automated. High-value exceptions, sensitive customer situations, prioritization decisions, and final responsibility checkpoints still need visible human judgment." data-zh="并不是所有步骤都适合自动化。高价值例外情况、敏感客户场景、优先级判断以及最终责任确认，仍然需要清楚可见的人类判断。">
-                Not every step should be automated. High-value exceptions, sensitive customer situations, prioritization decisions, and final responsibility checkpoints still need visible human judgment.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-faq">
-          <div class="card">
-            <h2>FAQ</h2>
-            <div class="faq-item">
-              <h3 data-en="Do you only provide advice, or can you also help with implementation?" data-zh="你们只做咨询，还是也能参与搭建？">Do you only provide advice, or can you also help with implementation?</h3>
-              <p class="muted" data-en="Both are possible depending on the scope." data-zh="两者都可以，取决于项目范围。">Both are possible depending on the scope.</p>
-            </div>
-            <div class="faq-item">
-              <h3 data-en="Can this include CRM, booking flow, and customer process support?" data-zh="可以协助CRM、预约和客户流程吗？">Can this include CRM, booking flow, and customer process support?</h3>
-              <p class="muted" data-en="Yes. These are often the most fragmented parts of a growing business." data-zh="可以。这些往往是增长型企业最容易碎片化的部分。">Yes. These are often the most fragmented parts of a growing business.</p>
-            </div>
-            <div class="faq-item">
-              <h3 data-en="Will the assessment leak business information?" data-zh="评估会不会泄露信息？">Will the assessment leak business information?</h3>
-              <p class="muted" data-en="No confidential information should be entered into the assessment or contact form." data-zh="请不要在评估或联系表单中填写机密信息。">No confidential information should be entered into the assessment or contact form.</p>
-            </div>
-            <div class="faq-item">
-              <h3 data-en="Does every project need a large system from the start?" data-zh="是不是一开始就要做很大的系统？">Does every project need a large system from the start?</h3>
-              <p class="muted" data-en="No. In many cases, starting with one key bottleneck is the most effective path." data-zh="不一定。很多情况下，先从一个关键瓶颈开始是最有效的。">No. In many cases, starting with one key bottleneck is the most effective path.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-contact">
-          <div class="card">
-            <h2 data-en="Contact" data-zh="联系">Contact</h2>
-            <p class="muted" data-en="If you want to talk about workflow clarity, CRM logic, responsibility structure, or automation support, the simplest next step is to reach out." data-zh="如果你想聊流程清晰、CRM逻辑、责任结构或自动化支持，最简单的下一步就是直接联系。">
-              If you want to talk about workflow clarity, CRM logic, responsibility structure, or automation support, the simplest next step is to reach out.
-            </p>
-          </div>
-
-          <div class="contact-shell">
-            <div class="card">
-              <div class="notice" data-en="Please do not submit confidential, sensitive, medical, legal, financial, payment card, government ID, or other regulated personal information through this form." data-zh="请不要通过此表单提交机密信息、敏感信息、医疗信息、法律信息、金融信息、支付卡信息、政府证件信息或其他受监管的个人数据。">
-                Please do not submit confidential, sensitive, medical, legal, financial, payment card, government ID, or other regulated personal information through this form.
-              </div>
-
-              <form class="form" action="https://api.web3forms.com/submit" method="POST" style="margin-top:16px;">
-                <input type="hidden" name="access_key" value="ff1ff130-68b2-480f-a4be-3f6f8734936e">
-                <input type="hidden" name="subject" value="New Contact from BB369 Tech Website">
-                <input type="hidden" name="from_name" value="BB369 Tech Website">
-                <input type="checkbox" name="botcheck" style="display:none;">
-
-                <div class="field">
-                  <label data-en="Name" data-zh="姓名">Name</label>
-                  <input name="name" type="text" placeholder="Your name" data-placeholder-en="Your name" data-placeholder-zh="你的姓名" required>
-                </div>
-
-                <div class="field">
-                  <label data-en="Company" data-zh="公司名称">Company</label>
-                  <input name="company" type="text" placeholder="Company name" data-placeholder-en="Company name" data-placeholder-zh="公司名称">
-                </div>
-
-                <div class="field">
-                  <label data-en="Email" data-zh="邮箱">Email</label>
-                  <input name="email" type="email" placeholder="contact@example.com" required>
-                </div>
-
-                <div class="field">
-                  <label data-en="Area of interest" data-zh="感兴趣的服务">Area of interest</label>
-                  <select name="service_interest">
-                    <option value="" data-en="Select" data-zh="请选择">Select</option>
-                    <option data-en="Enterprise Transformation" data-zh="企业转型">Enterprise Transformation</option>
-                    <option data-en="AI Automation" data-zh="AI自动化">AI Automation</option>
-                    <option data-en="CRM Structure" data-zh="CRM结构">CRM Structure</option>
-                    <option data-en="Booking Flow" data-zh="预约流程">Booking Flow</option>
-                    <option data-en="Business System Optimization" data-zh="业务系统优化">Business System Optimization</option>
-                    <option data-en="Custom Project" data-zh="定制项目">Custom Project</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label data-en="Project needs" data-zh="项目需求">Project needs</label>
-                  <textarea name="message" placeholder="Briefly describe what you need" data-placeholder-en="Briefly describe what you need" data-placeholder-zh="请简要描述你的需求" required></textarea>
-                </div>
-
-                <div class="hero-actions">
-                  <button class="btn primary" type="submit" data-en="Submit Inquiry" data-zh="提交咨询">Submit Inquiry</button>
-                  <a class="btn secondary" href="mailto:contact@bb369tech.com" data-en="Email Us" data-zh="邮件联系">Email Us</a>
-                </div>
-              </form>
-            </div>
-
-            <div class="card">
-              <div><strong data-en="Email:" data-zh="邮箱：">Email:</strong> contact@bb369tech.com</div>
-              <div><strong data-en="Website:" data-zh="网站：">Website:</strong> https://ai.bb369tech.com</div>
-              <div><strong data-en="Booking:" data-zh="预约：">Booking:</strong> <span data-en="30-minute consultation" data-zh="30分钟咨询">30-minute consultation</span></div>
-
-              <div class="contact-links">
-                <a href="mailto:contact@bb369tech.com" data-en="Email" data-zh="邮件">Email</a>
-                <a href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener" data-en="Book" data-zh="预约">Book</a>
-                <a href="https://ai.bb369tech.com" target="_blank" rel="noopener" data-en="Open site" data-zh="打开网站">Open site</a>
-              </div>
-
-              <div class="panel" style="margin-top:16px;">
-                <div class="micro" data-en="Current stack" data-zh="当前系统">Current stack</div>
-                <ul>
-                  <li>Cal.com</li>
-                  <li>Web3Forms</li>
-                  <li>Tawk.to</li>
-                  <li>Airtable as CRM</li>
-                </ul>
-              </div>
-
-              <div class="panel" style="margin-top:16px;">
-                <div class="micro" data-en="Data handling note" data-zh="数据处理说明">Data handling note</div>
-                <p class="muted" data-en="Contact requests may be processed through third-party form, booking, chat, and CRM tools. Do not send confidential or regulated personal data through this site." data-zh="联系请求可能会通过第三方表单、预约、聊天和CRM工具处理。请不要通过本站发送机密信息或受监管的个人数据。">
-                  Contact requests may be processed through third-party form, booking, chat, and CRM tools. Do not send confidential or regulated personal data through this site.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-legal">
-          <div class="card">
-            <h2 data-en="Legal" data-zh="法律信息">Legal</h2>
-            <p class="muted" data-en="For privacy, terms, and cookie information, please use the dedicated policy pages below." data-zh="关于隐私、服务条款和 Cookie 说明，请查看以下独立页面。">
-              For privacy, terms, and cookie information, please use the dedicated policy pages below.
-            </p>
-
-            <div class="legal-list" style="margin-top:16px;">
-              <div class="legal-item">
-                <h3 data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</h3>
-                <p class="muted" data-en="How business contact information may be collected, used, stored, and handled." data-zh="说明业务联系信息如何被收集、使用、保存和处理。">
-                  How business contact information may be collected, used, stored, and handled.
-                </p>
-                <div class="hero-actions">
-                  <a class="btn secondary" href="privacy.html" data-en="Open Privacy Policy" data-zh="查看隐私政策">Open Privacy Policy</a>
-                </div>
-              </div>
-
-              <div class="legal-item">
-                <h3 data-en="Terms of Service" data-zh="服务条款">Terms of Service</h3>
-                <p class="muted" data-en="General terms for website use, business communication, project scope, and service discussions." data-zh="说明网站使用、业务沟通、项目范围和服务合作的一般条款。">
-                  General terms for website use, business communication, project scope, and service discussions.
-                </p>
-                <div class="hero-actions">
-                  <a class="btn secondary" href="terms.html" data-en="Open Terms of Service" data-zh="查看服务条款">Open Terms of Service</a>
-                </div>
-              </div>
-
-              <div class="legal-item">
-                <h3 data-en="Cookie Notice" data-zh="Cookie 说明">Cookie Notice</h3>
-                <p class="muted" data-en="How cookies or similar technologies may be used by third-party services on this website." data-zh="说明本网站上的第三方服务如何使用 Cookie 或类似技术。">
-                  How cookies or similar technologies may be used by third-party services on this website.
-                </p>
-                <div class="hero-actions">
-                  <a class="btn secondary" href="cookies.html" data-en="Open Cookie Notice" data-zh="查看 Cookie 说明">Open Cookie Notice</a>
-                </div>
-              </div>
-
-              <div class="legal-item">
-                <h3 data-en="Disclaimer" data-zh="免责声明">Disclaimer</h3>
-                <p class="muted" data-en="This website provides general business information only and does not provide legal, medical, tax, financial, or investment advice." data-zh="本网站仅提供一般业务信息，不构成法律、医疗、税务、金融或投资建议。">
-                  This website provides general business information only and does not provide legal, medical, tax, financial, or investment advice.
-                </p>
-              </div>
-
-              <div class="legal-item">
-                <h3 data-en="Research Attribution" data-zh="研究归属">Research Attribution</h3>
-                <p class="muted" data-en="Research foundation developed through independent interdisciplinary research by Xufen Tu." data-zh="本平台研究基础源于 Xufen Tu 的独立跨学科研究。">
-                  Research foundation developed through independent interdisciplinary research by Xufen Tu.
-                </p>
-              </div>
-            </div>
-
-            <div class="footer-note">
-              © 2024 BB369 Tech — Research & Advisory ·
-              <a href="privacy.html" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a> ·
-              <a href="terms.html" data-en="Terms of Service" data-zh="服务条款">Terms of Service</a> ·
-              <a href="cookies.html" data-en="Cookie Notice" data-zh="Cookie 说明">Cookie Notice</a>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
   </div>
 
-  <script>
-    const app = document.getElementById("app");
-    const sidebar = document.getElementById("sidebar");
-    const collapseBtn = document.getElementById("collapseBtn");
-    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-    const navItems = document.querySelectorAll(".nav-item");
-    const views = document.querySelectorAll(".view");
-    const pageTitle = document.getElementById("pageTitle");
-    const pageSub = document.getElementById("pageSub");
-    const langEn = document.getElementById("langEn");
-    const langZh = document.getElementById("langZh");
-    let currentLang = "en";
+  <div class="grid-2">
+    <div class="card">
+      <div class="label" data-en="Common issues" data-zh="常见问题">Common issues</div>
+      <div class="check-list">
+        <div class="check">
+          <span class="check-mark">✓</span>
+          <div data-en="Leads arrive, but follow-up is inconsistent." data-zh="客户来了，但跟进不稳定。">Leads arrive, but follow-up is inconsistent.</div>
+        </div>
+        <div class="check">
+          <span class="check-mark">✓</span>
+          <div data-en="Information is scattered across tools." data-zh="信息分散在不同工具里。">Information is scattered across tools.</div>
+        </div>
+        <div class="check">
+          <span class="check-mark">✓</span>
+          <div data-en="Booking and confirmation still rely on manual back-and-forth." data-zh="预约与确认仍依赖人工来回沟通。">Booking and confirmation still rely on manual back-and-forth.</div>
+        </div>
+        <div class="check">
+          <span class="check-mark">✓</span>
+          <div data-en="Automation is desired, but the underlying process is not stable yet." data-zh="想做自动化，但底层流程还没理顺。">Automation is desired, but the underlying process is not stable yet.</div>
+        </div>
+      </div>
+    </div>
 
-    const pageMeta = {
-      overview: {
-        en: ["Overview", "Business systems optimization, customer flow clarity, responsibility structure, and AI automation support."],
-        zh: ["总览", "企业系统优化、客户流程清晰化、责任结构与自动化支持。"]
-      },
-      services: {
-        en: ["Services", "Core service areas for customer systems, CRM structure, and workflow clarity."],
-        zh: ["服务", "客户系统、CRM结构与流程清晰化的核心服务。"]
-      },
-      modules: {
-        en: ["Modules", "Detailed capabilities organized in one workspace."],
-        zh: ["模块", "把详细能力集中在一个工作区里。"]
-      },
-      assessment: {
-        en: ["Assessment", "A simplified readiness scoring tool for business systems."],
-        zh: ["评估", "用于业务系统准备度的简化评分工具。"]
-      },
-      process: {
-        en: ["Process", "A grounded path from bottleneck to implementation."],
-        zh: ["流程", "从瓶颈判断到实施优化的路径。"]
-      },
-      insights: {
-        en: ["Insights", "Operational ideas behind workflow and automation decisions."],
-        zh: ["观点", "流程与自动化判断背后的运营观察。"]
-      },
-      faq: {
-        en: ["FAQ", "Answers to common business and project questions."],
-        zh: ["常见问题", "常见业务与项目问题的回答。"]
-      },
-      contact: {
-        en: ["Contact", "Reach out to discuss workflow, CRM, responsibility structure, or automation support."],
-        zh: ["联系", "联系讨论流程、CRM、责任结构或自动化支持。"]
-      },
-      legal: {
-        en: ["Legal", "Privacy, terms, cookies, disclaimer, and data handling notes."],
-        zh: ["法律", "隐私、条款、Cookie、免责声明与数据处理说明。"]
-      }
-    };
+    <div class="card">
+      <div class="label" data-en="What this work improves" data-zh="改善方向">What this work improves</div>
+      <div class="check-list">
+        <div class="check">
+          <span class="check-mark">01</span>
+          <div data-en="A clearer customer path from inquiry to service." data-zh="让客户从咨询到服务的路径更清楚。">A clearer customer path from inquiry to service.</div>
+        </div>
+        <div class="check">
+          <span class="check-mark">02</span>
+          <div data-en="More stable ownership and less repeated communication." data-zh="减少重复沟通，让责任更清晰。">More stable ownership and less repeated communication.</div>
+        </div>
+        <div class="check">
+          <span class="check-mark">03</span>
+          <div data-en="A stronger CRM structure with less fragmented records." data-zh="让CRM结构更稳定，客户记录不再分散。">A stronger CRM structure with less fragmented records.</div>
+        </div>
+        <div class="check">
+          <span class="check-mark">04</span>
+          <div data-en="A more grounded path toward automation." data-zh="让自动化从更稳的地方开始。">A more grounded path toward automation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function setView(viewName) {
-      navItems.forEach(btn => btn.classList.toggle("active", btn.dataset.view === viewName));
-      views.forEach(v => v.classList.toggle("active", v.id === `view-${viewName}`));
-      pageTitle.textContent = pageMeta[viewName][currentLang][0];
-      pageSub.textContent = pageMeta[viewName][currentLang][1];
-      if (window.innerWidth <= 860) {
-        app.classList.remove("mobile-sidebar-open");
-      }
-    }
+<section class="view" id="view-services">
+  <div class="card">
+    <h2 data-en="Services" data-zh="服务">Services</h2>
+    <p class="muted" data-en="Think of this as business system design for companies that want clearer customer flow, better coordination, stronger responsibility structure, and more stable operations." data-zh="你可以把这理解为：帮企业把客户路径、运营流程、责任结构和系统逻辑搭清楚。">
+      Think of this as business system design for companies that want clearer customer flow, better coordination, stronger responsibility structure, and more stable operations.
+    </p>
+  </div>
 
-    navItems.forEach(btn => {
-      btn.addEventListener("click", () => setView(btn.dataset.view));
-    });
+  <div class="grid-3">
+    <div class="card">
+      <div class="label">Service 01</div>
+      <h3 data-en="Customer acquisition flow" data-zh="客户获取流程">Customer acquisition flow</h3>
+      <p class="muted" data-en="Turn the website into a clearer business entry point that can receive, screen, and move customers forward." data-zh="让官网不只是展示页，而是真正能接住客户、筛选客户、推动客户行动的入口。">
+        Turn the website into a clearer business entry point that can receive, screen, and move customers forward.
+      </p>
+      <ul>
+        <li data-en="Form design" data-zh="表单设计">Form design</li>
+        <li data-en="Inquiry entry structure" data-zh="咨询入口梳理">Inquiry entry structure</li>
+        <li data-en="Conversion path optimization" data-zh="转化路径优化">Conversion path optimization</li>
+      </ul>
+    </div>
 
-    document.querySelectorAll("[data-jump]").forEach(btn => {
-      btn.addEventListener("click", () => setView(btn.dataset.jump));
-    });
+    <div class="card">
+      <div class="label">Service 02</div>
+      <h3 data-en="CRM and follow-up structure" data-zh="CRM与跟进结构">CRM and follow-up structure</h3>
+      <p class="muted" data-en="Organize customer information scattered across email, chat, forms, and spreadsheets into a usable workflow." data-zh="把分散在聊天、邮件、表格里的客户信息整理成可用的工作流。">
+        Organize customer information scattered across email, chat, forms, and spreadsheets into a usable workflow.
+      </p>
+      <ul>
+        <li data-en="CRM logic design" data-zh="CRM逻辑设计">CRM logic design</li>
+        <li data-en="Follow-up structure" data-zh="跟进结构">Follow-up structure</li>
+        <li data-en="Status management recommendations" data-zh="状态管理建议">Status management recommendations</li>
+      </ul>
+    </div>
 
-    collapseBtn.addEventListener("click", () => {
-      if (window.innerWidth <= 860) {
-        app.classList.toggle("mobile-sidebar-open");
-      } else {
-        app.classList.toggle("sidebar-collapsed");
-        sidebar.classList.toggle("hidden-collapsed");
-      }
-    });
+    <div class="card">
+      <div class="label">Service 03</div>
+      <h3 data-en="Operational workflow clarity" data-zh="运营流程清晰化">Operational workflow clarity</h3>
+      <p class="muted" data-en="Reduce repeated communication, unclear handoffs, and temporary fixes so the team can stay stable as operations grow." data-zh="减少重复沟通、责任不清和临时补救，让团队在业务变复杂后仍然能稳定运转。">
+        Reduce repeated communication, unclear handoffs, and temporary fixes so the team can stay stable as operations grow.
+      </p>
+      <ul>
+        <li data-en="Workflow mapping" data-zh="流程梳理">Workflow mapping</li>
+        <li data-en="Automation recommendations" data-zh="自动化建议">Automation recommendations</li>
+        <li data-en="Key judgment points" data-zh="关键判断节点">Key judgment points</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    mobileMenuBtn.addEventListener("click", () => {
-      if (window.innerWidth <= 860) {
-        app.classList.toggle("mobile-sidebar-open");
-      } else {
-        app.classList.toggle("sidebar-collapsed");
-        sidebar.classList.toggle("hidden-collapsed");
-      }
-    });
+<section class="view" id="view-modules">
+  <div class="card">
+    <h2 data-en="Modules" data-zh="模块">Modules</h2>
+    <p class="muted" data-en="Detailed content is organized in tabs to keep the interface clean." data-zh="详细内容放在标签按钮里，界面更干净。">
+      Detailed content is organized in tabs to keep the interface clean.
+    </p>
+  </div>
 
-    function applyTextLanguage(lang){
-      document.querySelectorAll("[data-en][data-zh]").forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
+  <div class="card">
+    <div class="tabs">
+      <button class="tab active" data-tab="solutions" data-en="Solutions" data-zh="解决方案">Solutions</button>
+      <button class="tab" data-tab="automation" data-en="Automation" data-zh="自动化">Automation</button>
+      <button class="tab" data-tab="crm" data-en="CRM" data-zh="客户管理">CRM</button>
+      <button class="tab" data-tab="usecases" data-en="Use Cases" data-zh="应用场景">Use Cases</button>
+      <button class="tab" data-tab="deliverables" data-en="Deliverables" data-zh="交付物">Deliverables</button>
+      <button class="tab" data-tab="priority" data-en="What To Do First" data-zh="先做什么">What To Do First</button>
+      <button class="tab" data-tab="research" data-en="Research Foundation" data-zh="研究基础">Research Foundation</button>
+    </div>
 
-      document.querySelectorAll("[data-placeholder-en][data-placeholder-zh]").forEach(el => {
-        el.setAttribute("placeholder", el.getAttribute(`data-placeholder-${lang}`));
-      });
+    <div class="tab-view active" id="tab-solutions">
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">Solution 01</div>
+          <h3 data-en="Customer acquisition system" data-zh="客户获取系统">Customer acquisition system</h3>
+          <p class="muted" data-en="Upgrade the website from looking good to actually receiving customer demand." data-zh="把网站从“好看”升级成“能接客户”的入口。">
+            Upgrade the website from looking good to actually receiving customer demand.
+          </p>
+        </div>
+        <div class="card">
+          <div class="label">Solution 02</div>
+          <h3 data-en="Follow-up and CRM structure" data-zh="跟进与CRM结构">Follow-up and CRM structure</h3>
+          <p class="muted" data-en="Keep customer stages visible instead of letting communication drift across tools." data-zh="让客户阶段可见，而不是让沟通散落在多个工具里。">
+            Keep customer stages visible instead of letting communication drift across tools.
+          </p>
+        </div>
+        <div class="card">
+          <div class="label">Solution 03</div>
+          <h3 data-en="Appointment and service flow" data-zh="预约与服务流程">Appointment and service flow</h3>
+          <p class="muted" data-en="Reduce manual scheduling overhead and create a smoother intake-to-service process." data-zh="减少人工约时间成本，让接待到服务的流程更顺。">
+            Reduce manual scheduling overhead and create a smoother intake-to-service process.
+          </p>
+        </div>
+      </div>
+    </div>
 
-      document.querySelectorAll("option[data-en][data-zh]").forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
+    <div class="tab-view" id="tab-automation">
+      <div class="grid-4">
+        <div class="card"><h3 data-en="Lead intake" data-zh="线索收集">Lead intake</h3></div>
+        <div class="card"><h3 data-en="Response support" data-zh="咨询回复">Response support</h3></div>
+        <div class="card"><h3 data-en="Scheduling flow" data-zh="预约安排">Scheduling flow</h3></div>
+        <div class="card"><h3 data-en="Knowledge support" data-zh="知识支持">Knowledge support</h3></div>
+      </div>
+    </div>
 
-      document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
-    }
+    <div class="tab-view" id="tab-crm">
+      <div class="grid-3">
+        <div class="card"><h3 data-en="Lead collection and organization" data-zh="客户线索收集与整理">Lead collection and organization</h3></div>
+        <div class="card"><h3 data-en="Customer follow-up records" data-zh="客户跟进记录">Customer follow-up records</h3></div>
+        <div class="card"><h3 data-en="Workflow visibility" data-zh="流程可视化">Workflow visibility</h3></div>
+      </div>
+    </div>
 
-    function setLanguage(lang) {
-      currentLang = lang;
-      langEn.classList.toggle("active", lang === "en");
-      langZh.classList.toggle("active", lang === "zh");
+    <div class="tab-view" id="tab-usecases">
+      <div class="grid-3">
+        <div class="card"><h3 data-en="SMB AI workflow setup" data-zh="中小企业AI流程">SMB AI workflow setup</h3></div>
+        <div class="card"><h3 data-en="Lead management structure" data-zh="客户线索管理">Lead management structure</h3></div>
+        <div class="card"><h3 data-en="Digital workflow optimization" data-zh="数字化流程优化">Digital workflow optimization</h3></div>
+      </div>
+    </div>
 
-      applyTextLanguage(lang);
+    <div class="tab-view" id="tab-deliverables">
+      <div class="grid-3">
+        <div class="card"><h3 data-en="System blueprint" data-zh="系统蓝图">System blueprint</h3></div>
+        <div class="card"><h3 data-en="Automation recommendations" data-zh="自动化建议">Automation recommendations</h3></div>
+        <div class="card"><h3 data-en="Operational improvement direction" data-zh="运营优化建议">Operational improvement direction</h3></div>
+      </div>
+    </div>
 
-      const activeView = document.querySelector(".nav-item.active").dataset.view;
-      pageTitle.textContent = pageMeta[activeView][lang][0];
-      pageSub.textContent = pageMeta[activeView][lang][1];
+    <div class="tab-view" id="tab-priority">
+      <div class="grid-2">
+        <div class="card">
+          <h3 data-en="What usually makes sense first" data-zh="建议先做的事">What usually makes sense first</h3>
+          <ul>
+            <li data-en="Clarify the customer path first" data-zh="先理顺客户路径">Clarify the customer path first</li>
+            <li data-en="Unify inquiry, booking, follow-up, and customer records" data-zh="统一咨询、预约、跟进和客户记录">Unify inquiry, booking, follow-up, and customer records</li>
+            <li data-en="Separate judgment-required work from automation-ready work" data-zh="区分人工判断和自动化任务">Separate judgment-required work from automation-ready work</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-en="What is usually not a good first step" data-zh="通常不建议先做的事">What is usually not a good first step</h3>
+          <ul>
+            <li data-en="Adding heavy automation before the workflow is clear" data-zh="流程没理顺前就堆自动化">Adding heavy automation before the workflow is clear</li>
+            <li data-en="Buying more tools before operating logic is stable" data-zh="逻辑没稳前就继续买工具">Buying more tools before operating logic is stable</li>
+            <li data-en="Scaling outreach while intake and responsibility are still unclear" data-zh="入口和责任没清楚前就扩大投放">Scaling outreach while intake and responsibility are still unclear</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      const scoreValue = document.getElementById("scoreValue").textContent;
-      if (scoreValue !== "--") {
-        const form = document.getElementById("diagnosticForm");
-        form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
-      }
-    }
-langEn.addEventListener("click", () => setLanguage("en"));
-langZh.addEventListener("click", () => setLanguage("zh"));
+    <div class="tab-view" id="tab-research">
+      <div class="grid-2">
+        <div class="card">
+          <h3 data-en="Research foundation" data-zh="研究基础">Research foundation</h3>
+          <p class="muted" data-en="This work is grounded in enterprise transformation, AI governance, decision architecture, human judgment, and complex systems thinking." data-zh="这套工作建立在企业转型、AI治理、决策架构、人类判断与复杂系统研究之上。">
+            This work is grounded in enterprise transformation, AI governance, decision architecture, human judgment, and complex systems thinking.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Research focus" data-zh="研究重点">Research focus</h3>
+          <p class="muted" data-en="The key challenge is not only speed, but workflow clarity, responsibility clarity, judgment stability, and better automation boundaries." data-zh="关键挑战不只是速度，而是流程清晰、责任清晰、判断稳定，以及更清楚的自动化边界。">
+            The key challenge is not only speed, but workflow clarity, responsibility clarity, judgment stability, and better automation boundaries.
+          </p>
+        </div>
+      </div>
 
-const navGroup = document.querySelector(".sidebar-group");
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="card">
+          <h3 data-en="Research attribution" data-zh="研究归属">Research attribution</h3>
+          <p class="muted" data-en="Research foundation developed through independent interdisciplinary research by Xufen Tu." data-zh="本平台研究基础源于 Xufen Tu 的独立跨学科研究。">
+            Research foundation developed through independent interdisciplinary research by Xufen Tu.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Practical orientation" data-zh="实践方向">Practical orientation</h3>
+          <p class="muted" data-en="This platform translates structural research into usable business system design for customer flow, CRM logic, responsibility structure, and workflow optimization." data-zh="这个平台把结构研究转化为企业可实际使用的客户流程、CRM逻辑、责任结构与工作流优化方案。">
+            This platform translates structural research into usable business system design for customer flow, CRM logic, responsibility structure, and workflow optimization.
+          </p>
+        </div>
+      </div>
 
-if (window.innerWidth <= 860 && navGroup) {
-  navGroup.style.display = "none";
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="card">
+          <h3 data-en="Enterprise AI governance framework" data-zh="企业AI治理框架">Enterprise AI governance framework</h3>
+          <img src="images/ai-governance-decision-architecture-framework.png" alt="Enterprise AI governance framework" loading="lazy">
+        </div>
+        <div class="card">
+          <h3 data-en="Decision architecture model" data-zh="决策架构模型">Decision architecture model</h3>
+          <img src="images/decision-architecture-model.png" alt="Decision architecture model" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-assessment">
+  <div class="card">
+    <h2 data-en="Assessment" data-zh="评估">Assessment</h2>
+    <p class="muted" data-en="A simplified readiness assessment for founders and teams who want a quick view of where their system stands — not only in automation, but in clarity, responsibility, and judgment stability." data-zh="一个给企业老板和团队使用的简化评估，用来快速判断系统处于什么阶段，不只是看自动化，也看清晰度、责任结构和判断稳定性。">
+      A simplified readiness assessment for founders and teams who want a quick view of where their system stands — not only in automation, but in clarity, responsibility, and judgment stability.
+    </p>
+  </div>
+
+  <div class="diag-shell">
+    <div class="card">
+      <form class="form" id="diagnosticForm">
+        <div class="field">
+          <label for="company" data-en="Company name (optional)" data-zh="公司名称（可选）">Company name (optional)</label>
+          <input id="company" name="company" type="text" placeholder="Company name" data-placeholder-en="Company name" data-placeholder-zh="公司名称" />
+        </div>
+
+        <div class="field">
+          <label for="industry" data-en="Industry" data-zh="所属行业">Industry</label>
+          <select id="industry" name="industry">
+            <option value="" data-en="Select" data-zh="请选择">Select</option>
+            <option data-en="Manufacturing" data-zh="制造业">Manufacturing</option>
+            <option data-en="Technology / Software" data-zh="科技 / 软件">Technology / Software</option>
+            <option data-en="Retail / E-commerce" data-zh="零售 / 电商">Retail / E-commerce</option>
+            <option data-en="Professional Services" data-zh="专业服务">Professional Services</option>
+            <option data-en="Finance" data-zh="金融">Finance</option>
+            <option data-en="Healthcare" data-zh="医疗健康">Healthcare</option>
+            <option data-en="Education / Training" data-zh="教育 / 培训">Education / Training</option>
+            <option data-en="Other" data-zh="其他">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="leadFlow" data-en="How are new leads currently handled?" data-zh="目前新客户线索如何处理？">How are new leads currently handled?</label>
+          <select id="leadFlow" name="leadFlow">
+            <option value="" data-en="Select" data-zh="请选择">Select</option>
+            <option value="5" data-en="Mostly manual communication" data-zh="主要靠人工沟通">Mostly manual communication</option>
+            <option value="10" data-en="Some forms or shared tools" data-zh="已有部分表单或共享工具">Some forms or shared tools</option>
+            <option value="15" data-en="Relatively clear process" data-zh="流程相对清楚">Relatively clear process</option>
+            <option value="20" data-en="Automated intake and routing" data-zh="已自动收集与分流">Automated intake and routing</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="crm" data-en="Do you use CRM or customer tracking?" data-zh="是否使用CRM或客户追踪系统？">Do you use CRM or customer tracking?</label>
+          <select id="crm" name="crm">
+            <option value="" data-en="Select" data-zh="请选择">Select</option>
+            <option value="0" data-en="No" data-zh="没有">No</option>
+            <option value="8" data-en="Partially" data-zh="部分使用">Partially</option>
+            <option value="14" data-en="Yes, but inconsistent" data-zh="有，但不稳定">Yes, but inconsistent</option>
+            <option value="20" data-en="Yes, clearly managed" data-zh="有，而且管理清楚">Yes, clearly managed</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="booking" data-en="How is scheduling handled?" data-zh="咨询或预约流程如何管理？">How is scheduling handled?</label>
+          <select id="booking" name="booking">
+            <option value="" data-en="Select" data-zh="请选择">Select</option>
+            <option value="0" data-en="Manual back-and-forth" data-zh="靠人工来回确认">Manual back-and-forth</option>
+            <option value="8" data-en="Basic calendar tools" data-zh="基础日历工具">Basic calendar tools</option>
+            <option value="14" data-en="Dedicated booking tool" data-zh="专用预约工具">Dedicated booking tool</option>
+            <option value="20" data-en="Integrated with workflow" data-zh="已经整合到流程里">Integrated with workflow</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="response" data-en="How quickly are customer inquiries answered?" data-zh="企业通常多久回复客户咨询？">How quickly are customer inquiries answered?</label>
+          <select id="response" name="response">
+            <option value="" data-en="Select" data-zh="请选择">Select</option>
+            <option value="0" data-en="Frequently delayed" data-zh="经常延迟">Frequently delayed</option>
+            <option value="8" data-en="Within one business day" data-zh="一个工作日内">Within one business day</option>
+            <option value="14" data-en="Within hours" data-zh="数小时内">Within hours</option>
+            <option value="20" data-en="Near real-time" data-zh="接近实时">Near real-time</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="automation" data-en="Are repetitive tasks already automated?" data-zh="重复性任务是否已经自动化？">Are repetitive tasks already automated?</label>
+          <select id="automation" name="automation">
+            <option value="" data-en="Select" data-zh="请选择">Select</option>
+            <option value="0" data-en="No" data-zh="没有">No</option>
+            <option value="8" data-en="Some tasks" data-zh="部分任务">Some tasks</option>
+            <option value="14" data-en="Multiple workflows" data-zh="多个流程已自动化">Multiple workflows</option>
+            <option value="20" data-en="Broadly automated" data-zh="大范围自动化">Broadly automated</option>
+          </select>
+        </div>
+
+        <button class="btn primary" type="submit" data-en="Generate Result" data-zh="生成结果">Generate Result</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="micro" data-en="Assessment result" data-zh="评估结果">Assessment result</div>
+      <div class="score" id="scoreValue">--</div>
+      <div class="muted" id="scoreLabel" data-en="Complete the form to generate your score" data-zh="填写表单后生成评分">Complete the form to generate your score</div>
+
+      <div class="report">
+        <div><strong data-en="Readiness level:" data-zh="成熟度等级：">Readiness level:</strong> <span id="readiness">—</span></div>
+        <div><strong data-en="Primary gap:" data-zh="关键缺口：">Primary gap:</strong> <span id="gap">—</span></div>
+        <div><strong data-en="Recommended next step:" data-zh="建议下一步：">Recommended next step:</strong> <span id="nextStep">—</span></div>
+        <div><strong data-en="Suggested service direction:" data-zh="推荐服务方向：">Suggested service direction:</strong> <span id="advisoryNote">—</span></div>
+      </div>
+
+      <div class="grid-6" style="margin-top:16px;">
+        <div class="metric-card">
+          <div class="metric-name" data-en="System Clarity Level" data-zh="系统清晰度等级">System Clarity Level</div>
+          <div class="metric-score" id="metricSystem">—</div>
+          <div class="meter"><div class="meter-bar" id="barSystem"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-name" data-en="Customer Flow Readiness" data-zh="客户路径准备度">Customer Flow Readiness</div>
+          <div class="metric-score" id="metricCustomer">—</div>
+          <div class="meter"><div class="meter-bar" id="barCustomer"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-name" data-en="Human Judgment Node Stability" data-zh="人类判断节点稳定性">Human Judgment Node Stability</div>
+          <div class="metric-score" id="metricJudgment">—</div>
+          <div class="meter"><div class="meter-bar" id="barJudgment"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-name" data-en="Automation Boundary Readiness" data-zh="自动化边界准备度">Automation Boundary Readiness</div>
+          <div class="metric-score" id="metricBoundary">—</div>
+          <div class="meter"><div class="meter-bar" id="barBoundary"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-name" data-en="Responsibility Structure" data-zh="责任结构状态">Responsibility Structure</div>
+          <div class="metric-score" id="metricResponsibility">—</div>
+          <div class="meter"><div class="meter-bar" id="barResponsibility"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-name" data-en="Key Structural Gap" data-zh="关键结构缺口">Key Structural Gap</div>
+          <div class="metric-score" id="metricGap">—</div>
+          <div class="meter"><div class="meter-bar" id="barGap"></div></div>
+        </div>
+      </div>
+
+      <div class="report-block" style="margin-top:16px;">
+        <strong data-en="What this score suggests:" data-zh="这个分数说明：">What this score suggests:</strong>
+        <div id="scoreExplanation" class="muted" style="margin-top:8px;">—</div>
+      </div>
+
+      <div class="report-block">
+        <strong data-en="Human judgment nodes to keep visible first:" data-zh="建议优先保留可见的人类判断节点：">Human judgment nodes to keep visible first:</strong>
+        <div id="humanNodes" class="muted" style="margin-top:8px;">—</div>
+      </div>
+
+      <div class="report-block">
+        <strong data-en="Automation boundary recommendation:" data-zh="自动化边界建议：">Automation boundary recommendation:</strong>
+        <div id="boundaryNote" class="muted" style="margin-top:8px;">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-process">
+  <div class="card">
+    <h2 data-en="Process" data-zh="流程">Process</h2>
+    <p class="muted" data-en="The goal is not to force clients to learn more language first, but to see where the real bottleneck is and what should remain human-led." data-zh="目标不是让客户先学一堆概念，而是先看真正的瓶颈在哪里，以及哪些地方应该继续由人主导。">
+      The goal is not to force clients to learn more language first, but to see where the real bottleneck is and what should remain human-led.
+    </p>
+  </div>
+
+  <div class="grid-4">
+    <div class="card"><div class="label">Step 01</div><h3 data-en="Clarify the bottleneck" data-zh="先明确瓶颈">Clarify the bottleneck</h3></div>
+    <div class="card"><div class="label">Step 02</div><h3 data-en="Assess flow and structure" data-zh="评估流程与结构">Assess flow and structure</h3></div>
+    <div class="card"><div class="label">Step 03</div><h3 data-en="Design a grounded path" data-zh="设计更稳的路径">Design a grounded path</h3></div>
+    <div class="card"><div class="label">Step 04</div><h3 data-en="Implement and refine" data-zh="实施并优化">Implement and refine</h3></div>
+  </div>
+</section>
+
+<section class="view" id="view-insights">
+  <div class="card">
+    <h2 data-en="Operational insights" data-zh="运营观察">Operational insights</h2>
+
+    <div class="faq-item">
+      <h3 data-en="Why businesses can still feel chaotic even with more tools" data-zh="为什么工具很多，企业还是会乱">Why businesses can still feel chaotic even with more tools</h3>
+      <p class="muted" data-en="Because the real missing layer is often not software, but workflow clarity, ownership, responsibility structure, and decision architecture." data-zh="真正缺的常常不是工具，而是流程清晰、责任清晰、责任结构，以及决策架构。">
+        Because the real missing layer is often not software, but workflow clarity, ownership, responsibility structure, and decision architecture.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="Why automation should not be the first move everywhere" data-zh="为什么自动化不应该一上来就做很多">Why automation should not be the first move everywhere</h3>
+      <p class="muted" data-en="If the underlying process is unclear, automation usually amplifies confusion. It speeds up motion, but not necessarily good judgment." data-zh="底层流程没理清之前，自动化通常只是把混乱放大。它能加快动作，但不一定能加快好的判断。">
+        If the underlying process is unclear, automation usually amplifies confusion. It speeds up motion, but not necessarily good judgment.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="Why customer management shapes growth efficiency" data-zh="为什么客户管理决定了增长效率">Why customer management shapes growth efficiency</h3>
+      <p class="muted" data-en="The key difference is whether the path from inquiry to service is designed clearly enough — and whether each stage has a visible owner." data-zh="真正的差别在于，从咨询到服务的路径是否被设计得足够清楚，以及每个阶段是否有明确负责人。">
+        The key difference is whether the path from inquiry to service is designed clearly enough — and whether each stage has a visible owner.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="Why responsibility structure matters before scaling" data-zh="为什么扩张前要先理清责任结构">Why responsibility structure matters before scaling</h3>
+      <p class="muted" data-en="When businesses grow faster than their responsibility structure, teams start repeating work, dropping handoffs, and relying on memory instead of system logic." data-zh="当企业增长速度快于责任结构的清晰度时，团队就容易重复劳动、交接失误，并开始依赖记忆而不是系统逻辑。">
+        When businesses grow faster than their responsibility structure, teams start repeating work, dropping handoffs, and relying on memory instead of system logic.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="Why human judgment nodes still matter in business systems" data-zh="为什么业务系统里仍然需要人类判断节点">Why human judgment nodes still matter in business systems</h3>
+      <p class="muted" data-en="Not every step should be automated. High-value exceptions, sensitive customer situations, prioritization decisions, and final responsibility checkpoints still need visible human judgment." data-zh="并不是所有步骤都适合自动化。高价值例外情况、敏感客户场景、优先级判断以及最终责任确认，仍然需要清楚可见的人类判断。">
+        Not every step should be automated. High-value exceptions, sensitive customer situations, prioritization decisions, and final responsibility checkpoints still need visible human judgment.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="view" id="view-faq">
+  <div class="card">
+    <h2 data-en="FAQ" data-zh="常见问题">FAQ</h2>
+
+    <div class="faq-item">
+      <h3 data-en="Is this a software product?" data-zh="这是一个软件产品吗？">Is this a software product?</h3>
+      <p class="muted" data-en="No. This is a business system design and optimization service. It helps clarify how your existing tools and processes should work together." data-zh="不是。这不是一个软件产品，而是帮助企业梳理系统结构和流程逻辑的服务。">
+        No. This is a business system design and optimization service. It helps clarify how your existing tools and processes should work together.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="Do I need to already use AI tools?" data-zh="需要已经在用AI工具吗？">Do I need to already use AI tools?</h3>
+      <p class="muted" data-en="Not necessarily. Many improvements come from clarifying workflow and responsibility structure first." data-zh="不一定。很多优化来自于先把流程和责任结构理清。">
+        Not necessarily. Many improvements come from clarifying workflow and responsibility structure first.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="What kind of companies is this suitable for?" data-zh="适合什么类型的企业？">What kind of companies is this suitable for?</h3>
+      <p class="muted" data-en="Small to medium businesses, growing teams, or companies experiencing operational complexity." data-zh="适合中小企业、成长中的团队，以及运营开始变复杂的公司。">
+        Small to medium businesses, growing teams, or companies experiencing operational complexity.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-en="Is this consulting or implementation?" data-zh="这是咨询还是实施？">Is this consulting or implementation?</h3>
+      <p class="muted" data-en="Primarily structure and system design. Implementation guidance can be included depending on the project." data-zh="主要是结构设计和系统梳理，根据项目也可以提供实施建议。">
+        Primarily structure and system design. Implementation guidance can be included depending on the project.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-contact">
+  <div class="card">
+    <h2 data-en="Contact" data-zh="联系">Contact</h2>
+    <p class="muted" data-en="If you'd like to explore how this can apply to your business, you can start with a short call." data-zh="如果你想看看是否适合你的企业，可以先预约一个简单沟通。">
+      If you'd like to explore how this can apply to your business, you can start with a short call.
+    </p>
+
+    <div class="contact-links">
+      <a href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener" data-en="Book a call" data-zh="预约沟通">Book a call</a>
+      <a href="mailto:contact@bb369tech.com">Email</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="notice">
+      <strong data-en="Note:" data-zh="说明：">Note:</strong>
+      <span data-en="This platform provides system design and operational clarity guidance. It does not constitute legal, financial, or medical advice." data-zh="本平台提供系统设计与运营结构建议，不构成法律、财务或医疗建议。">
+        This platform provides system design and operational clarity guidance. It does not constitute legal, financial, or medical advice.
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-legal">
+  <div class="card">
+    <h2 data-en="Legal" data-zh="法律声明">Legal</h2>
+
+    <div class="legal-list">
+      <div class="legal-item">
+        <strong data-en="Scope" data-zh="适用范围">Scope</strong>
+        <p class="muted" data-en="This website presents business system design and research-based insights." data-zh="本网站提供企业系统设计与研究相关内容。">
+          This website presents business system design and research-based insights.
+        </p>
+      </div>
+
+      <div class="legal-item">
+        <strong data-en="No advice" data-zh="非建议声明">No advice</strong>
+        <p class="muted" data-en="Content does not constitute legal, financial, or medical advice." data-zh="内容不构成法律、财务或医疗建议。">
+          Content does not constitute legal, financial, or medical advice.
+        </p>
+      </div>
+
+      <div class="legal-item">
+        <strong data-en="Responsibility" data-zh="责任">Responsibility</strong>
+        <p class="muted" data-en="Implementation decisions remain the responsibility of the client." data-zh="具体实施决策由客户自行承担。">
+          Implementation decisions remain the responsibility of the client.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span data-en="© BB369 Tech" data-zh="© BB369 Tech">© BB369 Tech</span>
+    </div>
+  </div>
+</section>
+
+</div> <!-- workspace -->
+
+</main>
+</div>
+
+<script>
+const app = document.getElementById("app");
+const sidebar = document.getElementById("sidebar");
+
+const navItems = document.querySelectorAll(".nav-item");
+const views = document.querySelectorAll(".view");
+
+const pageTitle = document.getElementById("pageTitle");
+const pageSub = document.getElementById("pageSub");
+
+const langSwitch = document.getElementById("langSwitch");
+const casesTopBtn = document.getElementById("casesTopBtn");
+const bookTopBtn = document.getElementById("bookTopBtn");
+
+const caseLinkOne = document.getElementById("caseLinkOne");
+const caseLinkTwo = document.getElementById("caseLinkTwo");
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+let currentLang = "en";
+
+const pageMeta = {
+  overview: {
+    en: ["Overview", "Business systems optimization, customer flow clarity, responsibility structure, and AI automation support."],
+    zh: ["总览", "企业系统优化、客户路径清晰、责任结构与AI自动化支持"]
+  },
+  services: {
+    en: ["Services", "Customer flow, CRM structure, workflow clarity, and operational design."],
+    zh: ["服务", "客户路径、CRM结构、流程清晰与运营设计"]
+  },
+  modules: {
+    en: ["Modules", "Detailed system modules and practical directions."],
+    zh: ["模块", "详细系统模块与实践方向"]
+  },
+  assessment: {
+    en: ["Assessment", "Quick diagnostic of system readiness."],
+    zh: ["评估", "系统成熟度快速评估"]
+  },
+  process: {
+    en: ["Process", "How work is structured and delivered."],
+    zh: ["流程", "服务流程与结构"]
+  },
+  insights: {
+    en: ["Insights", "Operational observations and patterns."],
+    zh: ["观点", "运营观察与模式"]
+  },
+  faq: {
+    en: ["FAQ", "Common questions."],
+    zh: ["常见问题", "常见问题解答"]
+  },
+  contact: {
+    en: ["Contact", "Get in touch."],
+    zh: ["联系", "联系与预约"]
+  },
+  legal: {
+    en: ["Legal", "Terms and disclaimers."],
+    zh: ["法律", "条款与声明"]
+  }
+};
+
+function applyTextLanguage(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    const val = el.getAttribute(lang === "en" ? "data-en" : "data-zh");
+    if(val) el.textContent = val;
+  });
 }
 
-mobileMenuBtn?.addEventListener("click", () => {
-  if (!navGroup || window.innerWidth > 860) return;
-  navGroup.style.display = navGroup.style.display === "block" ? "none" : "block";
-});
-
-window.addEventListener("resize", () => {
-  if (!navGroup) return;
-  if (window.innerWidth > 860) {
-    navGroup.style.display = "block";
-  } else {
-    navGroup.style.display = "none";
+function updateToolbarLanguage(lang){
+  if(langSwitch){
+    langSwitch.textContent = lang === "en" ? "中文" : "EN";
   }
+
+  if(casesTopBtn){
+    casesTopBtn.textContent = lang === "en" ? "Cases" : "案例";
+    casesTopBtn.href = lang === "en" ? "case-studies.html" : "case-studies-cn.html";
+  }
+
+  if(bookTopBtn){
+    bookTopBtn.textContent = lang === "en" ? "Book" : "预约";
+  }
+
+  if(caseLinkOne){
+    caseLinkOne.textContent = lang === "en" ? "View →" : "查看 →";
+  }
+
+  if(caseLinkTwo){
+    caseLinkTwo.textContent = lang === "en" ? "View →" : "查看 →";
+  }
+}
+
+function setLanguage(lang){
+  currentLang = lang;
+  applyTextLanguage(lang);
+  updateToolbarLanguage(lang);
+
+  const active = document.querySelector(".nav-item.active")?.dataset.view || "overview";
+  if(pageMeta[active]){
+    pageTitle.textContent = pageMeta[active][lang][0];
+    pageSub.textContent = pageMeta[active][lang][1];
+  }
+}
+
+langSwitch?.addEventListener("click", ()=>{
+  setLanguage(currentLang === "en" ? "zh" : "en");
 });
 
-    
-    document.querySelectorAll(".tab").forEach(tab => {
-      tab.addEventListener("click", () => {
-        const wrap = tab.closest(".card");
-        wrap.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-        wrap.querySelectorAll(".tab-view").forEach(v => v.classList.remove("active"));
-        tab.classList.add("active");
-        const target = document.getElementById(`tab-${tab.dataset.tab}`);
-        if (target) target.classList.add("active");
-      });
-    });
+navItems.forEach(item=>{
+  item.addEventListener("click", ()=>{
+    navItems.forEach(n=>n.classList.remove("active"));
+    item.classList.add("active");
 
-    function readinessFromScore(score) {
-      if (score >= 85) return currentLang === "en" ? "Strong automation foundation" : "自动化基础较强";
-      if (score >= 65) return currentLang === "en" ? "Relatively clear business system" : "业务系统较清晰";
-      if (score >= 45) return currentLang === "en" ? "Workflow still being established" : "正在建立流程";
-      return currentLang === "en" ? "Early manual operating stage" : "早期手动运营阶段";
+    const target = item.dataset.view;
+    views.forEach(v=>v.classList.remove("active"));
+    document.getElementById("view-"+target).classList.add("active");
+
+    if(pageMeta[target]){
+      pageTitle.textContent = pageMeta[target][currentLang][0];
+      pageSub.textContent = pageMeta[target][currentLang][1];
     }
+  });
+});
 
-    function gapFromAnswers(values) {
-      const crm = Number(values.crm || 0);
-      const booking = Number(values.booking || 0);
-      const response = Number(values.response || 0);
-      const automation = Number(values.automation || 0);
-      const leadFlow = Number(values.leadFlow || 0);
+mobileMenuBtn?.addEventListener("click", ()=>{
+  app.classList.toggle("mobile-sidebar-open");
+});
 
-      if (leadFlow <= 10) return currentLang === "en" ? "Lead intake and routing are still weak." : "客户线索收集与分流流程仍较弱。";
-      if (crm <= 8) return currentLang === "en" ? "Customer records and follow-up structure are unclear." : "客户记录与跟进体系不够清晰。";
-      if (booking <= 8) return currentLang === "en" ? "Scheduling still relies too much on manual coordination." : "预约流程仍较依赖人工安排。";
-      if (response <= 8) return currentLang === "en" ? "Response speed can be improved." : "客户响应速度可进一步提升。";
-      if (automation <= 8) return currentLang === "en" ? "Repetitive work has not yet formed effective automation." : "重复性工作尚未形成有效自动化。";
-      return currentLang === "en" ? "The overall structure is relatively stable and ready for deeper optimization." : "整体结构较稳定，可进一步优化扩展。";
-    }
+applyTextLanguage("en");
+updateToolbarLanguage("en");
+</script>
 
-    function nextStepFromScore(score) {
-      if (score >= 85) return currentLang === "en" ? "Move into deeper automation, CRM integration, and workflow optimization." : "建议进入更高级的自动化、CRM整合与流程优化。";
-      if (score >= 65) return currentLang === "en" ? "Unify customer flow, booking logic, and team coordination structure." : "建议先统一客户流程、预约逻辑与团队协作结构。";
-      if (score >= 45) return currentLang === "en" ? "Prioritize standardized intake, follow-up, and response workflow." : "建议优先建立标准化获客、跟进与回复流程。";
-      return currentLang === "en" ? "Start with basic forms, customer records, and inquiry handling." : "建议先从基础表单、客户记录与咨询流程搭建开始。";
-    }
-
-    function advisoryNote(score) {
-      if (score >= 85) return currentLang === "en" ? "Advanced automation systems, integration, and structural upgrade." : "适合：高级自动化系统、流程整合与结构升级。";
-      if (score >= 65) return currentLang === "en" ? "CRM optimization, scheduling flow, customer system upgrade." : "适合：CRM优化、预约系统、客户流程升级。";
-      if (score >= 45) return currentLang === "en" ? "Acquisition system, response workflow, foundational automation." : "适合：获客系统、回复流程、基础自动化搭建。";
-      return currentLang === "en" ? "Foundational business system clarification." : "适合：基础业务系统梳理与转型起步支持。";
-    }
-
-    function scoreExplanation(score) {
-      if (score >= 85) {
-        return currentLang === "en"
-          ? "Your business likely has a workable operating structure already. The next step is not more random tools, but stronger integration, clearer exceptions handling, and tighter human judgment checkpoints."
-          : "你的业务大概率已经有了可运行的系统基础。下一步不是继续随机加工具，而是加强整合、理清例外处理，并把关键人类判断节点保留得更清楚。";
-      }
-      if (score >= 65) {
-        return currentLang === "en"
-          ? "Your system is no longer purely manual, but some core stages are still uneven. The main opportunity is to unify intake, booking, follow-up, and ownership into one clearer flow."
-          : "你的系统已经不完全是手动阶段，但核心环节仍不够均衡。主要机会在于把获客、预约、跟进和责任归属统一到更清楚的一条路径里。";
-      }
-      if (score >= 45) {
-        return currentLang === "en"
-          ? "You are in a transition stage. Some tools exist, but the structure is not stable enough yet. This is usually the point where businesses feel busy, but do not feel truly clear."
-          : "你目前处于过渡阶段。已经有一些工具，但结构还不够稳定。很多企业在这个阶段会很忙，但并不真正清楚。";
-      }
-      return currentLang === "en"
-        ? "Your business is still operating mainly through manual coordination. Before talking about complex automation, it usually makes more sense to first define the customer path, records, and responsibility points."
-        : "你的业务目前仍以人工协调为主。在谈复杂自动化之前，通常更适合先把客户路径、记录方式和责任节点定义清楚。";
-    }
-
-    function humanNodesNote(score, values) {
-      const leadFlow = Number(values.leadFlow || 0);
-      const crm = Number(values.crm || 0);
-      const response = Number(values.response || 0);
-
-      if (score >= 85) {
-        return currentLang === "en"
-          ? "Keep human visibility on exception handling, lead prioritization, proposal decisions, and final approval checkpoints."
-          : "建议继续保留人工可见节点在例外情况处理、客户优先级判断、方案决策和最终确认环节。";
-      }
-
-      if (leadFlow <= 10 || crm <= 8 || response <= 8) {
-        return currentLang === "en"
-          ? "Keep human oversight on first response quality, lead qualification, service-fit judgment, and handoff responsibility."
-          : "建议优先保留人工判断在首次回复质量、客户筛选、服务匹配判断和交接责任确认这些位置。";
-      }
-
-      return currentLang === "en"
-        ? "Keep human visibility on prioritization, customer fit, unusual requests, and final service commitments."
-        : "建议保留人工可见节点在优先级判断、客户匹配、特殊需求和最终服务承诺这些位置。";
-    }
-
-    function boundaryNote(score) {
-      if (score >= 85) {
-        return currentLang === "en"
-          ? "You may automate more repetitive coordination, but high-value exceptions and final responsibility checkpoints should remain human-led."
-          : "你可以自动化更多重复协调工作，但高价值例外情况和最终责任确认仍应由人主导。";
-      }
-      if (score >= 65) {
-        return currentLang === "en"
-          ? "Automate reminders, scheduling, and record updates first. Keep qualification, prioritization, and commitment decisions visible to humans."
-          : "建议优先自动化提醒、预约和记录更新；客户筛选、优先级判断和承诺决策仍保持人工可见。";
-      }
-      if (score >= 45) {
-        return currentLang === "en"
-          ? "Do not over-automate yet. Stabilize intake, response, and records first before expanding automation scope."
-          : "暂时不要过度自动化。先把获客、回复和记录流程稳定下来，再扩大自动化范围。";
-      }
-      return currentLang === "en"
-        ? "Start with basic structure first. Heavy automation at this stage usually creates more confusion than efficiency."
-        : "建议先做基础结构。这个阶段如果过早上重自动化，通常会让混乱多于效率。";
-    }
-
-    function labelFromPercent(value) {
-      if (value >= 80) return currentLang === "en" ? "Strong" : "较强";
-      if (value >= 60) return currentLang === "en" ? "Moderate" : "中等";
-      if (value >= 40) return currentLang === "en" ? "Developing" : "建立中";
-      return currentLang === "en" ? "Weak" : "较弱";
-    }
-
-    function setMetric(idText, idBar, value) {
-      document.getElementById(idText).textContent = `${Math.round(value)}% · ${labelFromPercent(value)}`;
-      document.getElementById(idBar).style.width = `${Math.max(0, Math.min(100, value))}%`;
-    }
-
-    const form = document.getElementById("diagnosticForm");
-    if (form) {
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        const data = new FormData(form);
-        const values = Object.fromEntries(data.entries());
-
-        const leadFlow = Number(values.leadFlow || 0);
-        const crm = Number(values.crm || 0);
-        const booking = Number(values.booking || 0);
-        const response = Number(values.response || 0);
-        const automation = Number(values.automation || 0);
-
-        const score = leadFlow + crm + booking + response + automation;
-
-        const systemClarity = (crm + booking + response) / 60 * 100;
-        const customerFlow = (leadFlow + booking + response) / 60 * 100;
-        const humanJudgment = (100 - Math.abs(leadFlow - response) * 3 - Math.abs(crm - booking) * 2);
-        const boundaryReadiness = (automation + crm + booking) / 60 * 100;
-        const responsibilityStructure = (crm + response + leadFlow) / 60 * 100;
-
-        let structuralGap = 100;
-        const scoresArr = [leadFlow, crm, booking, response, automation];
-        const maxScore = Math.max(...scoresArr);
-        const minScore = Math.min(...scoresArr);
-        structuralGap = Math.max(15, 100 - ((maxScore - minScore) * 4 + (100 - score)));
-        structuralGap = Math.min(100, structuralGap);
-
-        document.getElementById("scoreValue").textContent = score + " / 100";
-        document.getElementById("scoreLabel").textContent = currentLang === "en"
-          ? "Business system maturity score"
-          : "业务系统成熟度评分";
-
-        document.getElementById("readiness").textContent = readinessFromScore(score);
-        document.getElementById("gap").textContent = gapFromAnswers(values);
-        document.getElementById("nextStep").textContent = nextStepFromScore(score);
-        document.getElementById("advisoryNote").textContent = advisoryNote(score);
-        document.getElementById("scoreExplanation").textContent = scoreExplanation(score);
-        document.getElementById("humanNodes").textContent = humanNodesNote(score, values);
-        document.getElementById("boundaryNote").textContent = boundaryNote(score);
-
-        setMetric("metricSystem", "barSystem", systemClarity);
-        setMetric("metricCustomer", "barCustomer", customerFlow);
-        setMetric("metricJudgment", "barJudgment", Math.max(20, Math.min(100, humanJudgment)));
-        setMetric("metricBoundary", "barBoundary", boundaryReadiness);
-        setMetric("metricResponsibility", "barResponsibility", responsibilityStructure);
-        setMetric("metricGap", "barGap", structuralGap);
-      });
-    }
-
-    setLanguage("en");
-    setView("overview");
-  </script>
-
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/69b1a883b7035c1c3716a28e/1jjevkgm2';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
