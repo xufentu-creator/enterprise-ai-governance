@@ -735,153 +735,181 @@
     }
   }
 
-  @media (max-width:860px){
-    .app{
-      grid-template-columns:1fr;
-    }
-
-    .sidebar{
-      position:fixed;
-      left:12px;
-      top:12px;
-      bottom:auto;
-      height:auto;
-      width:auto;
-      z-index:40;
-      padding:0;
-    }
-
-    .sidebar-group,
-    .sidebar-foot{
-      display:none !important;
-    }
-
-    .brand-mark{
-      width:40px;
-      height:40px;
-      border-radius:12px;
-      font-size:20px;
-    }
-
-    .topbar{
-      padding:10px 12px 10px 64px;
-      align-items:flex-start;
-      gap:8px;
-    }
-
-    .topbar-left{
-      flex:1;
-      min-width:0;
-      padding-top:2px;
-    }
-
-    .page-title{
-      font-size:14px;
-      line-height:1.2;
-      margin:0;
-    }
-
-    .page-sub{
-      font-size:12px;
-      margin-top:2px;
-      max-width:180px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-.toolbar{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:flex-end;
-  gap:6px;
-  flex-wrap:wrap;
-  width:auto;
-  max-width:220px;
-}
-
-  .small-btn{
-  min-height:30px;
-  padding:0 10px;
-  font-size:12px;
-  border-radius:999px;
-}
-
-
-    #mobileMenuBtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .workspace{
-      width:min(var(--content-max), calc(100% - 24px));
-      padding:14px 0 30px;
-    }
-
-    .hero{
-      padding-top:6px;
-      gap:18px;
-      grid-template-columns:1fr;
-    }
-
-    .eyebrow{
-      margin-bottom:14px;
-      font-size:.68rem;
-      padding:0 10px;
-      min-height:28px;
-    }
-
-    h1{
-      font-size:clamp(2.7rem, 14vw, 4.5rem);
-      line-height:.95;
-      max-width:8ch;
-    }
-
-    .hero-lead{
-      font-size:15px;
-      line-height:1.6;
-      margin:16px 0 18px;
-    }
-
-    .hero-actions{
-      gap:8px;
-    }
-
-    .btn{
-      min-height:40px;
-      padding:0 14px;
-      font-size:14px;
-    }
-
-    .hero-tags{
-      gap:8px;
-      margin:18px 0 0;
-    }
-
-    .hero-tags li{
-      font-size:12px;
-      padding:7px 10px;
-    }
-
-    .stats,
-    .grid-2,
-    .grid-3,
-    .grid-4,
-    .grid-6,
-    .diag-shell,
-    .contact-shell{
-      grid-template-columns:1fr;
-    }
-
-    .panel,
-    .card{
-      padding:18px;
-      border-radius:20px;
-    }
+@media (max-width:860px){
+  .app{
+    grid-template-columns:1fr;
   }
 
+  .sidebar{
+    position:fixed;
+    left:12px;
+    top:12px;
+    bottom:auto;
+    height:auto;
+    width:auto;
+    z-index:10001;
+    padding:0;
+    overflow:visible;
+    pointer-events:auto;
+  }
+
+  .sidebar-foot{
+    display:none !important;
+  }
+
+  .sidebar-group{
+    display:none !important;
+    position:absolute;
+    top:52px;
+    left:0;
+    width:54px;
+    padding-top:8px;
+    z-index:10002;
+  }
+
+  .mobile-sidebar-open .sidebar-group{
+    display:block !important;
+  }
+
+  .sidebar .nav-item{
+    pointer-events:auto;
+    position:relative;
+    z-index:10003;
+  }
+
+  .brand-mark{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    font-size:20px;
+  }
+
+  .topbar{
+    padding:10px 12px 10px 64px;
+    align-items:flex-start;
+    gap:8px;
+    pointer-events:none;
+  }
+
+  .toolbar,
+  .toolbar *,
+  .sidebar,
+  .sidebar *{
+    pointer-events:auto;
+  }
+
+  .topbar-left{
+    flex:1;
+    min-width:0;
+    padding-top:2px;
+  }
+
+  .page-title{
+    font-size:14px;
+    line-height:1.2;
+    margin:0;
+  }
+
+  .page-sub{
+    font-size:12px;
+    margin-top:2px;
+    max-width:180px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .toolbar{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+    gap:6px;
+    flex-wrap:wrap;
+    width:auto;
+    max-width:220px;
+  }
+
+  .small-btn{
+    min-height:30px;
+    padding:0 10px;
+    font-size:12px;
+    border-radius:999px;
+  }
+
+  #mobileMenuBtn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .workspace{
+    width:min(var(--content-max), calc(100% - 24px));
+    padding:14px 0 30px;
+  }
+
+  .hero{
+    padding-top:6px;
+    gap:18px;
+    grid-template-columns:1fr;
+  }
+
+  .eyebrow{
+    margin-bottom:14px;
+    font-size:.68rem;
+    padding:0 10px;
+    min-height:28px;
+  }
+
+  h1{
+    font-size:clamp(2.7rem, 14vw, 4.5rem);
+    line-height:.95;
+    max-width:8ch;
+  }
+
+  .hero-lead{
+    font-size:15px;
+    line-height:1.6;
+    margin:16px 0 18px;
+  }
+
+  .hero-actions{
+    gap:8px;
+  }
+
+  .btn{
+    min-height:40px;
+    padding:0 14px;
+    font-size:14px;
+  }
+
+  .hero-tags{
+    gap:8px;
+    margin:18px 0 0;
+  }
+
+  .hero-tags li{
+    font-size:12px;
+    padding:7px 10px;
+  }
+
+  .stats,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-6,
+  .diag-shell,
+  .contact-shell{
+    grid-template-columns:1fr;
+  }
+
+  .panel,
+  .card{
+    padding:18px;
+    border-radius:20px;
+  }
+}
+  
   .topbar{
   position:relative;
   z-index:10;
@@ -1636,9 +1664,8 @@ const views = document.querySelectorAll(".view");
 const pageTitle = document.getElementById("pageTitle");
 const pageSub = document.getElementById("pageSub");
 
-const langSwitch = document.getElementById("langSwitch");
-const casesTopBtn = document.getElementById("casesTopBtn");
-const bookTopBtn = document.getElementById("bookTopBtn");
+const langEnBtn = document.getElementById("langEn");
+const langZhBtn = document.getElementById("langZh");
 
 const caseLinkOne = document.getElementById("caseLinkOne");
 const caseLinkTwo = document.getElementById("caseLinkTwo");
@@ -1664,6 +1691,7 @@ const pageMeta = {
     en: ["Assessment", "Quick diagnostic of system readiness."],
     zh: ["评估", "系统成熟度快速评估"]
   },
+
   process: {
     en: ["Process", "How work is structured and delivered."],
     zh: ["流程", "服务流程与结构"]
@@ -1686,90 +1714,133 @@ const pageMeta = {
   }
 };
 
-function applyTextLanguage(lang){
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    const val = el.getAttribute(lang === "en" ? "data-en" : "data-zh");
-    if(val) el.textContent = val;
-  });
-}
+function showView(target){
+  navItems.forEach(n => n.classList.remove("active"));
+  const navTarget = document.querySelector(`.nav-item[data-view="${target}"]`);
+  if (navTarget) navTarget.classList.add("active");
 
-function updateToolbarLanguage(lang){
-  if(langSwitch){
-    langSwitch.textContent = lang === "en" ? "中文" : "EN";
+  views.forEach(v => v.classList.remove("active"));
+  const targetView = document.getElementById("view-" + target);
+  if (targetView) targetView.classList.add("active");
+
+  if (pageMeta[target]) {
+    pageTitle.textContent = pageMeta[target][currentLang][0];
+    pageSub.textContent = pageMeta[target][currentLang][1];
   }
 
-  if(casesTopBtn){
-    casesTopBtn.textContent = lang === "en" ? "Cases" : "案例";
-    casesTopBtn.href = lang === "en" ? "case-studies.html" : "case-studies-cn.html";
-  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
-  if(bookTopBtn){
-    bookTopBtn.textContent = lang === "en" ? "Book" : "预约";
-  }
-
-  if(caseLinkOne){
-    caseLinkOne.textContent = lang === "en" ? "View →" : "查看 →";
-  }
-
-  if(caseLinkTwo){
-    caseLinkTwo.textContent = lang === "en" ? "View →" : "查看 →";
+  if (window.innerWidth <= 860) {
+    app.classList.remove("mobile-sidebar-open");
   }
 }
 
-function setLanguage(lang){
+function setLang(lang){
   currentLang = lang;
-  applyTextLanguage(lang);
-  updateToolbarLanguage(lang);
 
-  const active = document.querySelector(".nav-item.active")?.dataset.view || "overview";
-  if(pageMeta[active]){
-    pageTitle.textContent = pageMeta[active][lang][0];
-    pageSub.textContent = pageMeta[active][lang][1];
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const val = el.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+    if (val !== null) el.textContent = val;
+  });
+
+  document.querySelectorAll("[data-placeholder-en]").forEach(el => {
+    const val = el.getAttribute(
+      lang === "zh" ? "data-placeholder-zh" : "data-placeholder-en"
+    );
+    if (val !== null) el.setAttribute("placeholder", val);
+  });
+
+  const activeView = document.querySelector(".nav-item.active")?.dataset.view || "overview";
+  if (pageMeta[activeView]) {
+    pageTitle.textContent = pageMeta[activeView][lang][0];
+    pageSub.textContent = pageMeta[activeView][lang][1];
   }
+
+  if (caseLinkOne) caseLinkOne.textContent = lang === "zh" ? "查看 →" : "View →";
+  if (caseLinkTwo) caseLinkTwo.textContent = lang === "zh" ? "查看 →" : "View →";
+
+  if (langEnBtn) langEnBtn.classList.toggle("active", lang === "en");
+  if (langZhBtn) langZhBtn.classList.toggle("active", lang === "zh");
 }
 
-langSwitch?.addEventListener("click", ()=>{
-  setLanguage(currentLang === "en" ? "zh" : "en");
+navItems.forEach(item => {
+  item.addEventListener("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    const target = item.dataset.view;
+    if (target) showView(target);
+  });
 });
 
-navItems.forEach(item=>{
-  item.addEventListener("click", ()=>{
-    navItems.forEach(n=>n.classList.remove("active"));
-    item.classList.add("active");
-
-    const target = item.dataset.view;
-    views.forEach(v=>v.classList.remove("active"));
-    document.getElementById("view-"+target).classList.add("active");
-
-    if(pageMeta[target]){
-      pageTitle.textContent = pageMeta[target][currentLang][0];
-      pageSub.textContent = pageMeta[target][currentLang][1];
+document.querySelectorAll("[data-jump]").forEach(btn => {
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    const target = btn.dataset.jump;
+    if (target && document.getElementById("view-" + target)) {
+      showView(target);
     }
   });
 });
 
-mobileMenuBtn?.addEventListener("click", ()=>{
+langEnBtn?.addEventListener("click", function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  setLang("en");
+});
+
+langZhBtn?.addEventListener("click", function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  setLang("zh");
+});
+
+mobileMenuBtn?.addEventListener("click", function(e){
+  e.preventDefault();
+  e.stopPropagation();
   app.classList.toggle("mobile-sidebar-open");
 });
 
-applyTextLanguage("en");
-updateToolbarLanguage("en");
+document.addEventListener("click", function(e){
+  if (window.innerWidth <= 860) {
+    if (!sidebar.contains(e.target)) {
+      app.classList.remove("mobile-sidebar-open");
+    }
+  }
+});
 
-  const diagnosticForm = document.getElementById("diagnosticForm");
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
 
+    const target = tab.dataset.tab;
+    if (!target) return;
+
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".tab-view").forEach(v => v.classList.remove("active"));
+
+    tab.classList.add("active");
+    const pane = document.getElementById("tab-" + target);
+    if (pane) pane.classList.add("active");
+  });
+});
+
+const diagnosticForm = document.getElementById("diagnosticForm");
 if (diagnosticForm) {
-  diagnosticForm.addEventListener("submit", function (e) {
+  diagnosticForm.addEventListener("submit", function(e){
     e.preventDefault();
 
-    const leadFlow = Number(document.getElementById("leadFlow")?.value || 0);
-    const crm = Number(document.getElementById("crm")?.value || 0);
-    const booking = Number(document.getElementById("booking")?.value || 0);
-    const response = Number(document.getElementById("response")?.value || 0);
-    const automation = Number(document.getElementById("automation")?.value || 0);
+    const ids = ["leadFlow","crm","booking","response","automation"];
+    let total = 0;
 
-    const total = leadFlow + crm + booking + response + automation;
+    ids.forEach(id => {
+      const val = document.getElementById(id)?.value;
+      if (val) total += Number(val);
+    });
 
     const scoreValue = document.getElementById("scoreValue");
+    const scoreLabel = document.getElementById("scoreLabel");
     const readiness = document.getElementById("readiness");
     const gap = document.getElementById("gap");
     const nextStep = document.getElementById("nextStep");
@@ -1777,7 +1848,6 @@ if (diagnosticForm) {
     const scoreExplanation = document.getElementById("scoreExplanation");
     const humanNodes = document.getElementById("humanNodes");
     const boundaryNote = document.getElementById("boundaryNote");
-    const scoreLabel = document.getElementById("scoreLabel");
 
     const metricSystem = document.getElementById("metricSystem");
     const metricCustomer = document.getElementById("metricCustomer");
@@ -1793,58 +1863,61 @@ if (diagnosticForm) {
     const barResponsibility = document.getElementById("barResponsibility");
     const barGap = document.getElementById("barGap");
 
+    const systemVal = Math.min(100, total);
+    const customerVal = Math.min(100, total);
+    const judgmentVal = Math.min(100, Math.max(20, total - 10));
+    const boundaryVal = Math.min(100, Math.max(15, total - 5));
+    const responsibilityVal = Math.min(100, Math.max(10, total - 8));
+    const gapVal = Math.max(0, 100 - total);
+
     if (scoreValue) scoreValue.textContent = total;
 
-    let readinessText = "";
-    let gapText = "";
-    let nextStepText = "";
-    let advisoryText = "";
-    let explanationText = "";
-    let humanText = "";
-    let boundaryText = "";
-
-    if (total <= 35) {
-      readinessText = currentLang === "zh" ? "早期阶段" : "Early Stage";
-      gapText = currentLang === "zh" ? "流程清晰度不足" : "Workflow clarity gap";
-      nextStepText = currentLang === "zh" ? "先梳理客户进入、预约与跟进路径" : "Clarify intake, booking, and follow-up flow first";
-      advisoryText = currentLang === "zh" ? "建议先做基础业务系统梳理" : "Start with core business system design";
-      explanationText = currentLang === "zh" ? "目前更需要先把流程和责任结构理清，再谈自动化。" : "Your system needs clearer workflow and responsibility structure before more automation.";
-      humanText = currentLang === "zh" ? "客户分流、例外情况判断、优先级判断" : "Lead triage, exception handling, prioritization decisions";
-      boundaryText = currentLang === "zh" ? "先保留人工判断节点，不建议过早做重自动化。" : "Keep visible human judgment nodes before adding heavy automation.";
-    } else if (total <= 70) {
-      readinessText = currentLang === "zh" ? "成长阶段" : "Growth Stage";
-      gapText = currentLang === "zh" ? "责任结构与系统连接" : "Responsibility structure and system connection";
-      nextStepText = currentLang === "zh" ? "统一CRM、预约与客户跟进结构" : "Unify CRM, booking, and follow-up structure";
-      advisoryText = currentLang === "zh" ? "适合做流程清晰化与自动化准备" : "Good fit for workflow clarity and automation readiness";
-      explanationText = currentLang === "zh" ? "你已经有一定基础，下一步重点是减少流程断点与重复沟通。" : "You already have a foundation. The next step is reducing handoff gaps and repeated communication.";
-      humanText = currentLang === "zh" ? "客户优先级判断、服务节点确认、异常处理" : "Lead prioritization, service checkpoints, exception handling";
-      boundaryText = currentLang === "zh" ? "适合做轻量自动化，但关键判断节点仍建议保留人工。" : "Light automation is appropriate, but key decision points should remain human-led.";
+    if (total >= 75) {
+      if (scoreLabel) scoreLabel.textContent = currentLang === "zh" ? "系统准备度较高" : "High readiness";
+      if (readiness) readiness.textContent = currentLang === "zh" ? "较高" : "High";
+      if (gap) gap.textContent = currentLang === "zh" ? "需要优化自动化边界与责任节点" : "Automation boundaries and responsibility nodes still need refinement";
+      if (nextStep) nextStep.textContent = currentLang === "zh" ? "进入流程优化与自动化分层" : "Move into workflow optimization and automation layering";
+      if (advisoryNote) advisoryNote.textContent = currentLang === "zh" ? "适合进入系统优化" : "Suitable for system optimization";
+      if (scoreExplanation) scoreExplanation.textContent = currentLang === "zh"
+        ? "你的系统已经具备较好的基础清晰度，可以进一步提升责任结构、判断节点与自动化边界。"
+        : "Your system already has a relatively clear foundation and can move toward stronger responsibility structure, judgment nodes, and automation boundaries.";
+      if (humanNodes) humanNodes.textContent = currentLang === "zh"
+        ? "优先保留高价值客户判断、例外情况处理与最终责任确认。"
+        : "Keep high-value customer judgment, exception handling, and final responsibility confirmation visible first.";
+      if (boundaryNote) boundaryNote.textContent = currentLang === "zh"
+        ? "建议先自动化重复性流程，再逐步扩大范围。"
+        : "Automate repetitive flows first, then expand gradually.";
+    } else if (total >= 45) {
+      if (scoreLabel) scoreLabel.textContent = currentLang === "zh" ? "系统准备度中等" : "Medium readiness";
+      if (readiness) readiness.textContent = currentLang === "zh" ? "中等" : "Medium";
+      if (gap) gap.textContent = currentLang === "zh" ? "客户路径与责任结构还不够稳定" : "Customer path and responsibility structure are not stable enough yet";
+      if (nextStep) nextStep.textContent = currentLang === "zh" ? "先理顺客户路径与责任节点" : "Clarify the customer path and responsibility nodes first";
+      if (advisoryNote) advisoryNote.textContent = currentLang === "zh" ? "适合先做流程梳理" : "Best suited for workflow clarification first";
+      if (scoreExplanation) scoreExplanation.textContent = currentLang === "zh"
+        ? "系统已有部分基础，但还需要先理顺客户路径、跟进结构与关键判断节点。"
+        : "Your system has some structure already, but customer flow, follow-up structure, and key judgment nodes need to be clarified first.";
+      if (humanNodes) humanNodes.textContent = currentLang === "zh"
+        ? "优先保留客户筛选、预约确认和关键升级处理。"
+        : "Keep customer qualification, booking confirmation, and key escalation handling visible first.";
+      if (boundaryNote) boundaryNote.textContent = currentLang === "zh"
+        ? "不要过早堆自动化，先稳定底层流程。"
+        : "Do not over-automate too early. Stabilize the underlying workflow first.";
     } else {
-      readinessText = currentLang === "zh" ? "成熟阶段" : "Advanced Stage";
-      gapText = currentLang === "zh" ? "自动化边界优化" : "Automation boundary optimization";
-      nextStepText = currentLang === "zh" ? "优化结构，明确哪些地方继续由人主导" : "Refine boundaries between human judgment and automation";
-      advisoryText = currentLang === "zh" ? "适合做高级流程优化与系统协同" : "Good fit for advanced workflow optimization";
-      explanationText = currentLang === "zh" ? "系统整体较成熟，下一步重点是优化自动化边界与判断节点。" : "Your system is fairly mature. The next step is refining automation boundaries and decision nodes.";
-      humanText = currentLang === "zh" ? "高价值例外处理、最终责任确认、关键客户决策" : "High-value exceptions, final responsibility checks, key client decisions";
-      boundaryText = currentLang === "zh" ? "自动化可以更深入，但最终责任节点应继续保持人工可见。" : "Automation can go deeper, but final responsibility nodes should remain visibly human.";
+      if (scoreLabel) scoreLabel.textContent = currentLang === "zh" ? "系统准备度较低" : "Low readiness";
+      if (readiness) readiness.textContent = currentLang === "zh" ? "较低" : "Low";
+      if (gap) gap.textContent = currentLang === "zh" ? "基础流程、客户管理和责任结构都需要先建立" : "Core workflow, customer management, and responsibility structure need to be established first";
+      if (nextStep) nextStep.textContent = currentLang === "zh" ? "先建立清晰入口、跟进和记录方式" : "Build a clear intake, follow-up, and record structure first";
+      if (advisoryNote) advisoryNote.textContent = currentLang === "zh" ? "适合先做基础搭建" : "Best suited for foundational setup first";
+      if (scoreExplanation) scoreExplanation.textContent = currentLang === "zh"
+        ? "当前更适合先做基础系统梳理，而不是直接进入复杂自动化。"
+        : "At this stage, you are better served by foundational system clarification before moving into complex automation.";
+      if (humanNodes) humanNodes.textContent = currentLang === "zh"
+        ? "优先保留线索收集、客户分类与人工确认。"
+        : "Keep lead intake, customer classification, and human confirmation visible first.";
+      if (boundaryNote) boundaryNote.textContent = currentLang === "zh"
+        ? "暂时不要扩大自动化，先把信息流和责任流理清。"
+        : "Do not expand automation yet. Clarify information flow and responsibility flow first.";
     }
-
-    if (readiness) readiness.textContent = readinessText;
-    if (gap) gap.textContent = gapText;
-    if (nextStep) nextStep.textContent = nextStepText;
-    if (advisoryNote) advisoryNote.textContent = advisoryText;
-    if (scoreExplanation) scoreExplanation.textContent = explanationText;
-    if (humanNodes) humanNodes.textContent = humanText;
-    if (boundaryNote) boundaryNote.textContent = boundaryText;
-    if (scoreLabel) scoreLabel.textContent = currentLang === "zh" ? "评估结果已生成" : "Assessment result generated";
-
-    const percent = Math.min(100, total);
-    const systemVal = Math.round((leadFlow + crm) / 2);
-    const customerVal = Math.round((leadFlow + booking + response) / 3);
-    const judgmentVal = Math.round((response + crm) / 2);
-    const boundaryVal = automation;
-    const responsibilityVal = Math.round((crm + booking) / 2);
-    const gapVal = 100 - percent;
 
     if (metricSystem) metricSystem.textContent = systemVal;
     if (metricCustomer) metricCustomer.textContent = customerVal;
@@ -1867,33 +1940,8 @@ if (diagnosticForm) {
   });
 }
 
-// 顶部语言按钮
-langSwitch?.addEventListener("click", () => {
-  setLanguage(currentLang === "en" ? "zh" : "en");
-});
-
-// 首页三个跳转按钮
-document.querySelectorAll("[data-jump]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const target = btn.dataset.jump;
-
-    navItems.forEach(n => n.classList.remove("active"));
-    const navTarget = document.querySelector(`.nav-item[data-view="${target}"]`);
-    if (navTarget) navTarget.classList.add("active");
-
-    views.forEach(v => v.classList.remove("active"));
-    const targetView = document.getElementById("view-" + target);
-    if (targetView) targetView.classList.add("active");
-
-    if (pageMeta[target]) {
-      pageTitle.textContent = pageMeta[target][currentLang][0];
-      pageSub.textContent = pageMeta[target][currentLang][1];
-    }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-
+setLang("en");
+showView("overview");
 </script>
 
 </body>
