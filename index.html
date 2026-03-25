@@ -740,71 +740,21 @@
       grid-template-columns:1fr;
     }
 
-.sidebar{
-  position:fixed;
-  left:12px;
-  top:12px;
-  bottom:auto;
-  height:auto;
-  width:auto;
-  z-index:10001;
-  padding:0;
-  overflow:visible;
-}
+    .sidebar{
+      position:fixed;
+      left:12px;
+      top:12px;
+      bottom:auto;
+      height:auto;
+      width:auto;
+      z-index:40;
+      padding:0;
+    }
 
-.sidebar-foot{
-  display:none !important;
-}
-
-.sidebar-group{
-  display:none !important;
-  position:absolute;
-  top:52px;
-  left:0;
-  width:54px;
-  padding-top:8px;
-  z-index:10002;
-}
-
-.mobile-sidebar-open .sidebar-group{
-  display:block !important;
-}
-
-.sidebar .nav-item{
-  pointer-events:auto;
-  position:relative;
-  z-index:10003;
-}
-.sidebar{
-  z-index:10001;
-  overflow:visible;
-}
-
-.sidebar-foot{
-  display:none !important;
-}
-
-.sidebar-group{
-  display:none !important;
-  position:absolute;
-  top:52px;
-  left:0;
-  width:54px;
-  padding-top:8px;
-  z-index:10002;
-}
-
-.mobile-sidebar-open .sidebar-group{
-  display:block !important;
-}
-
-.sidebar .nav-item{
-  pointer-events:auto;
-  position:relative;
-  z-index:10003;
-}
-
-    
+    .sidebar-group,
+    .sidebar-foot{
+      display:none !important;
+    }
 
     .brand-mark{
       width:40px;
@@ -825,17 +775,6 @@
       padding-top:2px;
     }
 
-.topbar{
-  pointer-events:none;
-}
-
-.toolbar,
-.toolbar *,
-.sidebar,
-.sidebar *{
-  pointer-events:auto;
-}
-    
     .page-title{
       font-size:14px;
       line-height:1.2;
@@ -942,6 +881,25 @@
       border-radius:20px;
     }
   }
+
+  .topbar{
+  position:relative;
+  z-index:10;
+}
+
+.hero{
+  position:relative;
+  z-index:1;
+}
+
+.toolbar{
+  position:relative;
+  z-index:20;
+}
+
+.toolbar *{
+  pointer-events:auto;
+}  
 </style>
 </head>
 <body>
@@ -1003,11 +961,18 @@
         </div>
 
         <div class="toolbar">
-          <button class="small-btn icon-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
-          <button class="small-btn" id="langSwitch" data-en="中文" data-zh="EN">中文</button>
-          <a class="small-btn" id="casesTopBtn" href="case-studies.html" data-en="Cases" data-zh="案例">Cases</a>
-          <a class="small-btn" id="bookTopBtn" href="https://cal.com/bb369tech/30min" target="_blank" rel="noopener" data-en="Book" data-zh="预约">Book</a>
-        </div>
+
+  <button class="small-btn icon-btn" id="mobileMenuBtn">≡</button>
+
+  <button class="small-btn" id="langEn">EN</button>
+  <button class="small-btn" id="langZh">中文</button>
+
+  <button class="small-btn" data-jump="cases">Cases</button>
+
+  <a class="small-btn" href="https://cal.com/bb369tech/30min" target="_blank">
+    Book
+  </a>
+</div>
       </div>
 
 <div class="workspace">
@@ -1029,6 +994,11 @@
         Clarify customer acquisition, follow-up, appointment flow, CRM structure, responsibility structure, and operational logic — so growth becomes more stable, less manual, and easier to scale.
       </p>
 
+      <div class="hero-actions">
+        <button class="btn primary" data-jump="assessment" data-en="Start Assessment" data-zh="开始评估">Start Assessment</button>
+        <button class="btn secondary" data-jump="services" data-en="Explore Services" data-zh="查看服务">Explore Services</button>
+        <button class="btn soft" data-jump="modules" data-en="Open Modules" data-zh="查看模块">Open Modules</button>
+      </div>
 
       <ul class="hero-tags">
         <li data-en="Customer acquisition" data-zh="客户获取">Customer acquisition</li>
@@ -1154,6 +1124,7 @@
     </div>
   </div>
 </section>
+
 
 <section class="view" id="view-services">
   <div class="card">
@@ -1896,44 +1867,46 @@ if (diagnosticForm) {
   });
 }
 
-  function showViewDirect(target){
-  navItems.forEach(n => n.classList.remove("active"));
-  const navTarget = document.querySelector(`.nav-item[data-view="${target}"]`);
-  if (navTarget) navTarget.classList.add("active");
-
-  views.forEach(v => v.classList.remove("active"));
-  const targetView = document.getElementById("view-" + target);
-  if (targetView) targetView.classList.add("active");
-
-  if (pageMeta[target]) {
-    pageTitle.textContent = pageMeta[target][currentLang][0];
-    pageSub.textContent = pageMeta[target][currentLang][1];
-  }
-
- window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-const app = document.getElementById("app");
-const sidebar = document.getElementById("sidebar");
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-
-mobileMenuBtn?.addEventListener("click", function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  app.classList.toggle("mobile-sidebar-open");
+// 顶部语言按钮
+langSwitch?.addEventListener("click", () => {
+  setLanguage(currentLang === "en" ? "zh" : "en");
 });
 
-document.addEventListener("click", function(e){
-  if (window.innerWidth <= 860) {
-    if (!sidebar.contains(e.target)) {
-      app.classList.remove("mobile-sidebar-open");
+// 首页三个跳转按钮
+document.querySelectorAll("[data-jump]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.jump;
+
+    navItems.forEach(n => n.classList.remove("active"));
+    const navTarget = document.querySelector(`.nav-item[data-view="${target}"]`);
+    if (navTarget) navTarget.classList.add("active");
+
+    views.forEach(v => v.classList.remove("active"));
+    const targetView = document.getElementById("view-" + target);
+    if (targetView) targetView.classList.add("active");
+
+    if (pageMeta[target]) {
+      pageTitle.textContent = pageMeta[target][currentLang][0];
+      pageSub.textContent = pageMeta[target][currentLang][1];
     }
-  }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 });
-  
+
 </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
