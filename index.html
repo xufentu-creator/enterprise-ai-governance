@@ -969,9 +969,9 @@
       </p>
 
       <div class="hero-actions">
-        <button class="btn primary" data-jump="assessment" data-en="Start Assessment" data-zh="开始评估">Start Assessment</button>
-        <button class="btn secondary" data-jump="services" data-en="Explore Services" data-zh="查看服务">Explore Services</button>
-        <button class="btn soft" data-jump="modules" data-en="Open Modules" data-zh="查看模块">Open Modules</button>
+       <button class="btn primary" type="button" onclick="showViewDirect('assessment')" data-en="Start Assessment" data-zh="开始评估">Start Assessment</button>
+<button class="btn secondary" type="button" onclick="showViewDirect('services')" data-en="Explore Services" data-zh="查看服务">Explore Services</button>
+<button class="btn soft" type="button" onclick="showViewDirect('modules')" data-en="Open Modules" data-zh="查看模块">Open Modules</button>
       </div>
 
       <ul class="hero-tags">
@@ -1838,6 +1838,23 @@ if (diagnosticForm) {
       resultCard.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
+}
+
+  function showViewDirect(target){
+  navItems.forEach(n => n.classList.remove("active"));
+  const navTarget = document.querySelector(`.nav-item[data-view="${target}"]`);
+  if (navTarget) navTarget.classList.add("active");
+
+  views.forEach(v => v.classList.remove("active"));
+  const targetView = document.getElementById("view-" + target);
+  if (targetView) targetView.classList.add("active");
+
+  if (pageMeta[target]) {
+    pageTitle.textContent = pageMeta[target][currentLang][0];
+    pageSub.textContent = pageMeta[target][currentLang][1];
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 </script>
 
