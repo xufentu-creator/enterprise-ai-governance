@@ -740,21 +740,71 @@
       grid-template-columns:1fr;
     }
 
-    .sidebar{
-      position:fixed;
-      left:12px;
-      top:12px;
-      bottom:auto;
-      height:auto;
-      width:auto;
-      z-index:40;
-      padding:0;
-    }
+.sidebar{
+  position:fixed;
+  left:12px;
+  top:12px;
+  bottom:auto;
+  height:auto;
+  width:auto;
+  z-index:10001;
+  padding:0;
+  overflow:visible;
+}
 
-    .sidebar-group,
-    .sidebar-foot{
-      display:none !important;
-    }
+.sidebar-foot{
+  display:none !important;
+}
+
+.sidebar-group{
+  display:none !important;
+  position:absolute;
+  top:52px;
+  left:0;
+  width:54px;
+  padding-top:8px;
+  z-index:10002;
+}
+
+.mobile-sidebar-open .sidebar-group{
+  display:block !important;
+}
+
+.sidebar .nav-item{
+  pointer-events:auto;
+  position:relative;
+  z-index:10003;
+}
+.sidebar{
+  z-index:10001;
+  overflow:visible;
+}
+
+.sidebar-foot{
+  display:none !important;
+}
+
+.sidebar-group{
+  display:none !important;
+  position:absolute;
+  top:52px;
+  left:0;
+  width:54px;
+  padding-top:8px;
+  z-index:10002;
+}
+
+.mobile-sidebar-open .sidebar-group{
+  display:block !important;
+}
+
+.sidebar .nav-item{
+  pointer-events:auto;
+  position:relative;
+  z-index:10003;
+}
+
+    
 
     .brand-mark{
       width:40px;
@@ -775,6 +825,17 @@
       padding-top:2px;
     }
 
+.topbar{
+  pointer-events:none;
+}
+
+.toolbar,
+.toolbar *,
+.sidebar,
+.sidebar *{
+  pointer-events:auto;
+}
+    
     .page-title{
       font-size:14px;
       line-height:1.2;
@@ -1849,8 +1910,13 @@ if (diagnosticForm) {
     pageSub.textContent = pageMeta[target][currentLang][1];
   }
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+ window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+const app = document.getElementById("app");
+const sidebar = document.getElementById("sidebar");
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
 mobileMenuBtn?.addEventListener("click", function(e){
   e.preventDefault();
   e.stopPropagation();
@@ -1864,22 +1930,10 @@ document.addEventListener("click", function(e){
     }
   }
 });
-
-
   
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
