@@ -1,8 +1,11 @@
 # Case — Home Upgrade Service (Los Angeles)
 
+Application scenario: field service decision system (home upgrade).
+
 AI-assisted decision case for home upgrade services in Los Angeles.
 
 A real-world application of a structured decision approach in remodeling services.
+
 
 ---
 
