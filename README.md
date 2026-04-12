@@ -37,8 +37,10 @@ Enterprise advisory site:
 https://ai.bb369tech.com
 
 ---
-
 ## Contact
 
-Enterprise collaboration inquiries:  
-contact@bb369tech.com
+Enterprise collaboration inquiries:
+
+Email: contact@bb369tech.com  
+
+LinkedIn: https://www.linkedin.com/in/xufentu/
