@@ -1,46 +1,57 @@
-# Enterprise AI Governance Advisory
+# Enterprise AI Governance
 
-Applied frameworks for enterprise AI governance, decision architecture, and digital transformation in AI-mediated organizational environments.
+Public conceptual research on enterprise AI governance, decision architecture, organizational responsibility, and transformation in AI-mediated systems.
 
 ## Repository Role
 
-This repository represents an applied enterprise framework layer focused on governance structure, organizational transformation, and practical implementation contexts.
+This repository records the conceptual and research foundation behind Xufen Tu’s enterprise AI governance direction.
 
-It is not the canonical research source.
+It examines how AI changes organizational decision pathways, how responsibility becomes distributed across people and systems, where human judgment remains necessary, and how enterprises may preserve accountability, provenance, and structural stability during technological transformation.
 
-The purpose of this repository is to translate research-based structural thinking into enterprise-facing advisory materials, application scenarios, and governance references.
+This repository is not the operating platform, client delivery system, or commercial implementation environment. BB369TECH platform operations, service modules, business workflows, and technical infrastructure are maintained separately under an independent platform account.
 
 ## Research Foundation
 
-This work builds on the research framework developed by Xufen Tu, focusing on human judgment, decision architecture, and structural constraints in complex AI-mediated systems.
+This work develops from Xufen Tu’s continuing research on human judgment, complex systems, decision architecture, responsibility drift, provenance governance, and structural accountability.
 
-Canonical research repository:
+Canonical public research reference:
 
-https://github.com/xufentu-creator/judgment-as-structural-constraint
+https://xufentu.com
 
-## Focus Areas
+The complete research archive, internal methodology, assessment tools, implementation procedures, client materials, and proprietary delivery structures are maintained privately.
 
-- Enterprise AI governance in complex organizational systems
-- Decision architecture and human judgment
-- Enterprise digital transformation frameworks
-- Human–AI collaboration in operational environments
-- Governance structures for AI-mediated organizations
-- Structural responsibility and accountability boundaries
+## Public Scope
 
-## Applied Context
+The public materials in this repository may include conceptual explanations, enterprise-facing research notes, selected public cases, general governance observations, and references connecting research questions to organizational environments.
 
-This repository is intended for enterprise-facing interpretation, advisory positioning, and applied framework development.
+They do not contain complete implementation methods, assessment criteria, scoring systems, client workflows, backend infrastructure, platform logic, or proprietary advisory tools.
 
-It connects research concepts to practical organizational concerns such as how decisions are structured, where human judgment remains necessary, how responsibility is distributed across systems, and how AI changes organizational workflows.
+## Research Themes
 
-## Website
+Enterprise AI governance · Decision architecture · Human judgment · Organizational responsibility · Responsibility drift · Provenance governance · Structural accountability · Enterprise transformation
 
-Enterprise advisory site:
+## Relationship to BB369TECH
+
+BB369TECH is a separately operated platform and applied business environment.
+
+This repository provides conceptual and research context only. It does not represent the platform’s complete technical system, operational workflow, merchant structure, client delivery process, or commercial implementation model.
+
+## Public References
+
+Canonical research reference:
+
+https://xufentu.com
+
+Enterprise public website:
 
 https://ai.bb369tech.com
 
-## Contact
+## Author
 
-Enterprise collaboration inquiries:
+**Xufen Tu（涂绪芬）**
+Independent Interdisciplinary Researcher
+AI Governance · Complex Systems · Decision Architecture · Human Judgment
 
-LinkedIn: https://www.linkedin.com/in/xufentu/
+LinkedIn:
+
+https://www.linkedin.com/in/xufentu/
