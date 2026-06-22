@@ -3,179 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | BB369 Tech</title>
-  <meta name="description" content="Privacy Policy for BB369 Tech." />
+
+  <title>Privacy Policy | BB369TECH</title>
+  <meta name="description" content="Privacy Policy for BB369TECH business inquiries." />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="BB369 Tech" />
+  <meta name="author" content="BB369TECH" />
+  <link rel="canonical" href="https://ai.bb369tech.com/privacy.html" />
+
   <style>
     :root{
-      --bg:#f7f7f8;
+      --bg:#f6f8fb;
       --panel:#ffffff;
-      --line:#e6e8ec;
+      --line:#dde4ec;
       --text:#111827;
-      --muted:#6b7280;
-      --shadow:0 8px 24px rgba(15,23,42,0.06);
+      --muted:#667085;
+      --brand:#0b1220;
+      --max:900px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      background:var(--bg);
+      background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial,sans-serif;
-      font-size:13px;
-      line-height:1.65;
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      line-height:1.75;
     }
+
+    a{text-decoration:none;color:inherit}
+
     .wrap{
-      max-width:920px;
+      width:min(var(--max),calc(100% - 32px));
       margin:0 auto;
-      padding:28px 16px 60px;
+      padding:28px 0 60px;
     }
+
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:14px;
+      margin-bottom:18px;
       flex-wrap:wrap;
     }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+    }
+
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:var(--brand);
+    }
+
     .toolbar{
       display:flex;
       gap:8px;
       flex-wrap:wrap;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:36px;
-      padding:0 12px;
+      min-height:40px;
+      padding:0 14px;
       border-radius:999px;
       border:1px solid var(--line);
       background:#fff;
       color:var(--text);
-      text-decoration:none;
       cursor:pointer;
-      font-size:12px;
+      font-size:13px;
     }
+
     .btn.active{
-      background:#111827;
+      background:var(--brand);
       color:#fff;
-      border-color:#111827;
+      border-color:var(--brand);
     }
+
     .card{
       background:var(--panel);
       border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:24px;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 18px 48px rgba(15,23,42,.07);
     }
+
     h1{
-      font-size:24px;
-      line-height:1.15;
       margin:0 0 10px;
-      letter-spacing:-0.02em;
+      font-size:clamp(2rem,5vw,3.2rem);
+      line-height:1.1;
+      letter-spacing:-.035em;
     }
+
     h2{
-      font-size:15px;
-      margin:28px 0 10px;
-      line-height:1.25;
+      margin:26px 0 8px;
+      font-size:1.05rem;
     }
+
     p{
-      margin:0 0 10px;
-      color:#1f2937;
+      margin:0 0 14px;
+      color:#344054;
     }
-    .muted{
-      color:var(--muted);
-    }
+
+    .muted{color:var(--muted)}
+
     .footer{
-      margin-top:22px;
-      padding-top:16px;
+      margin-top:26px;
+      padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--muted);
-      font-size:12px;
-      line-height:1.7;
+      font-size:13px;
     }
-    .footer a{
-      color:#334155;
-      text-decoration:none;
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    @media(max-width:640px){
+      .card{padding:24px}
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="topbar">
-      <a class="btn" href="index.html" data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
+      <a class="brand" href="index.html">
+        <span class="brand-mark">B</span>
+        <span>BB369TECH</span>
+      </a>
+
       <div class="toolbar">
-        <button class="btn active" id="langEn">EN</button>
-        <button class="btn" id="langZh">中文</button>
+        <a class="btn" href="index.html" data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
+        <button class="btn active" id="langEn" type="button">EN</button>
+        <button class="btn" id="langZh" type="button">中文</button>
       </div>
     </div>
 
-    <div class="card">
+    <main class="card">
       <h1 data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</h1>
-      <p class="muted" data-en="Last updated: March 2026" data-zh="最后更新：2026年3月">Last updated: March 2026</p>
 
-      <p data-en="This website is operated by BB369 Tech. Its research foundation is informed by independent interdisciplinary research by Xufen Tu." data-zh="本网站由 BB369 Tech 运营。其研究基础来源于 Xufen Tu 的独立跨学科研究。">
-        This website is operated by BB369 Tech. Its research foundation is informed by independent interdisciplinary research by Xufen Tu.
-      </p>
-
-      <h2 data-en="1. Scope" data-zh="1. 适用范围">1. Scope</h2>
-      <p data-en="This Privacy Policy explains how business contact information may be collected, used, stored, and handled when visitors interact with this website, including through forms, booking tools, chat tools, email, or other business communication channels connected to the site." data-zh="本隐私政策说明，当访问者通过表单、预约工具、聊天工具、电子邮件或其他与本网站相关的业务沟通渠道与本网站互动时，业务联系信息可能如何被收集、使用、保存和处理。">
-        This Privacy Policy explains how business contact information may be collected, used, stored, and handled when visitors interact with this website, including through forms, booking tools, chat tools, email, or other business communication channels connected to the site.
+      <p class="muted" data-en="Last updated: June 2026" data-zh="最后更新：2026年6月">
+        Last updated: June 2026
       </p>
 
-      <h2 data-en="2. Information We May Collect" data-zh="2. 我们可能收集的信息">2. Information We May Collect</h2>
-      <p data-en="Information may include name, business email address, company name, general project description, scheduling details, and communication records voluntarily submitted by the user." data-zh="收集的信息可能包括姓名、业务邮箱、公司名称、项目概述、预约信息，以及用户主动提交的沟通记录。">
-        Information may include name, business email address, company name, general project description, scheduling details, and communication records voluntarily submitted by the user.
-      </p>
-      <p data-en="We may also receive limited technical information through website infrastructure or third-party services, such as browser type, device type, approximate location by IP region, referral source, or usage activity related to page visits and service interactions." data-zh="我们也可能通过网站基础设施或第三方服务接收有限的技术信息，例如浏览器类型、设备类型、基于 IP 区域的大致位置、来源渠道，或与页面访问和服务互动相关的使用行为。">
-        We may also receive limited technical information through website infrastructure or third-party services, such as browser type, device type, approximate location by IP region, referral source, or usage activity related to page visits and service interactions.
+      <p
+        data-en="BB369TECH uses information submitted through this website only for business inquiries, appointments, communication, and possible service discussions."
+        data-zh="BB369TECH 仅将通过本网站提交的信息用于业务咨询、预约、沟通及可能的服务讨论。">
+        BB369TECH uses information submitted through this website only for business inquiries, appointments, communication, and possible service discussions.
       </p>
 
-      <h2 data-en="3. How Information May Be Used" data-zh="3. 信息可能如何被使用">3. How Information May Be Used</h2>
-      <p data-en="Submitted information may be used for responding to inquiries, coordinating consultations, evaluating possible service fit, maintaining communication, supporting project discussions, improving website operations, and maintaining reasonable business records." data-zh="已提交的信息可能用于回复咨询、协调沟通、评估服务匹配度、保持联系、支持项目讨论、改进网站运营，以及保留合理的业务记录。">
-        Submitted information may be used for responding to inquiries, coordinating consultations, evaluating possible service fit, maintaining communication, supporting project discussions, improving website operations, and maintaining reasonable business records.
+      <h2 data-en="Information We May Receive" data-zh="我们可能收到的信息">Information We May Receive</h2>
+      <p
+        data-en="Information may include your name, company name, business email, phone number, website, industry, market, and a brief description of your business needs."
+        data-zh="信息可能包括您的姓名、公司名称、企业邮箱、电话、网站、行业、市场及业务需求简要说明。">
+        Information may include your name, company name, business email, phone number, website, industry, market, and a brief description of your business needs.
       </p>
 
-      <h2 data-en="4. Third-Party Services" data-zh="4. 第三方服务">4. Third-Party Services</h2>
-      <p data-en="This website may use third-party services such as Web3Forms, Cal.com, Tawk.to, Airtable, hosting providers, analytics tools, or similar infrastructure services." data-zh="本网站可能使用第三方服务，例如 Web3Forms、Cal.com、Tawk.to、Airtable、网站托管服务、数据分析工具或类似基础设施服务。">
-        This website may use third-party services such as Web3Forms, Cal.com, Tawk.to, Airtable, hosting providers, analytics tools, or similar infrastructure services.
-      </p>
-      <p data-en="Information submitted through or processed by those services may also be subject to the terms, privacy practices, data processing methods, and technical infrastructure of the relevant service provider." data-zh="通过这些服务提交或由这些服务处理的信息，也可能同时受相关服务提供方的条款、隐私实践、数据处理方式和技术基础设施约束。">
-        Information submitted through or processed by those services may also be subject to the terms, privacy practices, data processing methods, and technical infrastructure of the relevant service provider.
-      </p>
-
-      <h2 data-en="5. Data Retention" data-zh="5. 数据保留">5. Data Retention</h2>
-      <p data-en="Business contact information may be retained for a reasonable period for communication, inquiry handling, project coordination, record-keeping, service discussions, operational follow-up, and compliance-related administration." data-zh="业务联系信息可能会在合理期限内保留，用于沟通、咨询处理、项目协调、记录保存、服务讨论、运营跟进和与合规相关的管理。">
-        Business contact information may be retained for a reasonable period for communication, inquiry handling, project coordination, record-keeping, service discussions, operational follow-up, and compliance-related administration.
+      <h2 data-en="How We Use Information" data-zh="我们如何使用信息">How We Use Information</h2>
+      <p
+        data-en="Information may be used to respond to your inquiry, arrange a conversation, review whether our services may be relevant, and maintain reasonable business records."
+        data-zh="信息可能用于回复您的咨询、安排沟通、判断相关服务是否适合，以及保留合理的业务记录。">
+        Information may be used to respond to your inquiry, arrange a conversation, review whether our services may be relevant, and maintain reasonable business records.
       </p>
 
-      <h2 data-en="6. Sensitive Information" data-zh="6. 敏感信息">6. Sensitive Information</h2>
-      <p data-en="This website is intended for general business communication. Users should not submit confidential, sensitive, medical, legal, financial, payment card, government-issued ID, health-related, or other regulated personal information through this website, including through forms, booking tools, or chat tools." data-zh="本网站仅用于一般业务沟通。用户不应通过本网站提交机密信息、敏感信息、医疗信息、法律信息、金融信息、支付卡信息、政府证件信息、健康相关信息或其他受监管的个人数据，包括通过表单、预约工具或聊天工具提交。">
-        This website is intended for general business communication. Users should not submit confidential, sensitive, medical, legal, financial, payment card, government-issued ID, health-related, or other regulated personal information through this website, including through forms, booking tools, or chat tools.
+      <h2 data-en="Sharing of Information" data-zh="信息共享">Sharing of Information</h2>
+      <p
+        data-en="BB369TECH does not sell personal information. Information may be handled by service providers that support website hosting, forms, appointments, or email communication."
+        data-zh="BB369TECH 不出售个人信息。支持网站托管、表单、预约或电子邮件沟通的服务提供方，可能会处理相关信息。">
+        BB369TECH does not sell personal information. Information may be handled by service providers that support website hosting, forms, appointments, or email communication.
       </p>
 
-      <h2 data-en="7. Data Security" data-zh="7. 数据安全">7. Data Security</h2>
-      <p data-en="Reasonable technical and organizational measures may be used to protect information that is submitted through the website. However, no website, communication system, or internet transmission method can guarantee absolute security." data-zh="我们可能采取合理的技术和管理措施来保护通过网站提交的信息。但任何网站、通信系统或互联网传输方式都无法保证绝对安全。">
-        Reasonable technical and organizational measures may be used to protect information that is submitted through the website. However, no website, communication system, or internet transmission method can guarantee absolute security.
+      <h2 data-en="Sensitive Information" data-zh="敏感信息">Sensitive Information</h2>
+      <p
+        data-en="Please do not submit confidential, payment, medical, legal, government identification, or other highly sensitive information through public website forms."
+        data-zh="请不要通过公开网站表单提交机密、支付、医疗、法律、政府证件或其他高度敏感的信息。">
+        Please do not submit confidential, payment, medical, legal, government identification, or other highly sensitive information through public website forms.
       </p>
 
-      <h2 data-en="8. Correction or Deletion Requests" data-zh="8. 更正或删除请求">8. Correction or Deletion Requests</h2>
-      <p data-en="To request correction or deletion of information you submitted directly through this website, please contact contact@bb369tech.com." data-zh="若你希望更正或删除你通过本网站直接提交的信息，请联系 contact@bb369tech.com。">
-        To request correction or deletion of information you submitted directly through this website, please contact contact@bb369tech.com.
+      <h2 data-en="Correction or Deletion" data-zh="更正或删除">Correction or Deletion</h2>
+      <p>
+        <span data-en>To request correction or deletion of information you submitted, contact </span>
+        <span data-zh>如需更正或删除您提交的信息，请联系 </span>
+        <a href="mailto:business@bb369tech.com">business@bb369tech.com</a>
       </p>
 
-      <h2 data-en="9. Policy Updates" data-zh="9. 政策更新">9. Policy Updates</h2>
-      <p data-en="This Privacy Policy may be updated from time to time to reflect operational, legal, technical, or business changes. The updated version will be posted on this page." data-zh="本隐私政策可能会根据运营、法律、技术或业务变化不定期更新。更新后的版本将发布在本页面。">
-        This Privacy Policy may be updated from time to time to reflect operational, legal, technical, or business changes. The updated version will be posted on this page.
+      <h2 data-en="Policy Updates" data-zh="政策更新">Policy Updates</h2>
+      <p
+        data-en="This policy may be updated when website or business practices change. The current version will remain available on this page."
+        data-zh="当网站或业务做法发生变化时，本政策可能会更新。当前版本将持续发布在本页面。">
+        This policy may be updated when website or business practices change. The current version will remain available on this page.
       </p>
 
       <div class="footer">
-        © 2024 BB369 Tech ·
-        <a href="terms.html" data-en="Terms of Service" data-zh="服务条款">Terms of Service</a> ·
-        <a href="cookies.html" data-en="Cookie Notice" data-zh="Cookie 说明">Cookie Notice</a>
+        <div>© 2026 BB369TECH</div>
+        <div class="footer-links">
+          <a href="terms.html" data-en="Terms of Service" data-zh="服务条款">Terms of Service</a>
+          <a href="cookies.html" data-en="Cookie Notice" data-zh="Cookie 说明">Cookie Notice</a>
+        </div>
       </div>
-    </div>
+    </main>
   </div>
 
   <script>
@@ -186,6 +227,7 @@
       langEn.classList.toggle("active", lang === "en");
       langZh.classList.toggle("active", lang === "zh");
       document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+
       document.querySelectorAll("[data-en][data-zh]").forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
       });
@@ -193,6 +235,7 @@
 
     langEn.addEventListener("click", () => setLanguage("en"));
     langZh.addEventListener("click", () => setLanguage("zh"));
+
     setLanguage("en");
   </script>
 </body>
