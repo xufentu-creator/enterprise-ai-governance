@@ -1,6 +1,9 @@
 # Enterprise AI Governance
 
-Public conceptual research on enterprise AI governance, decision architecture, organizational responsibility, and transformation in AI-mediated systems.
+Public conceptual research on enterprise AI governance, organizational responsibility, and transformation in AI-mediated systems.
+
+This repository preserves the public research context associated with Xufen Tu’s enterprise AI governance direction. It is separate from BB369TECH’s commercial services, client delivery methods, and operating platforms.
+
 
 ## Repository Role
 
@@ -42,9 +45,10 @@ Canonical research reference:
 
 https://xufentu.com
 
-Enterprise public website:
+BB369TECH enterprise services website:
 
 https://ai.bb369tech.com
+
 
 ## Author
 
