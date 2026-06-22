@@ -2,20 +2,28 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://ai.bb369tech.com/</loc>
-</url>
+  <url>
+    <loc>https://ai.bb369tech.com/</loc>
+  </url>
 
-<url>
-<loc>https://ai.bb369tech.com/privacy.html</loc>
-</url>
+  <url>
+    <loc>https://ai.bb369tech.com/case-studies.html</loc>
+  </url>
 
-<url>
-<loc>https://ai.bb369tech.com/terms.html</loc>
-</url>
+  <url>
+    <loc>https://ai.bb369tech.com/case-studies-cn.html</loc>
+  </url>
 
-<url>
-<loc>https://ai.bb369tech.com/cookies.html</loc>
-</url>
+  <url>
+    <loc>https://ai.bb369tech.com/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://ai.bb369tech.com/terms.html</loc>
+  </url>
+
+  <url>
+    <loc>https://ai.bb369tech.com/cookies.html</loc>
+  </url>
 
 </urlset>
