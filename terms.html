@@ -3,183 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service | BB369 Tech</title>
-  <meta name="description" content="Terms of Service for BB369 Tech." />
+
+  <title>Terms of Service | BB369TECH</title>
+  <meta name="description" content="Terms of Service for BB369TECH business inquiries and services." />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="BB369 Tech" />
+  <meta name="author" content="BB369TECH" />
+  <link rel="canonical" href="https://ai.bb369tech.com/terms.html" />
+
   <style>
     :root{
-      --bg:#f7f7f8;
+      --bg:#f6f8fb;
       --panel:#ffffff;
-      --line:#e6e8ec;
+      --line:#dde4ec;
       --text:#111827;
-      --muted:#6b7280;
-      --shadow:0 8px 24px rgba(15,23,42,0.06);
+      --muted:#667085;
+      --brand:#0b1220;
+      --max:900px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      background:var(--bg);
+      background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial,sans-serif;
-      font-size:13px;
-      line-height:1.65;
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      line-height:1.75;
     }
+
+    a{text-decoration:none;color:inherit}
+
     .wrap{
-      max-width:920px;
+      width:min(var(--max),calc(100% - 32px));
       margin:0 auto;
-      padding:28px 16px 60px;
+      padding:28px 0 60px;
     }
+
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:14px;
+      margin-bottom:18px;
       flex-wrap:wrap;
     }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+    }
+
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:var(--brand);
+    }
+
     .toolbar{
       display:flex;
       gap:8px;
       flex-wrap:wrap;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:36px;
-      padding:0 12px;
+      min-height:40px;
+      padding:0 14px;
       border-radius:999px;
       border:1px solid var(--line);
       background:#fff;
       color:var(--text);
-      text-decoration:none;
       cursor:pointer;
-      font-size:12px;
+      font-size:13px;
     }
+
     .btn.active{
-      background:#111827;
+      background:var(--brand);
       color:#fff;
-      border-color:#111827;
+      border-color:var(--brand);
     }
+
     .card{
       background:var(--panel);
       border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:24px;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 18px 48px rgba(15,23,42,.07);
     }
+
     h1{
-      font-size:24px;
-      line-height:1.15;
       margin:0 0 10px;
-      letter-spacing:-0.02em;
+      font-size:clamp(2rem,5vw,3.2rem);
+      line-height:1.1;
+      letter-spacing:-.035em;
     }
+
     h2{
-      font-size:15px;
-      margin:28px 0 10px;
-      line-height:1.25;
+      margin:26px 0 8px;
+      font-size:1.05rem;
     }
+
     p{
-      margin:0 0 10px;
-      color:#1f2937;
+      margin:0 0 14px;
+      color:#344054;
     }
-    .muted{
-      color:var(--muted);
-    }
+
+    .muted{color:var(--muted)}
+
     .footer{
-      margin-top:22px;
-      padding-top:16px;
+      margin-top:26px;
+      padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--muted);
-      font-size:12px;
-      line-height:1.7;
+      font-size:13px;
     }
-    .footer a{
-      color:#334155;
-      text-decoration:none;
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    @media(max-width:640px){
+      .card{padding:24px}
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="topbar">
-      <a class="btn" href="index.html" data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
+      <a class="brand" href="index.html">
+        <span class="brand-mark">B</span>
+        <span>BB369TECH</span>
+      </a>
+
       <div class="toolbar">
-        <button class="btn active" id="langEn">EN</button>
-        <button class="btn" id="langZh">中文</button>
+        <a class="btn" href="index.html" data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
+        <button class="btn active" id="langEn" type="button">EN</button>
+        <button class="btn" id="langZh" type="button">中文</button>
       </div>
     </div>
 
-    <div class="card">
+    <main class="card">
       <h1 data-en="Terms of Service" data-zh="服务条款">Terms of Service</h1>
-      <p class="muted" data-en="Last updated: March 2026" data-zh="最后更新：2026年3月">Last updated: March 2026</p>
 
-      <p data-en="These Terms of Service apply to the use of the BB369 Tech website and related business communications initiated through this website." data-zh="本服务条款适用于对 BB369 Tech 网站的访问和使用，以及通过本网站发起的相关业务沟通。">
-        These Terms of Service apply to the use of the BB369 Tech website and related business communications initiated through this website.
-      </p>
-
-      <h2 data-en="1. Informational Website Use" data-zh="1. 信息展示性质">1. Informational Website Use</h2>
-      <p data-en="This website is provided for general informational, research presentation, business communication, and service inquiry purposes only." data-zh="本网站仅用于一般信息展示、研究介绍、业务沟通和服务咨询。">
-        This website is provided for general informational, research presentation, business communication, and service inquiry purposes only.
-      </p>
-      <p data-en="Nothing on this website constitutes a binding offer, guaranteed service outcome, or automatic project acceptance." data-zh="本网站任何内容均不构成具有约束力的报价、对服务结果的保证，或对项目的自动接受。">
-        Nothing on this website constitutes a binding offer, guaranteed service outcome, or automatic project acceptance.
+      <p class="muted" data-en="Last updated: June 2026" data-zh="最后更新：2026年6月">
+        Last updated: June 2026
       </p>
 
-      <h2 data-en="2. No Professional Advice" data-zh="2. 非专业建议">2. No Professional Advice</h2>
-      <p data-en="Content on this website does not constitute legal, medical, tax, accounting, financial, investment, or regulatory advice." data-zh="本网站内容不构成法律、医疗、税务、会计、金融、投资或监管建议。">
-        Content on this website does not constitute legal, medical, tax, accounting, financial, investment, or regulatory advice.
-      </p>
-      <p data-en="Any examples, observations, structural language, or business recommendations are provided for general informational and communication purposes only." data-zh="本网站中的任何示例、观察、结构性表达或业务建议，仅用于一般信息展示和沟通。">
-        Any examples, observations, structural language, or business recommendations are provided for general informational and communication purposes only.
+      <p
+        data-en="These terms apply to the use of the BB369TECH website and to business inquiries submitted through this website."
+        data-zh="本条款适用于 BB369TECH 网站的使用，以及通过本网站提交的业务咨询。">
+        These terms apply to the use of the BB369TECH website and to business inquiries submitted through this website.
       </p>
 
-      <h2 data-en="3. User Responsibility" data-zh="3. 用户责任">3. User Responsibility</h2>
-      <p data-en="Users are responsible for deciding how to interpret or use information from this website in their own business or organizational context." data-zh="用户需自行判断如何在其自身业务或组织场景中理解和使用本网站信息。">
-        Users are responsible for deciding how to interpret or use information from this website in their own business or organizational context.
-      </p>
-      <p data-en="Users should not submit confidential, regulated, or highly sensitive information through website forms, booking tools, or chat tools." data-zh="用户不应通过网站表单、预约工具或聊天工具提交机密、受监管或高度敏感的信息。">
-        Users should not submit confidential, regulated, or highly sensitive information through website forms, booking tools, or chat tools.
-      </p>
-
-      <h2 data-en="4. Service Discussions and Agreements" data-zh="4. 服务沟通与协议">4. Service Discussions and Agreements</h2>
-      <p data-en="Any advisory, consulting, implementation, or project-related services discussed through this website are subject to separate discussion, scope definition, availability, and written agreement where applicable." data-zh="任何通过本网站讨论的顾问、咨询、实施或项目相关服务，均以单独沟通、范围界定、资源安排及必要时的书面协议为准。">
-        Any advisory, consulting, implementation, or project-related services discussed through this website are subject to separate discussion, scope definition, availability, and written agreement where applicable.
+      <h2 data-en="Website Information" data-zh="网站信息">Website Information</h2>
+      <p
+        data-en="This website provides general information about BB369TECH services and allows companies to contact us regarding possible business needs."
+        data-zh="本网站提供 BB369TECH 服务的一般信息，并允许企业就可能的业务需求与我们联系。">
+        This website provides general information about BB369TECH services and allows companies to contact us regarding possible business needs.
       </p>
 
-      <h2 data-en="5. Third-Party Tools and External Services" data-zh="5. 第三方工具与外部服务">5. Third-Party Tools and External Services</h2>
-      <p data-en="This website may rely on third-party tools or services, including but not limited to form tools, scheduling tools, chat tools, CRM tools, analytics tools, hosting platforms, and external publication links." data-zh="本网站可能依赖第三方工具或服务，包括但不限于表单工具、预约工具、聊天工具、CRM 工具、数据分析工具、托管平台以及外部发布链接。">
-        This website may rely on third-party tools or services, including but not limited to form tools, scheduling tools, chat tools, CRM tools, analytics tools, hosting platforms, and external publication links.
-      </p>
-      <p data-en="BB369 Tech is not responsible for the content, availability, technical performance, or privacy practices of third-party services beyond this website." data-zh="对于本网站之外的第三方服务的内容、可用性、技术性能或隐私实践，BB369 Tech 不承担责任。">
-        BB369 Tech is not responsible for the content, availability, technical performance, or privacy practices of third-party services beyond this website.
-      </p>
-
-      <h2 data-en="6. Intellectual Property and Research Attribution" data-zh="6. 知识产权与研究归属">6. Intellectual Property and Research Attribution</h2>
-      <p data-en="Unless otherwise stated, original website content, structural descriptions, research framing, and related presentation materials remain the intellectual property of their respective owner." data-zh="除非另有说明，网站原创内容、结构描述、研究表达及相关展示材料的知识产权均归其相应权利人所有。">
-        Unless otherwise stated, original website content, structural descriptions, research framing, and related presentation materials remain the intellectual property of their respective owner.
-      </p>
-      <p data-en="Research foundation developed through independent interdisciplinary research by Xufen Tu." data-zh="本平台研究基础来源于 Xufen Tu 的独立跨学科研究。">
-        Research foundation developed through independent interdisciplinary research by Xufen Tu.
+      <h2 data-en="No Automatic Agreement" data-zh="不构成自动合作">No Automatic Agreement</h2>
+      <p
+        data-en="Submitting an inquiry does not create a contract, guarantee service availability, confirm project acceptance, or guarantee any business result."
+        data-zh="提交咨询不代表已经形成合同，也不保证服务一定可提供、项目一定被接受，或获得任何商业结果。">
+        Submitting an inquiry does not create a contract, guarantee service availability, confirm project acceptance, or guarantee any business result.
       </p>
 
-      <h2 data-en="7. Limitation of Reliance" data-zh="7. 依赖限制">7. Limitation of Reliance</h2>
-      <p data-en="Use of this website and reliance on its content remain at the user’s own discretion and responsibility." data-zh="对本网站的使用以及对其内容的依赖，均由用户自行决定并自行承担责任。">
-        Use of this website and reliance on its content remain at the user’s own discretion and responsibility.
+      <h2 data-en="Separate Service Agreement" data-zh="单独服务协议">Separate Service Agreement</h2>
+      <p
+        data-en="Any paid service, project scope, fee, delivery schedule, or responsibility arrangement must be confirmed separately in writing."
+        data-zh="任何付费服务、项目范围、费用、交付时间或责任安排，均需另行书面确认。">
+        Any paid service, project scope, fee, delivery schedule, or responsibility arrangement must be confirmed separately in writing.
       </p>
 
-      <h2 data-en="8. Changes to These Terms" data-zh="8. 条款变更">8. Changes to These Terms</h2>
-      <p data-en="These Terms of Service may be updated from time to time. The updated version will be posted on this page." data-zh="本服务条款可能会不定期更新。更新后的版本将发布在本页面。">
-        These Terms of Service may be updated from time to time. The updated version will be posted on this page.
+      <h2 data-en="No Professional Advice" data-zh="不提供专业建议">No Professional Advice</h2>
+      <p
+        data-en="BB369TECH does not provide legal, financial, tax, medical, investment, licensing, engineering, or regulatory advice through this website."
+        data-zh="BB369TECH 不通过本网站提供法律、财务、税务、医疗、投资、许可、工程或监管建议。">
+        BB369TECH does not provide legal, financial, tax, medical, investment, licensing, engineering, or regulatory advice through this website.
+      </p>
+
+      <h2 data-en="Business Decisions" data-zh="商业决定">Business Decisions</h2>
+      <p
+        data-en="All final business, pricing, contracting, market, and operational decisions remain the responsibility of the client and its qualified advisers."
+        data-zh="所有最终商业、定价、合同、市场和运营决定，均由客户及其专业顾问负责。">
+        All final business, pricing, contracting, market, and operational decisions remain the responsibility of the client and its qualified advisers.
+      </p>
+
+      <h2 data-en="No Guaranteed Results" data-zh="不保证结果">No Guaranteed Results</h2>
+      <p
+        data-en="BB369TECH does not guarantee search ranking, AI recommendation, platform inclusion, customer inquiries, procurement opportunities, sales, contracts, or revenue."
+        data-zh="BB369TECH 不保证搜索排名、AI 推荐、平台收录、客户咨询、采购机会、销售、合同或收入。">
+        BB369TECH does not guarantee search ranking, AI recommendation, platform inclusion, customer inquiries, procurement opportunities, sales, contracts, or revenue.
+      </p>
+
+      <h2 data-en="Acceptable Use" data-zh="合理使用">Acceptable Use</h2>
+      <p
+        data-en="Users must not misuse the website, submit false information, interfere with website operation, or use the website for unlawful activity."
+        data-zh="用户不得滥用网站、提交虚假信息、干扰网站运行，或将网站用于违法活动。">
+        Users must not misuse the website, submit false information, interfere with website operation, or use the website for unlawful activity.
+      </p>
+
+      <h2 data-en="Changes to These Terms" data-zh="条款更新">Changes to These Terms</h2>
+      <p
+        data-en="These terms may be updated from time to time. The current version will remain available on this page."
+        data-zh="本条款可能会不定期更新。当前版本将持续发布在本页面。">
+        These terms may be updated from time to time. The current version will remain available on this page.
+      </p>
+
+      <h2 data-en="Contact" data-zh="联系">Contact</h2>
+      <p>
+        <span data-en>Questions may be sent to </span>
+        <span data-zh>如有问题，请联系 </span>
+        <a href="mailto:business@bb369tech.com">business@bb369tech.com</a>
       </p>
 
       <div class="footer">
-        © 2024 BB369 Tech ·
-        <a href="privacy.html" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a> ·
-        <a href="cookies.html" data-en="Cookie Notice" data-zh="Cookie 说明">Cookie Notice</a>
+        <div>© 2026 BB369TECH</div>
+        <div class="footer-links">
+          <a href="privacy.html" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a>
+          <a href="cookies.html" data-en="Cookie Notice" data-zh="Cookie 说明">Cookie Notice</a>
+        </div>
       </div>
-    </div>
+    </main>
   </div>
 
   <script>
@@ -190,6 +248,7 @@
       langEn.classList.toggle("active", lang === "en");
       langZh.classList.toggle("active", lang === "zh");
       document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+
       document.querySelectorAll("[data-en][data-zh]").forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
       });
@@ -197,6 +256,7 @@
 
     langEn.addEventListener("click", () => setLanguage("en"));
     langZh.addEventListener("click", () => setLanguage("zh"));
+
     setLanguage("en");
   </script>
 </body>
